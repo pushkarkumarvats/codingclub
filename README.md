@@ -1,2 +1,2 @@
 # codingclub
-for event learning new things
+make better
