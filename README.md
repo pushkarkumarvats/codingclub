@@ -1,73 +1,110 @@
-# Coding Club IITG
+# IITG Coding Club Website
 
-## Design Guide
+Welcome to the official repository for the IITG Coding Club website. This project is a modern, responsive, and accessible site for the IITG Online Degree Coding Club, built with HTML, CSS, and JavaScript.
 
-### Color Codes
+---
 
-Dark:
+## 🚀 Project Overview
+- **Purpose:** Showcase club activities, events, resources, and team members for the IITG Coding Club.
+- **Features:**
+  - Modern dark-themed design
+  - Fully responsive and mobile-first
+  - Modular, maintainable codebase
+  - Accessibility and SEO best practices
 
-- text: #E0E0E0
-- background: #1A202C
-- primary color: #00F0FF (used in button)
-- secondary color: #9370DB (used in button)
-- accent: #FFA500 (used in code snippet image)
+---
 
-Light:
+## 🛠️ Tech Stack
+- **HTML5** (semantic, modular pages)
+- **CSS3** (modular, per section/page, CSS variables for theming)
+- **JavaScript** (vanilla, modular per section/page)
+- **Font Awesome** (for icons)
 
-- text: #333333
-- background: #F5F5F5
-- primary color: #00A896 (used in button)
-- secondary color: #4A90E2 (used in button)
-- accent: #FFA500 (same as dark mode)
+---
 
-For now use the [Inter](https://fonts.google.com/specimen/Inter) font and it's variations. It is subject to change.
+## 📁 Folder Structure
+```
+codingclub/
+├── assets/           # Images, logos, and profile photos
+├── css/              # CSS files (one per section/page)
+├── js/               # JavaScript files (one per section/page)
+├── events/           # Events page and related files
+├── resources/        # Resources page and related files
+├── team/             # Team page and related files
+├── index.html        # Homepage
+├── README.md         # This file
+└── ...
+```
 
-### Homepage layout blueprint
+---
 
-![Homepage layout blueprint](assets/readme_images/layout.png)
+## 🧑‍💻 How to Update Content
 
-### Reference images
+### Team Members
+- **File:** `team/index.html`
+- **Profile Images:** Place images in `assets/` (e.g., `pushkar.jpeg`).
+- **Social Links:** Update LinkedIn/GitHub/email links in each member's card.
+- **Add/Remove Members:** Duplicate or remove a `<div class="card">...</div>` block as needed. Use the same structure for avatars and social icons.
+- **Image Format:** Use `.jpeg` or `.png` as per the actual file in `assets/`.
 
-- Logo 1
+### Events
+- **File:** `events/index.html`
+- **Add/Remove Events:** Edit the event cards inside the `.cards-grid` section. Each event is a `<div class="card">...</div>`.
+- **Event Images:** Place any event images in `assets/` and reference them with the correct path.
 
-![Logo 1](assets/logo.png)
+### Resources
+- **File:** `resources/index.html`
+- **Add/Remove Resources:** Edit the resource cards inside the `.cards-grid` section.
 
-- Logo 2
+### General Instructions
+- **Navigation:** Update navigation links in the `<nav>` section of each HTML file if you add new pages.
+- **Assets:** Place all images, logos, and profile photos in the `assets/` folder. Use descriptive, lowercase filenames.
+- **CSS/JS:** For new sections, create a new CSS/JS file in the respective folder and link it in your HTML.
 
-![Logo 2](assets/logo2.png)
+---
 
-- Homepage first/top view (Dark)
+## ♿ Accessibility & SEO
+- ARIA labels and skip links for navigation
+- High color contrast and keyboard accessibility
+- Meta description, Open Graph, and Twitter Card tags on all pages
+- Semantic HTML5 tags throughout
 
-![Homepage](assets/readme_images/home4-dark.jpg)
+---
 
-- Homepage first/top view (Light)
+## ⚡ Performance
+- Responsive and mobile-first design
+- CSS variables for easy theming
+- Scroll-to-top button and smooth scroll
+- Lazy loading for images (add `loading="lazy"` to `<img>` tags as needed)
 
-![Homepage](assets/readme_images/home4-light.jpg)
+---
 
-- Events (Dark)
+## 🧩 Contribution Guidelines
+- Keep code modular and well-commented
+- Use consistent naming conventions
+- Test changes on mobile, tablet, and desktop
+- Follow accessibility and SEO best practices
+- Remove unused code and assets
 
-![Events](assets/readme_images/events_dark.jpeg)
+---
 
-- Events (Light)
+## 🙏 Credits
+- IITG Coding Club core team and contributors
+- [Font Awesome](https://fontawesome.com/) for icons
+- All images and content © IITG Coding Club
 
-![Events](assets/readme_images/events_light.jpeg)
+## 👥 Team
 
-- Courses (Dark)
+### Core Development Team
+- **Pushkar Kumar Vats** (v.pushkar@op.iitg.ac.in) - Cohort 1
+- **Ayush Raj Chourasia** (a.chourasia@op.iitg.ac.in) - Cohort 1
+- **Sumit Rana** (sumit.rana@op.iitg.ac.in) - Cohort 1
+- **Nilay Sarma** (nilay.sarma@op.iitg.ac.in) - Cohort 2
+- **Vyom Agrawal** (vyom.agrawal@op.iitg.ac.in) - Cohort 2
+- **Aaryan Santosh Gotad** (a.gotad@op.iitg.ac.in) - Cohort 2
+- **Hema Das** (d.hema@op.iitg.ac.in) - Cohort 2
 
-![Courses](assets/readme_images/courses_dark.jpeg)
+---
 
-- Courses (Light)
-
-![Courses](assets/readme_images/courses_light.jpeg)
-
-- Reviews (Dark)
-
-![Courses](assets/readme_images/reviews_dark.jpeg)
-
-- Reviews (Light)
-
-![Courses](assets/readme_images/reviews_light.jpeg)
-
-### Note
-
-Some texts are used as a placeholder and are subject to change.
+## 📢 Need Help?
+For questions or contributions, open an issue or contact the Coding Club team.
