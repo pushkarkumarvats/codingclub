@@ -1,170 +1,363 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Resources from IITG Coding Club. Access curated learning materials, guides, and project ideas for developers and tech enthusiasts."
-    />
-    <meta property="og:title" content="Resources | IITG Coding Club" />
-    <meta
-      property="og:description"
-      content="Resources from IITG Coding Club. Access curated learning materials, guides, and project ideas for developers and tech enthusiasts."
-    />
-    <meta
-      property="og:image"
-      content="../assets/logo_with_name1_transparent.png"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/resources/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Resources | IITG Coding Club" />
-    <meta
-      name="twitter:description"
-      content="Resources from IITG Coding Club. Access curated learning materials, guides, and project ideas for developers and tech enthusiasts."
-    />
-    <meta
-      name="twitter:image"
-      content="../assets/logo_with_name1_transparent.png"
-    />
-    <title>Resources / Coding Club</title>
-    <link rel="stylesheet" href="../css/resources.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
-  </head>
-  <body>
-    <noscript
-      ><div
-        style="background: #222; color: #fff; padding: 1em; text-align: center"
-      >
-        This site works best with JavaScript enabled. Some features may not work
-        properly without it.
-      </div></noscript
-    >
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <div class="particles" id="particles"></div>
-    <header class="header" role="banner">
-      <nav class="nav" aria-label="Main navigation">
-        <a href="../index.html" class="logo"
-          ><img
-            src="../assets/logo_with_name1_transparent.png"
-            width="150px"
-            alt="Coding Club logo"
-            loading="eager"
-        /></a>
-        <!-- <a href="index.html" class="logo"><img src="../assets/logo.png" width="60px" alt="logo"></a> -->
-        <!-- <a href="index.html" class="logo">Coding Club</a> -->
-        <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../events/">Events</a></li>
-          <li><a href="#" class="active">Resources</a></li>
-          <li><a href="../team/">Team</a></li>
-        </ul>
-        <input
-          type="text"
-          class="search-bar"
-          placeholder="Search..."
-          aria-label="Search"
-        />
-      </nav>
-    </header>
+  
+    <head>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <meta
+            name="description"
+            content="Resources from IITG Coding Club. Access curated learning materials,
+                     guides, and project ideas for developers and tech enthusiasts."/>
 
-    <main id="main-content" tabindex="-1">
-      <br /><br /><br /><br />
-      <div class="container">
-        <section class="section" id="events">
-          <div class="section-header">
-            <h2 class="section-title">Resources</h2>
-          </div>
-          <div class="cards-grid">
-            <div class="card">
-              <div class="card-content">
-                <h3>JavaScript Workshop</h3>
-                <p>
-                  Learn modern JS fundamentals and ES6+ features in this
-                  hands-on workshop.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-content">
-                <h3>React Bootcamp</h3>
-                <p>
-                  Build your first React application with hooks, state
-                  management, and modern practices.
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-content">
-                <h3>Open Source Hackathon</h3>
-                <p>
-                  Contribute to open source projects and collaborate with
-                  developers worldwide.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+        <meta property="og:title" content="Resources | IITG Coding Club" />
+    
+        <meta
+            property="og:description"
+            content="Resources from IITG Coding Club. Access curated learning materials,
+                     guides, and project ideas for developers and tech enthusiasts."/>
+    
+        <meta
+            property="og:image"
+            content="../assets/logo_with_name1_transparent.png"/>
 
-    <footer class="footer" role="contentinfo">
-      <div class="footer-links">
-        <a href="../index.html">Home</a><a href="../events/">Events</a
-        ><a href="../courses/">Courses</a><a href="#">Resources</a
-        ><a href="#">Feedback</a><a href="../team/">Team</a>
-      </div>
-      <p id="footer_text"></p>
-    </footer>
-    <button
-      id="scrollToTop"
-      aria-label="Scroll to top"
-      class="scroll-to-top"
-      style="
-        display: none;
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 1001;
-        background: #00d4ff;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        font-size: 2rem;
-        cursor: pointer;
-      "
-    >
-      <i class="fas fa-arrow-up"></i>
-    </button>
-    <script src="../js/resources.js"></script>
-    <script src="../js/footer_text.js"></script>
-    <script>
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      });
-      // Scroll to top button
-      const scrollBtn = document.getElementById("scrollToTop");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) scrollBtn.style.display = "block";
-        else scrollBtn.style.display = "none";
-      });
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    </script>
-  </body>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/resources/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Resources | IITG Coding Club" />
+    
+        <meta
+            name="twitter:description"
+            content="Resources from IITG Coding Club. Access curated learning materials,
+                     guides, and project ideas for developers and tech enthusiasts."/>
+    
+        <meta
+            name="twitter:image"
+            content="../assets/logo_with_name1_transparent.png"/>
+    
+        <title>Resources / Coding Club</title>
+        <link rel="stylesheet" href="../css/resources.css" />
+    
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/
+                  all.min.css"/>
+    
+        <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
+  
+    </head>
+  
+    <body>
+    
+        <noscript>
+            <div style="background: #222;
+                        color: #fff;
+                        padding: 1em;
+                        text-align: center">
+                This site works best with JavaScript enabled. Some features may not work
+                properly without it.
+            </div>
+        </noscript>
+
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <div class="particles" id="particles"></div>
+        <header class="header" role="banner">
+        <nav class="nav" aria-label="Main navigation">
+        
+            <a href="../index.html" class="logo">
+                <img
+                    src="../assets/logo_with_name1_transparent.png"
+                    width="150px"
+                    alt="Coding Club logo"
+                    loading="eager"/>
+            </a>
+     
+            <ul class="nav-links">
+        
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../events/">Events</a></li>
+                <li><a href="#" class="active">Resources</a></li>
+                <li><a href="../team/">Team</a></li>
+        
+            </ul>
+        
+            <input
+                type="text"
+                class="search-bar"
+                placeholder="Search..."
+                aria-label="Search"/>
+        
+        </nav>
+    
+        </header>
+    
+        <main id="main-content" tabindex="-1">
+    
+            <br /><br /><br /><br />
+            <div class="container">
+    
+                <section class="section" id="events">
+    
+                    <div class="section-header">
+                        <h2 class="section-title">Resources</h2>
+                    </div>
+    
+                    <div class="cards-grid">
+    
+                        <div class="card">
+    
+                            <div class="card-content">
+    
+                                <h3>Data Structures and Algorithms</h3>
+                                <p>
+                                    These resources will help you learn DSA in Java/C++                                
+                                </p>
+                                <p>
+                                    (Including learning the language if you dont know them
+                                    already 😉):-
+                                </p>
+
+                                <br>
+                                
+                                <p>
+                                  1. Apna College's DSA playlist in <a href="https://youtube.com/playlist?list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop&si=X_sSN5y0JqRIS9oj">
+                                    Java</a> ☕
+                                </p>
+
+                                <p>
+                                  1. Apna College's DSA playlist in <a href="https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&si=wZoMa22BiyJtTPZ4">
+                                    C++</a> 💻
+                                </p>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="card">
+    
+                            <div class="card-content">
+    
+                                <h3>New to Coding? Start Here!</h3>
+                                <p>
+                                    1. CS50x: Harvard's introductory course to
+                                    <a href="https://cs50.harvard.edu/x">Computer Science</a> 🧑‍💻
+                                </p>
+
+                                <p>
+                                    2. CS50P: Harvard's introductory course to
+                                    <a href="https://cs50.harvard.edu/python">Python</a> 🐍
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    Our suggestion would be to first take CS50x
+                                    at least till week 6 before thinking of starting
+                                    CS50P.
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    If you do take our suggested route, then makesure
+                                    to complete CS50x.
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    This course is indeed hard but will make your CS fundamentals
+                                    super strong💪!
+                                </p>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="card">
+    
+                            <div class="card-content">
+    
+                                <h3>Curious about web developemnt in Python? 🤔</h3>
+                                <p>
+                                    Harvard's CS50: <a href="https://cs50.harvard.edu/web">Web Programming</a> 
+                                    with Python.
+                                </p>
+    
+                            </div>
+    
+                        </div>
+
+                        <div class="card">
+    
+                            <div class="card-content">
+    
+                                <h3>Unlock the power of React JS:</h3>
+                                <p>
+                                    Through this 15 hour YouTube <a href="https://youtu.be/x4rFhThSX04?si=OsWJECv4Sdao40UQ">video</a> 
+                                    from freeCodeCamp.org!📺
+                                </p>
+    
+                            </div>
+    
+                        </div>
+
+                        <div class="card">
+    
+                            <div class="card-content">
+    
+                                <h3>Master Git & GitHub for Version Control:</h3>
+
+                                <br>
+
+                                <p>
+                                    1. For peopple comfortable with english, here's a
+                                    short YouTube <a href="https://youtu.be/hwP7WQkmECE?si=vDJ99jzYN3u0dDbS">video</a>
+                                    from fireship !📺
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    For peopple comfortable with Hindi, here's a detailed
+                                    YouTube <a href="https://youtu.be/Ez8F0nW6S-w?si=vjgAEjk5Tj0aPSnK">video</a>
+                                    from Apna College !📺
+                                </p>
+    
+                            </div>
+    
+                        </div>
+
+                        <div class="card">
+    
+                            <div class="card-content">
+    
+                                <h3>Reliable YouTube Channels for Every Coder:</h3>
+
+                                <br>
+
+                                <p>
+                                    1. <a href="https://www.youtube.com/@ApnaCollegeOfficial">Apna College</a> 
+                                       For people who prefer hindi and want beautifully
+                                       animated explanations
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    2. <a href="https://www.youtube.com/@CodeWithHarry">CodeWithHarry</a> 
+                                    Also for people who prefer hindi. This is the channel
+                                    where you'll find answers to almost ALL your coding
+                                    related questions!
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    2. <a href="https://www.youtube.com/@freecodecamp">freeCodeCamp.org</a> 
+                                    For people who prefer english. This channel has some
+                                    of THE best coding courses out there! And its on
+                                    YouTube, so, completely free aswell, as the name
+                                    suggests!
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    4. <a href="https://www.youtube.com/@Fireship">FireShip</a> 
+                                    Want to stay upto date with this exponentially
+                                    evolving field? Or you want to brushup some of your
+                                    cs concepts but dont want to waste another hour on
+                                    some YouTube lecture, then this channel is the perfect
+                                    place for you!
+                                </p>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+            </div>
+    
+        </main>
+
+        <footer class="footer" role="contentinfo">
+      
+            <div class="footer-links">
+            
+                <a href="../index.html">Home</a><a href="../events/">Events</a>
+                <a href="../courses/">Courses</a><a href="#">Resources</a>
+                <a href="#">Feedback</a><a href="../team/">Team</a>
+      
+            </div>
+      
+            <p id="footer_text"></p>
+    
+        </footer>
+    
+        <button
+    
+          id="scrollToTop"
+          aria-label="Scroll to top"
+          class="scroll-to-top"
+          style="
+              display: none;
+              position: fixed;
+              bottom: 2rem;
+              right: 2rem;
+              z-index: 1001;
+              background: #00d4ff;
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 48px;
+              height: 48px;
+              font-size: 2rem;
+              cursor: pointer;
+          ">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    
+        <script src="../js/resources.js"></script>
+        <script src="../js/footer_text.js"></script>
+    
+        <script>
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                
+                anchor.addEventListener("click", function (e) {
+                    
+                    const target = document.querySelector(this.getAttribute("href"));
+          
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: "smooth" });
+                    }
+                
+                });
+            
+            });
+            // Scroll to top button
+            const scrollBtn = document.getElementById("scrollToTop");
+            
+            window.addEventListener("scroll", () => {
+            
+                if (window.scrollY > 300) scrollBtn.style.display = "block";
+                else scrollBtn.style.display = "none";
+            
+            });
+      
+            scrollBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+    
+        </script>
+  
+    </body>
+
 </html>
