@@ -10,6 +10,11 @@ body {
   color: white;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+body::after {
+  /* Remove this background pattern for consistency with other pages */
+  display: none;
 }
 .header {
   position: fixed;
@@ -73,6 +78,13 @@ body {
 .nav-links a.active::after {
   width: 100%;
 }
+.nav-links a,
+.nav-links a.active,
+.nav-links a:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
 .search-bar {
   padding: 0.5rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -92,8 +104,8 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
-/* --- HERO SECTION (as per wireframe) --- */
+        
+        /* --- HERO SECTION (as per wireframe) --- */
 .hero {
   padding-top: 140px;
   padding-bottom: 80px;
@@ -160,7 +172,7 @@ body {
   perspective: 1000px;
 }
 
-/* 3D Cube for Hero Visual */
+        /* 3D Cube for Hero Visual */
 .cube {
   width: 200px;
   height: 200px;
@@ -211,7 +223,7 @@ body {
   transform: rotateX(-90deg) translateZ(100px);
 }
 
-/* --- CARD SECTIONS --- */
+        /* --- CARD SECTIONS --- */
 .section {
   padding: 4rem 0;
 }
@@ -220,6 +232,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  border-bottom: 1.5px solid rgba(0,212,255,0.10);
+  padding-bottom: 0.7rem;
 }
 .section-title {
   font-size: 2rem;
@@ -236,73 +250,56 @@ body {
 }
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
 }
 .card {
   position: relative;
-  padding: 2px;
-  border-radius: 15px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(26,26,46,0.97) 80%, rgba(0,212,255,0.04));
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,212,255,0.04);
+  border: 1.5px solid rgba(0,212,255,0.10);
   overflow: hidden;
-  background: transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.25s, transform 0.18s;
+  margin-bottom: 2rem;
 }
 .card::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    #00d4ff,
-    transparent,
-    transparent,
-    #00d4ff
-  );
-  transform: translate(-50%, -50%);
-  animation: spin 4s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+  border-radius: 0 8px 8px 0;
+  z-index: 2;
 }
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+.card:hover, .card:focus-within {
+  box-shadow: 0 8px 40px 0 rgba(0,212,255,0.18), 0 2px 8px 0 rgba(0,0,0,0.12);
+  transform: translateY(-4px) scale(1.012);
 }
 .card-content {
-  background: linear-gradient(
-    145deg,
-    rgba(26, 26, 46, 0.9),
-    rgba(15, 15, 35, 0.9)
-  );
-  backdrop-filter: blur(10px);
-  border-radius: 14px;
-  padding: 2rem;
-  height: 100%;
+  padding: 2rem 1.5rem 1.5rem 2rem;
   position: relative;
-  z-index: 1;
-}
-.card:hover {
-  transform: translateY(-10px);
-}
-.card:hover::before {
-  opacity: 1;
+  z-index: 3;
 }
 .card h3 {
-  color: #00d4ff;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.card h3 .fa, .card h3 .fab {
+  font-size: 1.1em;
+  color: var(--primary-dark);
 }
 .card small {
   opacity: 0.7;
+  font-size: 0.98em;
 }
-
-/* --- TESTIMONIALS (as per wireframe with animation) --- */
+        
+        /* --- TESTIMONIALS (as per wireframe with animation) --- */
 .testimonials {
   padding: 4rem 0;
   background: rgba(0, 0, 0, 0.1);
@@ -368,7 +365,7 @@ body {
   opacity: 0.9;
 }
 
-/* --- ABOUT SECTION (as per wireframe) --- */
+        /* --- ABOUT SECTION (as per wireframe) --- */
 .about {
   padding: 6rem 0;
   display: grid;
@@ -391,7 +388,7 @@ body {
   color: #00d4ff;
 }
 
-/* Footer */
+        /* Footer */
 .footer {
   background: rgba(0, 0, 0, 0.3);
   padding: 3rem 2rem 1rem;
@@ -428,9 +425,10 @@ body {
   padding: 0.25em 0.5em;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .cards-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -447,9 +445,6 @@ body {
   }
   .nav-links {
     display: none;
-  }
-  .cards-grid {
-    grid-template-columns: 1fr;
   }
   .section-header {
     flex-direction: column;
@@ -551,4 +546,68 @@ body {
 .footer-links a:hover {
   color: var(--text);
   background: var(--primary);
+}
+
+/* --- Resource Link Buttons --- */
+.resource-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.resource-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.55em 1.1em 0.55em 1.1em;
+  border-radius: 999px;
+  background: rgba(0,212,255,0.10);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.04em;
+  text-decoration: none;
+  border: 1.5px solid rgba(0,212,255,0.18);
+  box-shadow: 0 1px 6px rgba(0,212,255,0.04);
+  transition: background 0.18s, color 0.18s, border 0.18s, transform 0.18s;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+.resource-link .fa, .resource-link .fab {
+  font-size: 1.15em;
+  margin-right: 0.3em;
+}
+.resource-link .fa-arrow-right {
+  margin-left: 0.7em;
+  font-size: 0.98em;
+  opacity: 0.7;
+  transition: margin-left 0.18s;
+}
+.resource-link:hover, .resource-link:focus {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary-dark);
+  transform: translateY(-2px) scale(1.03);
+  text-decoration: none;
+}
+.resource-link:hover .fa-arrow-right, .resource-link:focus .fa-arrow-right {
+  margin-left: 1em;
+  opacity: 1;
+}
+.resource-link:active {
+  transform: scale(0.98);
+}
+.resource-link[aria-label]:after {
+  /* Remove tooltip on .resource-link hover/focus */
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .resource-links {
+    gap: 0.5rem;
+  }
+  .resource-link {
+    font-size: 0.98em;
+    padding: 0.5em 1em;
+  }
 }
