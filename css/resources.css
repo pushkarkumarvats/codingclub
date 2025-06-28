@@ -16,11 +16,6 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
   /* Multi-stop gradient background for visual depth */
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-<<<<<<< Updated upstream
-  color: white;
-  line-height: 1.6;
-  overflow-x: hidden;
-=======
   color: white;                 /* Primary text color */
   line-height: 1.6;             /* Improved readability with proper line spacing */
   overflow-x: hidden;           /* Prevent horizontal scrolling on mobile */
@@ -31,7 +26,6 @@ body {
 body::after {
   /* Remove this background pattern for consistency with other pages */
   display: none;                /* Hide any background patterns */
->>>>>>> Stashed changes
 }
 /* ================================================
    HEADER & NAVIGATION SYSTEM
@@ -116,20 +110,6 @@ body::after {
 .nav-links a.active::after {
   width: 100%;                 /* Full width underline */
 }
-<<<<<<< Updated upstream
-.search-bar {
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.search-bar:focus {
-  border-color: #00d4ff;
-  background: rgba(255, 255, 255, 0.15);
-=======
 
 /* Override any conflicting text decoration styles */
 .nav-links a,
@@ -138,7 +118,6 @@ body::after {
   text-decoration: none !important;   /* Force no underlines */
   border-bottom: none !important;     /* Force no borders */
   box-shadow: none !important;        /* Force no shadows */
->>>>>>> Stashed changes
 }
 
 /* Search bar styling with glassmorphism effect */
@@ -168,16 +147,11 @@ body::after {
   margin: 0 auto;              /* Center container */
   padding: 0 2rem;             /* Horizontal padding for content */
 }
-<<<<<<< Updated upstream
-
-/* --- HERO SECTION (as per wireframe) --- */
-=======
 /* ================================================
    HERO SECTION - MAIN LANDING AREA
    ================================================ */
         
 /* Hero section with split-screen layout */
->>>>>>> Stashed changes
 .hero {
   padding-top: 140px;          /* Account for fixed header height */
   padding-bottom: 80px;        /* Bottom spacing */
@@ -267,15 +241,11 @@ body::after {
   perspective: 1000px;         /* 3D perspective for child elements - crucial for 3D effect */
 }
 
-<<<<<<< Updated upstream
-/* 3D Cube for Hero Visual */
-=======
 /* ================================================
    3D CUBE ANIMATION SYSTEM
    ================================================ */
 
 /* 3D Cube container with transform-style preservation */
->>>>>>> Stashed changes
 .cube {
   width: 200px;                /* Cube dimensions */
   height: 200px;
@@ -314,17 +284,11 @@ body::after {
   filter: grayscale(1) brightness(2);  /* Stylized monochrome effect */
 }
 
-<<<<<<< Updated upstream
-/* --- CARD SECTIONS --- */
-.section {
-  padding: 4rem 0;
-=======
 /* 3D Positioning for each cube face using CSS transforms */
 /* Each face is rotated and translated to form a cube shape */
 
 .front {
   transform: rotateY(0deg) translateZ(100px);    /* Front face - no rotation, moved forward */
->>>>>>> Stashed changes
 }
 
 .back {
@@ -358,17 +322,11 @@ body::after {
 /* Section header with flex layout for title and "view more" link */
 .section-header {
   display: flex;
-<<<<<<< Updated upstream
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-=======
   justify-content: space-between;  /* Title left, link right */
   align-items: center;         /* Vertically align items */
   margin-bottom: 2rem;         /* Space before content */
   border-bottom: 1.5px solid rgba(0,212,255,0.10);  /* Subtle brand-colored divider */
   padding-bottom: 0.7rem;      /* Space above border */
->>>>>>> Stashed changes
 }
 
 /* Section title styling */
@@ -397,25 +355,12 @@ body::after {
 /* Responsive grid layout for resource cards - 2 columns by default */
 .cards-grid {
   display: grid;
-<<<<<<< Updated upstream
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-=======
   grid-template-columns: 1fr 1fr;  /* Two equal columns for resources */
   gap: 2.2rem;                /* Generous space between cards */
->>>>>>> Stashed changes
 }
 
 /* Individual resource card with advanced styling */
 .card {
-<<<<<<< Updated upstream
-  position: relative;
-  padding: 2px;
-  border-radius: 15px;
-  overflow: hidden;
-  background: transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-=======
   position: relative;          /* Positioning context for pseudo-elements */
   border-radius: 12px;         /* Rounded corners for modern look */
   /* Complex gradient background with brand color accent */
@@ -427,38 +372,10 @@ body::after {
   /* Smooth transitions for hover effects */
   transition: box-shadow 0.25s, transform 0.18s;
   margin-bottom: 2rem;         /* Vertical spacing between cards */
->>>>>>> Stashed changes
 }
 
 /* Left accent border using pseudo-element */
 .card::before {
-<<<<<<< Updated upstream
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    #00d4ff,
-    transparent,
-    transparent,
-    #00d4ff
-  );
-  transform: translate(-50%, -50%);
-  animation: spin 4s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-=======
   content: "";                 /* Required for pseudo-element */
   position: absolute;          /* Position relative to card */
   left: 0; top: 0; bottom: 0;  /* Full height, left edge */
@@ -475,43 +392,17 @@ body::after {
   box-shadow: 0 8px 40px 0 rgba(0,212,255,0.18), 0 2px 8px 0 rgba(0,0,0,0.12);
   /* Subtle lift and scale effect */
   transform: translateY(-4px) scale(1.012);
->>>>>>> Stashed changes
 }
 
 /* Card content container */
 .card-content {
-<<<<<<< Updated upstream
-  background: linear-gradient(
-    145deg,
-    rgba(26, 26, 46, 0.9),
-    rgba(15, 15, 35, 0.9)
-  );
-  backdrop-filter: blur(10px);
-  border-radius: 14px;
-  padding: 2rem;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-}
-.card:hover {
-  transform: translateY(-10px);
-}
-.card:hover::before {
-  opacity: 1;
-=======
   padding: 2rem 1.5rem 1.5rem 2rem;  /* Asymmetric padding for left accent */
   position: relative;          /* Above pseudo-elements */
   z-index: 3;                  /* Ensure content stays above decorative elements */
->>>>>>> Stashed changes
 }
 
 /* Card title styling with icon support */
 .card h3 {
-<<<<<<< Updated upstream
-  color: #00d4ff;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-=======
   font-size: 1.25rem;          /* Slightly larger than body text */
   font-weight: 700;            /* Bold weight for emphasis */
   color: var(--primary);       /* Brand color for headings */
@@ -525,17 +416,10 @@ body::after {
 .card h3 .fa, .card h3 .fab {
   font-size: 1.1em;            /* Slightly larger than text */
   color: var(--primary-dark);  /* Darker brand shade for contrast */
->>>>>>> Stashed changes
 }
 
 /* Card metadata styling */
 .card small {
-<<<<<<< Updated upstream
-  opacity: 0.7;
-}
-
-/* --- TESTIMONIALS (as per wireframe with animation) --- */
-=======
   opacity: 0.7;                /* Subtle styling for secondary text */
   font-size: 0.98em;           /* Slightly smaller than body text */
 }
@@ -544,7 +428,6 @@ body::after {
    ================================================ */
         
 /* Testimonials section with auto-scrolling animation */
->>>>>>> Stashed changes
 .testimonials {
   padding: 4rem 0;             /* Section spacing */
   background: rgba(0, 0, 0, 0.1);  /* Subtle background differentiation */
@@ -630,14 +513,10 @@ body::after {
   opacity: 0.9;               /* Slight transparency for hierarchy */
 }
 
-<<<<<<< Updated upstream
-/* --- ABOUT SECTION (as per wireframe) --- */
-=======
 /* ================================================
    ABOUT SECTION
    ================================================ */
 /* About section with two-column layout */
->>>>>>> Stashed changes
 .about {
   padding: 6rem 0;             /* Extra padding for section emphasis */
   display: grid;               /* CSS Grid layout */
@@ -664,15 +543,11 @@ body::after {
   color: #00d4ff;             /* Brand color */
 }
 
-<<<<<<< Updated upstream
-/* Footer */
-=======
 /* ================================================
    FOOTER SECTION
    ================================================ */
 
 /* Footer container with dark background */
->>>>>>> Stashed changes
 .footer {
   background: rgba(0, 0, 0, 0.3);    /* Dark semi-transparent background */
   padding: 3rem 2rem 1rem;           /* Generous padding with less bottom space */
@@ -680,11 +555,6 @@ body::after {
   border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle top border */
 }
 
-<<<<<<< Updated upstream
-@media (max-width: 992px) {
-  .cards-grid {
-    grid-template-columns: 1fr 1fr;
-=======
 /* Footer navigation links container */
 .footer-links {
   display: flex;               /* Horizontal layout */
@@ -733,7 +603,6 @@ body::after {
   .cards-grid {
     grid-template-columns: 1fr;    /* Single column layout */
     gap: 1.5rem;                   /* Reduced gap for mobile */
->>>>>>> Stashed changes
   }
 }
 
@@ -760,14 +629,8 @@ body::after {
   .nav-links {
     display: none;
   }
-<<<<<<< Updated upstream
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-=======
 
   /* Stack section headers vertically on mobile */
->>>>>>> Stashed changes
   .section-header {
     flex-direction: column;        /* Vertical layout */
     gap: 1rem;                     /* Space between title and link */
@@ -900,8 +763,6 @@ body::after {
   color: var(--text);          /* White text for contrast */
   background: var(--primary);  /* Brand color background */
 }
-<<<<<<< Updated upstream
-=======
 
 /* ================================================
    RESOURCE LINK BUTTONS - INTERACTIVE ELEMENTS
@@ -990,4 +851,3 @@ body::after {
     padding: 0.5em 1em;         /* Reduced padding for smaller screens */
   }
 }
->>>>>>> Stashed changes

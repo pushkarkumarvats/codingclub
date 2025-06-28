@@ -433,15 +433,11 @@ body {
     /* Could add box-shadow for depth: box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); */
 }
 
-<<<<<<< Updated upstream
-/* Footer */
-=======
 /* ================================================
    FOOTER SECTION
    ================================================ */
 
 /* Footer container with glassmorphism background */
->>>>>>> Stashed changes
 .footer {
     background: rgba(0, 0, 0, 0.3);    /* Dark semi-transparent overlay */
     padding: 3rem 2rem 1rem;           /* Generous padding with less bottom space */
