@@ -101,13 +101,13 @@ body {
   width: 0;                    /* Start with no width */
   height: 2px;                 /* Thin underline */
   background: var(--primary);  /* Brand color underline */
-  transition: none;            /* No transition in this implementation */
+  transition: width 0.3s ease; /* Smooth width animation */
 }
 
-/* Note: Underline animation is disabled in this design */
+/* Expand underline on hover and active states */
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 0;                    /* Keep underline hidden */
+  width: 100%;                 /* Full width underline on hover/active */
 }
 
 /* Search bar styling with glassmorphism effect */
