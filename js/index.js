@@ -53,59 +53,43 @@ window.addEventListener('scroll', function() {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// Dynamic typewriter animation for hero heading
-// Creates an engaging visual effect by typing and erasing words in sequence
-const heroHeading = document.querySelector('.hero-content h1');
+// Typewriter animation for hero section
+const words = ["Code.", "Create.", "Collaborate."];
+const typewriterText = document.getElementById("typewriter-text");
+const cursor = document.querySelector(".typewriter-cursor");
+let wordIndex = 0;
+let charIndex = 0;
+let typing = true;
 
-if (heroHeading) {
-  // Define the words to cycle through in the animation
-  const words = ['Code.', 'Create.', 'Collaborate.'];
-  
-  // Animation state variables
-  let wordIndex = 0;        // Current word being animated
-  let charIndex = 0;        // Current character position within word
-  let isDeleting = false;   // Whether we're currently erasing or typing
-  let currentWord = '';     // Cache of current word being processed
-
-  function type() {
-    currentWord = words[wordIndex];
-    
-    if (!isDeleting) {
-      // TYPING MODE: Add characters one by one
-      heroHeading.innerHTML =
-        currentWord.substring(0, charIndex + 1) +
-        // Add line break when word is complete for visual formatting
-        (charIndex + 1 === currentWord.length ? '<br>' : '');
+function typeWord() {
+  if (typing) {
+    if (charIndex < words[wordIndex].length) {
+      typewriterText.textContent += words[wordIndex][charIndex];
       charIndex++;
-      
-      // When word is complete, pause then start deleting
-      if (charIndex === currentWord.length) {
-        setTimeout(() => {
-          isDeleting = true;
-          setTimeout(type, 1000);  // Pause at end of word
-        }, 1000);
-        return;
-      }
+      setTimeout(typeWord, 100);
     } else {
-      // DELETING MODE: Remove characters one by one
-      heroHeading.innerHTML =
-        currentWord.substring(0, charIndex) + 
-        (charIndex === 0 ? '' : '<br>');
-      charIndex--;
-      
-      // When word is fully deleted, move to next word
-      if (charIndex < 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;  // Cycle through words
-        setTimeout(type, 500);  // Brief pause before starting next word
-        return;
-      }
+      typing = false;
+      setTimeout(eraseWord, 1200);
     }
-    
-    // Recursive call with timing: faster when deleting, slower when typing
-    setTimeout(type, isDeleting ? 50 : 120);
   }
-  
-  // Start the typewriter animation
-  type();
 }
+
+function eraseWord() {
+  if (!typing) {
+    if (charIndex > 0) {
+      typewriterText.textContent = words[wordIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(eraseWord, 50);
+    } else {
+      typing = true;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(typeWord, 400);
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typewriterText && cursor) {
+    typeWord();
+  }
+});
