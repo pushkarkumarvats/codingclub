@@ -805,7 +805,8 @@ body {
 .hero-title {
   margin-bottom: 0 !important;
 }
-.hero-subtitle, .hero-content > p {
+.hero-subtitle,
+.hero-content > p {
   margin-top: 0 !important;
 }
 .hero-container {

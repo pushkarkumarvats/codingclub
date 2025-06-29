@@ -8,16 +8,16 @@ function createParticles() {
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        
+
         // Randomize horizontal position across full width
         particle.style.left = Math.random() * 100 + '%';
-        
+
         // Stagger animation start times for natural effect (0-6 seconds)
         particle.style.animationDelay = Math.random() * 6 + 's';
-        
+
         // Vary animation duration for organic movement (3-6 seconds)
         particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        
+
         particlesContainer.appendChild(particle);
     }
 }
@@ -32,7 +32,7 @@ filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
         // Remove active styling from all tabs first
         filterTabs.forEach(t => t.classList.remove('active'));
-        
+
         // Add active styling to the clicked tab
         tab.classList.add('active');
 
@@ -104,10 +104,10 @@ document.querySelectorAll('.event-card, .timeline-item').forEach(element => {
     // Set initial state: invisible and slightly below final position
     element.style.opacity = '0';
     element.style.transform = 'translateY(30px)';
-    
+
     // Define smooth transition for the animation
     element.style.transition = 'all 0.6s ease';
-    
+
     // Start observing this element for viewport intersection
     observer.observe(element);
 });

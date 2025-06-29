@@ -2,17 +2,17 @@
 // Created by Shu Ding (https://github.com/shuding/liquid-glass) in 2025.
 // This creates a draggable glass-like element that distorts the background content
 
-(function() {
+(function () {
   'use strict';
-  
+
   // Check if liquid glass already exists and destroy it to prevent duplicates
   if (window.liquidGlass) {
     window.liquidGlass.destroy();
     console.log('Previous liquid glass effect removed.');
   }
-  
+
   // Mathematical utility functions for shader calculations
-  
+
   // Smooth interpolation function - creates smooth transitions between values
   // Used for creating natural-looking visual effects without harsh edges
   function smoothStep(a, b, t) {
@@ -55,19 +55,19 @@
       // Visual properties of the glass element
       this.width = options.width || 100;
       this.height = options.height || 100;
-      
+
       // Fragment shader function - defines how each pixel is displaced
       // This function is called for every pixel to calculate distortion
       this.fragment = options.fragment || ((uv) => texture(uv.x, uv.y));
-      
+
       this.canvasDPI = 1;  // Device pixel ratio for sharp rendering
       this.id = generateId();  // Unique identifier for SVG elements
       this.offset = 10; // Viewport boundary offset to prevent edge clipping
-      
+
       // Mouse tracking for interactive effects
       this.mouse = { x: 0, y: 0 };
       this.mouseUsed = false;  // Flag to track if shader uses mouse input
-      
+
       // Initialize the visual element and its behavior
       this.createElement();
       this.setupEventListeners();
@@ -154,17 +154,17 @@
     constrainPosition(x, y) {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
-      
+
       // Calculate boundaries with offset to prevent edge clipping
       const minX = this.offset;
       const maxX = viewportWidth - this.width - this.offset;
       const minY = this.offset;
       const maxY = viewportHeight - this.height - this.offset;
-      
+
       // Constrain position within calculated boundaries
       const constrainedX = Math.max(minX, Math.min(maxX, x));
       const constrainedY = Math.max(minY, Math.min(maxY, y));
-      
+
       return { x: constrainedX, y: constrainedY };
     }
 
@@ -179,7 +179,7 @@
         this.container.style.cursor = 'grabbing';  // Visual feedback for dragging
         startX = e.clientX;
         startY = e.clientY;
-        
+
         // Store initial position for calculating relative movement
         const rect = this.container.getBoundingClientRect();
         initialX = rect.left;
@@ -193,14 +193,14 @@
           // Calculate movement delta from drag start position
           const deltaX = e.clientX - startX;
           const deltaY = e.clientY - startY;
-          
+
           // Calculate new position based on initial position + delta
           const newX = initialX + deltaX;
           const newY = initialY + deltaY;
-          
+
           // Constrain position within viewport bounds to prevent off-screen dragging
           const constrained = this.constrainPosition(newX, newY);
-          
+
           // Apply new position and remove centering transform
           this.container.style.left = constrained.x + 'px';
           this.container.style.top = constrained.y + 'px';
@@ -211,7 +211,7 @@
         const rect = this.container.getBoundingClientRect();
         this.mouse.x = (e.clientX - rect.left) / rect.width;
         this.mouse.y = (e.clientY - rect.top) / rect.height;
-        
+
         // Only update shader if it actually uses mouse input (performance optimization)
         if (this.mouseUsed) {
           this.updateShader();
@@ -229,7 +229,7 @@
       window.addEventListener('resize', () => {
         const rect = this.container.getBoundingClientRect();
         const constrained = this.constrainPosition(rect.left, rect.top);
-        
+
         // Reposition glass if it's now outside the new viewport bounds
         if (rect.left !== constrained.x || rect.top !== constrained.y) {
           this.container.style.left = constrained.x + 'px';
@@ -256,7 +256,7 @@
       // Calculate canvas dimensions with DPI scaling for sharp rendering
       const w = this.width * this.canvasDPI;
       const h = this.height * this.canvasDPI;
-      
+
       // Create pixel data array (RGBA format: 4 bytes per pixel)
       const data = new Uint8ClampedArray(w * h * 4);
 
@@ -268,17 +268,17 @@
         // Convert linear pixel index to 2D coordinates
         const x = (i / 4) % w;
         const y = Math.floor(i / 4 / w);
-        
+
         // Call fragment shader function with normalized UV coordinates (0-1)
         const pos = this.fragment(
           { x: x / w, y: y / h },  // Current pixel UV coordinates
           mouseProxy               // Mouse position (if used by shader)
         );
-        
+
         // Calculate displacement vectors (how far each pixel should move)
         const dx = pos.x * w - x;  // X displacement in pixels
         const dy = pos.y * h - y;  // Y displacement in pixels
-        
+
         // Track maximum displacement for proper scaling
         maxScale = Math.max(maxScale, Math.abs(dx), Math.abs(dy));
         rawValues.push(dx, dy);
@@ -294,7 +294,7 @@
         // Normalize displacement values to 0-1 range and convert to 0-255
         const r = rawValues[index++] / maxScale + 0.5;  // X displacement
         const g = rawValues[index++] / maxScale + 0.5;  // Y displacement
-        
+
         data[i] = r * 255;      // Red channel (X displacement)
         data[i + 1] = g * 255;  // Green channel (Y displacement)
         data[i + 2] = 0;        // Blue channel (unused)
@@ -327,14 +327,14 @@
     const shader = new Shader({
       width: 300,   // Glass width in pixels
       height: 200,  // Glass height in pixels
-      
+
       // Fragment shader function - defines the distortion pattern
       // This creates a lens-like effect that's stronger in the center
       fragment: (uv, mouse) => {
         // Convert UV coordinates to centered coordinates (-0.5 to 0.5)
         const ix = uv.x - 0.5;
         const iy = uv.y - 0.5;
-        
+
         // Calculate distance to the edge of a rounded rectangle
         // This creates the "lens" shape of the distortion
         const distanceToEdge = roundedRectSDF(
@@ -343,11 +343,11 @@
           0.2,       // Half-height of lens area
           0.6        // Corner radius
         );
-        
+
         // Create smooth falloff from center to edge
         const displacement = smoothStep(0.8, 0, distanceToEdge - 0.15);
         const scaled = smoothStep(0, 1, displacement);
-        
+
         // Return displaced texture coordinates (creates the magnification effect)
         return texture(ix * scaled + 0.5, iy * scaled + 0.5);
       }
@@ -357,7 +357,7 @@
     shader.appendTo(document.body);
 
     console.log('Liquid Glass effect created! Drag the glass around the page.');
-    
+
     // Store reference globally so it can be removed if needed
     window.liquidGlass = shader;
   }

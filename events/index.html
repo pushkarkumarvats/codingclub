@@ -1,370 +1,326 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- SEO meta description for search engines -->
-    <meta name="description"
-        content="Events at IITG ODP Coding Club. Join workshops, bootcamps, and hackathons to learn, build, and collaborate!" />
-    
+    <meta
+      name="description"
+      content="Events at IITG ODP Coding Club. Join workshops, bootcamps, and hackathons to learn, build, and collaborate!"
+    />
+
     <!-- Open Graph meta tags for social media sharing (Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="Events | IITG ODP Coding Club" />
-    <meta property="og:description"
-        content="Events at IITG ODP Coding Club. Join workshops, bootcamps, and hackathons to learn, build, and collaborate!" />
-    <meta property="og:image" content="https://codingcluboesiitg.vercel.app/assets/logo_with_name1.png" />
+    <meta
+      property="og:description"
+      content="Events at IITG ODP Coding Club. Join workshops, bootcamps, and hackathons to learn, build, and collaborate!"
+    />
+    <meta
+      property="og:image"
+      content="https://codingcluboesiitg.vercel.app/assets/logo_with_name1.png"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://codingcluboesiitg.vercel.app/events/" />
-    
+    <meta
+      property="og:url"
+      content="https://codingcluboesiitg.vercel.app/events/"
+    />
+
     <!-- Twitter Card meta tags for Twitter sharing -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Events | IITG ODP Coding Club" />
-    <meta name="twitter:description"
-        content="Events at IITG ODP Coding Club. Join workshops, bootcamps, and hackathons to learn, build, and collaborate!" />
-    <meta name="twitter:image" content="https://codingcluboesiitg.vercel.app/assets/logo_with_name1.png" />
-    
+    <meta
+      name="twitter:description"
+      content="Events at IITG ODP Coding Club. Join workshops, bootcamps, and hackathons to learn, build, and collaborate!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://codingcluboesiitg.vercel.app/assets/logo_with_name1.png"
+    />
+
     <title>Events / ODP Coding Club</title>
-    
+
     <!-- External CSS stylesheets -->
     <link rel="stylesheet" href="../css/events.css" />
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- Favicon for browser tab -->
     <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Fallback notice for users with JavaScript disabled -->
     <noscript>
-        
-        <div style="background: #222; color: #fff; padding: 1em; text-align: center">
-            This site works best with JavaScript enabled. Some features may not work
-            properly without it.
-        </div>
-
+      <div
+        style="background: #222; color: #fff; padding: 1em; text-align: center"
+      >
+        This site works best with JavaScript enabled. Some features may not work
+        properly without it.
+      </div>
     </noscript>
-    
+
     <!-- Accessibility: Skip to main content link for screen readers -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Particle animation background container -->
     <div class="particles" id="particles"></div>
-    
+
     <header class="header" role="banner">
+      <nav class="nav" aria-label="Main navigation">
+        <!-- Logo with home page link -->
+        <a href="/" class="logo"
+          ><img
+            src="../assets/logo_with_name1_transparent.png"
+            width="150px"
+            alt="Coding Club logo"
+            loading="eager"
+        /></a>
+        <!-- Alternative logo options (commented out) -->
+        <!-- <a href="/" class="logo"><img src="../assets/logo.png" width="60px" alt="logo"></a> -->
+        <!-- <a href="/" class="logo">Coding Club</a> -->
 
-        <nav class="nav" aria-label="Main navigation">
-            
-            <!-- Logo with home page link -->
-            <a href="/" class="logo"><img src="../assets/logo_with_name1_transparent.png" width="150px"
-                    alt="Coding Club logo" loading="eager" /></a>
-            <!-- Alternative logo options (commented out) -->
-            <!-- <a href="/" class="logo"><img src="../assets/logo.png" width="60px" alt="logo"></a> -->
-            <!-- <a href="/" class="logo">Coding Club</a> -->
-            
-            <!-- Main navigation menu -->
-            <ul class="nav-links">
+        <!-- Main navigation menu -->
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="../events/" class="active">Events</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="../team/">Team</a></li>
+        </ul>
 
-                <li><a href="/">Home</a></li>
-                <li><a href="../events/" class="active">Events</a></li>
-                <li><a href="../resources/">Resources</a></li>
-                <li><a href="../team/">Team</a></li>
-            
-            </ul>
-            
-            <!-- Search functionality -->
-            <input type="text" class="search-bar" placeholder="Search..." aria-label="Search" />
-        </nav>
+        <!-- Search functionality -->
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search..."
+          aria-label="Search"
+        />
+      </nav>
     </header>
 
-        <main>
-
-        <!-- Page header section with title and description -->
-        <section class="page-header">
-
-            <h1 class="page-title">Events</h1>
-            <p class="page-subtitle">
-                Join our exciting workshops, hackathons, and techtalks. Connect with
-                fellow developers and expand your skills.
-            </p>
-
-        </section>
-
-        <div class="events-container">
-
-            <!-- Filter tabs for event categories -->
-            <div class="filter-tabs">
-
-                <button class="filter-tab active" data-filter="all">All Events</button>
-                <button class="filter-tab" data-filter="workshop">Workshops</button>
-                <button class="filter-tab" data-filter="hackathon">Hackathons</button>
-                <button class="filter-tab" data-filter="talk">Tech Talks</button>
-                <button class="filter-tab" data-filter="competition">Competitions</button>
-
-            </div>
-
-            <!-- Events grid container with filterable event cards -->
-            <div class="events-grid">
-
-                <!-- Event card with data-type attribute for filtering -->
-                <div class="event-card" data-type="workshop">
-
-                    <!-- Event type badge -->
-                    <div class="event-type">Workshop</div>
-                    <div class="event-content">
-
-                        <div class="event-date">MAR 15, 2024</div>
-                        <h3 class="event-title">JavaScript Mastery Workshop</h3>
-
-                        <p class="event-description">
-                            Deep dive into modern JavaScript with ES6+, async/await,
-                            and advanced concepts. Perfect for intermediate developers.
-                        </p>
-
-                        <!-- Event metadata with emojis for visual appeal -->
-                        <div class="event-meta">
-
-                            <span class="event-location">📍 Online</span>
-                            <span class="event-time">⏰ 6:00 PM - 9:00 PM</span>
-
-                        </div>
-
-                        <a href="#" class="btn btn-outline">Register Now</a>
-
-                    </div>
-
-                </div>
-
-                <div class="event-card" data-type="hackathon">
-
-                    <div class="event-type">Hackathon</div>
-
-                    <div class="event-content">
-
-                        <div class="event-date">MAR 25-26, 2024</div>
-                        <h3 class="event-title">Open Source Hackathon For Everyone</h3>
-
-                        <p class="event-description">
-                            48-hour hackathon focused on contributing to open source
-                            projects. E-Certificates will be provided!
-                        </p>
-
-                        <div class="event-meta">
-
-                            <span class="event-location">📍 Online</span>
-                            <span class="event-time">⏰ All Weekend</span>
-
-                        </div>
-
-                        <a href="#" class="btn btn-outline">Join Hackathon</a>
-
-                    </div>
-
-                </div>
-
-                <div class="event-card" data-type="talk">
-
-                    <div class="event-type">Tech Talk</div>
-
-                    <div class="event-content">
-
-                        <div class="event-date">APR 02, 2024</div>
-                        <h3 class="event-title">AI & Machine Learning Trends</h3>
-
-                        <p class="event-description">
-                            Industry expert shares insights on the latest AI trends
-                            and their impact on software development.
-                        </p>
-
-                        <div class="event-meta">
-
-                            <span class="event-location">📍 Virtual Event</span>
-                            <span class="event-time">⏰ 7:00 PM - 8:30 PM</span>
-
-                        </div>
-
-                        <a href="#" class="btn btn-outline">Join Online</a>
-
-                    </div>
-
-                </div>
-
-                <div class="event-card" data-type="workshop">
-
-                    <div class="event-type">Workshop</div>
-
-                    <div class="event-content">
-
-                        <div class="event-date">APR 10, 2024</div>
-                        <h3 class="event-title">React & Next.js Bootcamp</h3>
-
-                        <p class="event-description">
-                            Build modern web applications with React, Next.js,
-                            and deployment strategies.
-                        </p>
-
-                        <div class="event-meta">
-
-                            <span class="event-location">📍 Online</span>
-                            <span class="event-time">⏰ 2:00 PM - 6:00 PM</span>
-
-                        </div>
-
-                        <a href="#" class="btn btn-outline">Register Now</a>
-
-                    </div>
-
-                </div>
-
-                <div class="event-card" data-type="competition">
-
-                    <div class="event-type">Competition</div>
-
-                    <div class="event-content">
-
-                        <div class="event-date">APR 18, 2024</div>
-                        <h3 class="event-title">Data Structure & Algorithm Challenge</h3>
-
-                        <p class="event-description">
-                            Test your problem-solving skills in our monthly coding
-                            competition. Cash prizes for winners!
-                        </p>
-
-                        <div class="event-meta">
-
-                            <span class="event-location">📍 Online</span>
-                            <span class="event-time">⏰ 3:00 PM - 6:00 PM</span>
-
-                        </div>
-
-                        <a href="#" class="btn btn-outline">Participate</a>
-
-                    </div>
-
-                </div>
-
-                <div class="event-card" data-type="talk">
-
-                    <div class="event-type">Tech Talk</div>
-
-                    <div class="event-content">
-
-                        <div class="event-date">APR 22, 2024</div>
-                        <h3 class="event-title">Cloud Computing & DevOps</h3>
-
-                        <p class="event-description">
-                            Learn about modern cloud architectures, containerization,
-                            and CI/CD pipelines.
-                        </p>
-
-                        <div class="event-meta">
-
-                            <span class="event-location">📍 Online</span>
-                            <span class="event-time">⏰ 6:30 PM - 8:00 PM</span>
-
-                        </div>
-
-                        <a href="#" class="btn btn-outline">Attend Talk</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Timeline section showing upcoming events in chronological order -->
-            <section class="timeline">
-
-                <h2 class="timeline-title">Upcoming Timeline</h2>
-
-                <div class="timeline-container">
-
-                    <!-- Visual timeline line connecting all events -->
-                    <div class="timeline-line"></div>
-
-                    <!-- Individual timeline items with dots and content -->
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-content">
-
-                            <h4>JavaScript Workshop</h4>
-                            <p>March 15 • Deep dive into modern JS</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-content">
-
-                            <h4>Open Source Hackathon</h4>
-                            <p>March 25-26 • 48-hour coding marathon</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-content">
-
-                            <h4>AI & ML Tech Talk</h4>
-                            <p>April 2 • Industry insights and trends</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-content">
-
-                            <h4>React Bootcamp</h4>
-                            <p>April 10 • Modern web development</p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
+    <main>
+      <!-- Page header section with title and description -->
+      <section class="page-header">
+        <h1 class="page-title">Events</h1>
+        <p class="page-subtitle">
+          Join our exciting workshops, hackathons, and techtalks. Connect with
+          fellow developers and expand your skills.
+        </p>
+      </section>
+
+      <div class="events-container">
+        <!-- Filter tabs for event categories -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">
+            All Events
+          </button>
+          <button class="filter-tab" data-filter="workshop">Workshops</button>
+          <button class="filter-tab" data-filter="hackathon">Hackathons</button>
+          <button class="filter-tab" data-filter="talk">Tech Talks</button>
+          <button class="filter-tab" data-filter="competition">
+            Competitions
+          </button>
         </div>
 
+        <!-- Events grid container with filterable event cards -->
+        <div class="events-grid">
+          <!-- Event card with data-type attribute for filtering -->
+          <div class="event-card" data-type="workshop">
+            <!-- Event type badge -->
+            <div class="event-type">Workshop</div>
+            <div class="event-content">
+              <div class="event-date">MAR 15, 2024</div>
+              <h3 class="event-title">JavaScript Mastery Workshop</h3>
+
+              <p class="event-description">
+                Deep dive into modern JavaScript with ES6+, async/await, and
+                advanced concepts. Perfect for intermediate developers.
+              </p>
+
+              <!-- Event metadata with emojis for visual appeal -->
+              <div class="event-meta">
+                <span class="event-location">📍 Online</span>
+                <span class="event-time">⏰ 6:00 PM - 9:00 PM</span>
+              </div>
+
+              <a href="#" class="btn btn-outline">Register Now</a>
+            </div>
+          </div>
+
+          <div class="event-card" data-type="hackathon">
+            <div class="event-type">Hackathon</div>
+
+            <div class="event-content">
+              <div class="event-date">MAR 25-26, 2024</div>
+              <h3 class="event-title">Open Source Hackathon For Everyone</h3>
+
+              <p class="event-description">
+                48-hour hackathon focused on contributing to open source
+                projects. E-Certificates will be provided!
+              </p>
+
+              <div class="event-meta">
+                <span class="event-location">📍 Online</span>
+                <span class="event-time">⏰ All Weekend</span>
+              </div>
+
+              <a href="#" class="btn btn-outline">Join Hackathon</a>
+            </div>
+          </div>
+
+          <div class="event-card" data-type="talk">
+            <div class="event-type">Tech Talk</div>
+
+            <div class="event-content">
+              <div class="event-date">APR 02, 2024</div>
+              <h3 class="event-title">AI & Machine Learning Trends</h3>
+
+              <p class="event-description">
+                Industry expert shares insights on the latest AI trends and
+                their impact on software development.
+              </p>
+
+              <div class="event-meta">
+                <span class="event-location">📍 Virtual Event</span>
+                <span class="event-time">⏰ 7:00 PM - 8:30 PM</span>
+              </div>
+
+              <a href="#" class="btn btn-outline">Join Online</a>
+            </div>
+          </div>
+
+          <div class="event-card" data-type="workshop">
+            <div class="event-type">Workshop</div>
+
+            <div class="event-content">
+              <div class="event-date">APR 10, 2024</div>
+              <h3 class="event-title">React & Next.js Bootcamp</h3>
+
+              <p class="event-description">
+                Build modern web applications with React, Next.js, and
+                deployment strategies.
+              </p>
+
+              <div class="event-meta">
+                <span class="event-location">📍 Online</span>
+                <span class="event-time">⏰ 2:00 PM - 6:00 PM</span>
+              </div>
+
+              <a href="#" class="btn btn-outline">Register Now</a>
+            </div>
+          </div>
+
+          <div class="event-card" data-type="competition">
+            <div class="event-type">Competition</div>
+
+            <div class="event-content">
+              <div class="event-date">APR 18, 2024</div>
+              <h3 class="event-title">Data Structure & Algorithm Challenge</h3>
+
+              <p class="event-description">
+                Test your problem-solving skills in our monthly coding
+                competition. Cash prizes for winners!
+              </p>
+
+              <div class="event-meta">
+                <span class="event-location">📍 Online</span>
+                <span class="event-time">⏰ 3:00 PM - 6:00 PM</span>
+              </div>
+
+              <a href="#" class="btn btn-outline">Participate</a>
+            </div>
+          </div>
+
+          <div class="event-card" data-type="talk">
+            <div class="event-type">Tech Talk</div>
+
+            <div class="event-content">
+              <div class="event-date">APR 22, 2024</div>
+              <h3 class="event-title">Cloud Computing & DevOps</h3>
+
+              <p class="event-description">
+                Learn about modern cloud architectures, containerization, and
+                CI/CD pipelines.
+              </p>
+
+              <div class="event-meta">
+                <span class="event-location">📍 Online</span>
+                <span class="event-time">⏰ 6:30 PM - 8:00 PM</span>
+              </div>
+
+              <a href="#" class="btn btn-outline">Attend Talk</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline section showing upcoming events in chronological order -->
+        <section class="timeline">
+          <h2 class="timeline-title">Upcoming Timeline</h2>
+
+          <div class="timeline-container">
+            <!-- Visual timeline line connecting all events -->
+            <div class="timeline-line"></div>
+
+            <!-- Individual timeline items with dots and content -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content">
+                <h4>JavaScript Workshop</h4>
+                <p>March 15 • Deep dive into modern JS</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content">
+                <h4>Open Source Hackathon</h4>
+                <p>March 25-26 • 48-hour coding marathon</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content">
+                <h4>AI & ML Tech Talk</h4>
+                <p>April 2 • Industry insights and trends</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content">
+                <h4>React Bootcamp</h4>
+                <p>April 10 • Modern web development</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">
+      <!-- Footer navigation links -->
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="#">Events</a>
+        <a href="../resources/">Resources</a>
+        <a href="../team/">Team</a>
+        <a href="#">Feedback</a>
+      </div>
 
-        <!-- Footer navigation links -->
-        <div class="footer-links">
-
-            <a href="/">Home</a>
-            <a href="#">Events</a>
-            <a href="../resources/">Resources</a>
-            <a href="../team/">Team</a>
-            <a href="#">Feedback</a>
-
-        </div>
-
-        <!-- Dynamic footer text loaded via JavaScript -->
-        <p id="footer_text"></p>
-
+      <!-- Dynamic footer text loaded via JavaScript -->
+      <p id="footer_text"></p>
     </footer>
 
     <!-- JavaScript files for functionality -->
     <script src="../js/events.js"></script>
     <script src="../js/footer_text.js"></script>
-</body>
-
+  </body>
 </html>
