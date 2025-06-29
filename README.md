@@ -5,6 +5,7 @@ Welcome to the official repository for the IITG ODP Coding Club website. This pr
 ---
 
 ## 🚀 Project Overview
+
 - **Purpose:** Showcase club activities, events, resources, and team members for the IITG ODP Coding Club.
 - **Features:**
   - Modern dark-themed design
@@ -15,6 +16,7 @@ Welcome to the official repository for the IITG ODP Coding Club website. This pr
 ---
 
 ## 🛠️ Tech Stack
+
 - **HTML5** (semantic, modular pages)
 - **CSS3** (modular, per section/page, CSS variables for theming)
 - **JavaScript** (vanilla, modular per section/page)
@@ -23,6 +25,7 @@ Welcome to the official repository for the IITG ODP Coding Club website. This pr
 ---
 
 ## 📁 Folder Structure
+
 ```
 codingclub/
 ├── assets/           # Images, logos, and profile photos
@@ -41,15 +44,18 @@ codingclub/
 ## 🧑‍💻 How to Update Content
 
 ### Events
+
 - **File:** `events/index.html`
 - **Add/Remove Events:** Edit the event cards inside the `.cards-grid` section. Each event is a `<div class="card">...</div>`.
 - **Event Images:** Place any event images in `assets/` and reference them with the correct path.
 
 ### Resources
+
 - **File:** `resources/index.html`
 - **Add/Remove Resources:** Edit the resource cards inside the `.cards-grid` section.
 
 ### General Instructions
+
 - **Navigation:** Update navigation links in the `<nav>` section of each HTML file if you add new pages.
 - **Assets:** Place all images, logos, and profile photos in the `assets/` folder. Use descriptive, lowercase filenames.
 - **CSS/JS:** For new sections, create a new CSS/JS file in the respective folder and link it in your HTML.
@@ -57,6 +63,7 @@ codingclub/
 ---
 
 ## ♿ Accessibility & SEO
+
 - ARIA labels and skip links for navigation
 - High color contrast and keyboard accessibility
 - Meta description, Open Graph, and Twitter Card tags on all pages
@@ -65,6 +72,7 @@ codingclub/
 ---
 
 ## ⚡ Performance
+
 - Responsive and mobile-first design
 - CSS variables for easy theming
 - Scroll-to-top button and smooth scroll
@@ -73,6 +81,7 @@ codingclub/
 ---
 
 ## 🧩 Contribution Guidelines
+
 - Keep code modular and well-commented
 - Use consistent naming conventions
 - Test changes on mobile, tablet, and desktop
@@ -82,6 +91,7 @@ codingclub/
 ---
 
 ## 🙏 Credits
+
 - IITG ODP Coding Club core team and contributors
 - [Font Awesome](https://fontawesome.com/) for icons
 - All images and content © IITG ODP Coding Club
@@ -90,4 +100,5 @@ codingclub/
 ---
 
 ## 📢 Need Help?
+
 For questions or contributions, open an issue or contact the Coding Club team.
