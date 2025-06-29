@@ -4,6 +4,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/courses/",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
