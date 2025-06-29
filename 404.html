@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | IITG Coding Club</title>
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+  <style>
+    body {
+      background: #0a192f;
+      color: #b6eaff;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .logo {
+      margin-bottom: 2rem;
+    }
+    .error {
+      font-size: 6rem;
+      font-weight: bold;
+      color: #00d4ff;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px #00d4ff44;
+    }
+    .message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 400px;
+    }
+    .home-btn {
+      background: linear-gradient(90deg, #00d4ff, #007cf0);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 0.8em 2.2em;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 16px #00d4ff33;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .home-btn:hover {
+      background: linear-gradient(90deg, #007cf0, #00d4ff);
+      transform: translateY(-2px) scale(1.04);
+    }
+    @media (max-width: 600px) {
+      .error { font-size: 3.5rem; }
+      .message { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <img src="/assets/logo_with_name1_transparent.png" alt="Coding Club Logo" class="logo" width="180" />
+  <div class="error">404</div>
+  <div class="message">Oops! The page you're looking for doesn't exist.<br>Let's get you back to the club homepage.</div>
+  <a href="/" class="home-btn">Go Home</a>
+</body>
+</html> 
