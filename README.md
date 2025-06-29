@@ -1,6 +1,6 @@
 # IITG ODP Coding Club Website
 
-Welcome to the official repository for the IITG OPD Coding Club website. This project is a modern, responsive, and accessible site for the IITG Online Degree Coding Club, built with HTML, CSS, and JavaScript.
+Welcome to the official repository for the IITG ODP Coding Club website. This project is a modern, responsive, and accessible site for the IITG Online Degree Coding Club, built with HTML, CSS, and JavaScript.
 
 ---
 
@@ -89,9 +89,9 @@ codingclub/
 ---
 
 ## 🙏 Credits
-- IITG Coding Club core team and contributors
+- IITG ODP Coding Club core team and contributors
 - [Font Awesome](https://fontawesome.com/) for icons
-- All images and content © IITG Coding Club
+- All images and content © IITG ODP Coding Club
 
 
 ---
