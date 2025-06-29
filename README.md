@@ -40,13 +40,6 @@ codingclub/
 
 ## 🧑‍💻 How to Update Content
 
-### Team Members
-- **File:** `team/index.html`
-- **Profile Images:** Place images in `assets/` (e.g., `pushkar.jpeg`).
-- **Social Links:** Update LinkedIn/GitHub/email links in each member's card.
-- **Add/Remove Members:** Duplicate or remove a `<div class="card">...</div>` block as needed. Use the same structure for avatars and social icons.
-- **Image Format:** Use `.jpeg` or `.png` as per the actual file in `assets/`.
-
 ### Events
 - **File:** `events/index.html`
 - **Add/Remove Events:** Edit the event cards inside the `.cards-grid` section. Each event is a `<div class="card">...</div>`.
