@@ -1,613 +1,853 @@
+/* =====================================================
+   RESOURCES PAGE STYLES - IITG CODING CLUB
+   ===================================================== */
+
 /* --- Base styles are kept, with layout matching the wireframe --- */
+
+/* Global reset for consistent cross-browser rendering */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;                    /* Remove default margins */
+  padding: 0;                   /* Remove default padding */
+  box-sizing: border-box;       /* Include padding/border in element dimensions */
 }
+
+/* Body styling with dark theme and gradient background */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  /* Multi-stop gradient background for visual depth */
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  color: white;
-  line-height: 1.6;
-  overflow-x: hidden;
-  position: relative;
+  color: white;                 /* Primary text color */
+  line-height: 1.6;             /* Improved readability with proper line spacing */
+  overflow-x: hidden;           /* Prevent horizontal scrolling on mobile */
+  position: relative;           /* Positioning context for pseudo-elements */
 }
+
+/* Removed background pattern for consistency with other pages */
 body::after {
   /* Remove this background pattern for consistency with other pages */
-  display: none;
+  display: none;                /* Hide any background patterns */
 }
+/* ================================================
+   HEADER & NAVIGATION SYSTEM
+   ================================================ */
+
+/* Fixed header with glassmorphism effect */
 .header {
-  position: fixed;
+  position: fixed;              /* Stay at top during scroll */
   top: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(15, 15, 35, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;               /* Ensure header stays above other content */
+  background: rgba(15, 15, 35, 0.95);  /* Semi-transparent dark background */
+  backdrop-filter: blur(10px);  /* Glassmorphism blur effect for modern look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle separator */
 }
+
+/* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;  /* Logo left, navigation right */
+  align-items: center;          /* Vertically center items */
+  padding: 1rem 2rem;           /* Internal spacing */
+  max-width: 1200px;            /* Constrain width on large screens */
+  margin: 0 auto;               /* Center navigation container */
 }
+
+/* Logo styling with brand color */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00d4ff;
-  text-decoration: none;
+  color: #00d4ff;              /* Brand cyan color */
+  text-decoration: none;        /* Remove underline from link */
 }
+
+/* Navigation links container with flexbox */
 .nav-links {
   display: flex;
-  gap: 2rem;
-  list-style: none;
+  gap: 2rem;                   /* Space between navigation items */
+  list-style: none;            /* Remove bullet points from list */
 }
+
+/* Base navigation link styling */
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  position: relative;
+  color: white;                /* Default text color */
+  text-decoration: none;       /* Remove underlines */
+  transition: color 0.3s ease; /* Smooth color transitions on hover */
+  position: relative;          /* Required for pseudo-element positioning */
 }
+
+/* Active navigation link styling - highlights current page */
 .nav-links a.active {
-  color: var(--primary);
-  font-weight: bold;
-  background: var(--primary);
-  color: var(--text);
-  border-radius: 8px;
-  padding: 0.25em 0.5em;
+  color: var(--primary);       /* Brand color for active state */
+  font-weight: bold;           /* Emphasize active link */
+  background: var(--primary);  /* Background highlight */
+  color: var(--text);          /* Text color override */
+  border-radius: 8px;          /* Rounded corners */
+  padding: 0.25em 0.5em;       /* Pill-shaped padding */
 }
+
+/* Navigation link hover effects */
 .nav-links a:hover {
-  color: var(--primary);
-  background: rgba(0, 212, 255, 0.08);
-  border-radius: 8px;
-  padding: 0.25em 0.5em;
+  color: var(--primary);       /* Brand color on hover */
+  background: rgba(0, 212, 255, 0.08);  /* Subtle background highlight */
+  border-radius: 8px;          /* Rounded hover state */
+  padding: 0.25em 0.5em;       /* Consistent padding with active state */
 }
+
+/* Animated underline effect using pseudo-elements */
 .nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
+  content: "";                 /* Required for pseudo-element */
+  position: absolute;          /* Position relative to parent link */
+  bottom: -5px;                /* Below the text */
   left: 0;
-  width: 0;
-  height: 2px;
-  background: #00d4ff;
-  transition: width 0.3s ease;
+  width: 0;                    /* Start with no width */
+  height: 2px;                 /* Thin underline */
+  background: #00d4ff;         /* Brand color underline */
+  transition: width 0.3s ease; /* Animate width change */
 }
+
+/* Expand underline on hover and active states */
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 100%;
+  width: 100%;                 /* Full width underline */
 }
+
+/* Override any conflicting text decoration styles */
 .nav-links a,
 .nav-links a.active,
 .nav-links a:hover {
-  text-decoration: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-.search-bar {
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.search-bar:focus {
-  border-color: #00d4ff;
-  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none !important;   /* Force no underlines */
+  border-bottom: none !important;     /* Force no borders */
+  box-shadow: none !important;        /* Force no shadows */
 }
 
+/* Search bar styling with glassmorphism effect */
+.search-bar {
+  padding: 0.5rem 1rem;        /* Internal spacing */
+  border: 1px solid rgba(255, 255, 255, 0.2);  /* Semi-transparent border */
+  border-radius: 25px;         /* Pill-shaped input */
+  background: rgba(255, 255, 255, 0.1);  /* Glassmorphism background */
+  color: white;                /* Text color */
+  outline: none;               /* Remove default focus outline */
+  transition: all 0.3s ease;   /* Smooth focus transitions */
+}
+
+/* Search bar focus state */
+.search-bar:focus {
+  border-color: #00d4ff;       /* Brand color border on focus */
+  background: rgba(255, 255, 255, 0.15);  /* Slightly more opaque on focus */
+}
+
+/* ================================================
+   LAYOUT CONTAINERS
+   ================================================ */
+
+/* Main content container with responsive max-width */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 1200px;           /* Optimal reading width */
+  margin: 0 auto;              /* Center container */
+  padding: 0 2rem;             /* Horizontal padding for content */
 }
+/* ================================================
+   HERO SECTION - MAIN LANDING AREA
+   ================================================ */
         
-        /* --- HERO SECTION (as per wireframe) --- */
+/* Hero section with split-screen layout */
 .hero {
-  padding-top: 140px;
-  padding-bottom: 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  min-height: 80vh;
+  padding-top: 140px;          /* Account for fixed header height */
+  padding-bottom: 80px;        /* Bottom spacing */
+  display: grid;               /* CSS Grid for layout */
+  grid-template-columns: 1fr 1fr;  /* Two equal columns */
+  gap: 4rem;                   /* Space between content and visual */
+  align-items: center;         /* Vertically center content */
+  min-height: 80vh;            /* Minimum viewport height for impact */
 }
+
+/* Hero content text styling */
 .hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  min-height: 4.5em;
-  display: block;
+  font-size: 3.5rem;           /* Large impact font size */
+  margin-bottom: 1rem;         /* Space below heading */
+  line-height: 1.2;            /* Tight line spacing for headings */
+  min-height: 4.5em;           /* Reserve space for typewriter animation */
+  display: block;              /* Block-level for consistent layout */
 }
+
+/* Gradient text effect for highlighted words */
 .hero-content .highlight {
+  /* Create gradient background that will be clipped to text */
   background: linear-gradient(135deg, #00d4ff, #0099cc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text;      /* Webkit-specific property */
+  -webkit-text-fill-color: transparent;  /* Make text transparent to show background */
+  background-clip: text;              /* Standard property for future compatibility */
 }
+
+/* Hero description paragraph */
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-  max-width: 500px;
+  font-size: 1.2rem;           /* Slightly larger than body text */
+  margin-bottom: 2rem;         /* Space before call-to-action buttons */
+  opacity: 0.9;                /* Subtle transparency for hierarchy */
+  max-width: 500px;            /* Constrain width for readability */
 }
+
+/* Call-to-action buttons container */
 .cta-buttons {
-  display: flex;
-  gap: 1rem;
+  display: flex;               /* Horizontal layout for buttons */
+  gap: 1rem;                   /* Space between buttons */
 }
+
+/* Base button styling */
 .btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
+  padding: 12px 24px;          /* Comfortable click target size */
+  border: none;                /* Remove default button border */
+  border-radius: 8px;          /* Rounded corners */
+  cursor: pointer;             /* Pointer cursor for interactivity */
+  font-size: 1rem;             /* Readable font size */
+  transition: all 0.3s ease;   /* Smooth hover animations */
+  text-decoration: none;       /* Remove underlines from links styled as buttons */
+  display: inline-block;       /* Allow width/height while staying inline */
 }
+
+/* Primary button with gradient background */
 .btn-primary {
-  background: linear-gradient(135deg, #00d4ff, #0099cc);
-  color: white;
+  background: linear-gradient(135deg, #00d4ff, #0099cc);  /* Brand gradient */
+  color: white;                /* White text for contrast */
 }
+
+/* Secondary button with outline style */
 .btn-secondary {
-  background: transparent;
-  color: #00d4ff;
-  border: 2px solid #00d4ff;
+  background: transparent;     /* No background fill */
+  color: #00d4ff;             /* Brand color text */
+  border: 2px solid #00d4ff;  /* Brand color border */
 }
+
+/* Button hover effects */
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);  /* Glowing shadow */
 }
+
+/* ================================================
+   HERO VISUAL SECTION - 3D CUBE ANIMATION
+   ================================================ */
+
+/* Container for 3D visual element */
 .hero-visual {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 350px;
-  background: rgba(0, 212, 255, 0.05);
-  border: 1px solid rgba(0, 212, 255, 0.1);
-  border-radius: 15px;
-  perspective: 1000px;
+  align-items: center;         /* Vertically center cube */
+  justify-content: center;     /* Horizontally center cube */
+  height: 350px;               /* Fixed height for consistent layout */
+  background: rgba(0, 212, 255, 0.05);  /* Subtle background tint */
+  border: 1px solid rgba(0, 212, 255, 0.1);  /* Subtle border */
+  border-radius: 15px;         /* Rounded container */
+  perspective: 1000px;         /* 3D perspective for child elements - crucial for 3D effect */
 }
 
-        /* 3D Cube for Hero Visual */
+/* ================================================
+   3D CUBE ANIMATION SYSTEM
+   ================================================ */
+
+/* 3D Cube container with transform-style preservation */
 .cube {
-  width: 200px;
+  width: 200px;                /* Cube dimensions */
   height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: rotate-cube 20s infinite linear;
+  position: relative;          /* Positioning context for faces */
+  transform-style: preserve-3d; /* CRITICAL: Preserves 3D positioning of child elements */
+  animation: rotate-cube 20s infinite linear;  /* Continuous rotation animation */
 }
+
+/* Keyframe animation for smooth 3D rotation */
 @keyframes rotate-cube {
   from {
-    transform: rotateX(0) rotateY(0);
+    transform: rotateX(0) rotateY(0);    /* Start position */
   }
   to {
-    transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg);  /* Full rotation on both axes */
   }
 }
+
+/* Individual cube face styling - each face is positioned in 3D space */
 .face {
-  position: absolute;
-  width: 200px;
+  position: absolute;          /* Absolute positioning for 3D transforms */
+  width: 200px;                /* Match cube dimensions */
   height: 200px;
-  border: 2px solid #00d4ff;
-  background: rgba(0, 212, 255, 0.1);
-  backdrop-filter: blur(5px);
-  display: flex;
+  border: 2px solid #00d4ff;   /* Brand color borders */
+  background: rgba(0, 212, 255, 0.1);  /* Semi-transparent fill */
+  backdrop-filter: blur(5px);  /* Glassmorphism effect */
+  display: flex;               /* Center content within each face */
   align-items: center;
   justify-content: center;
 }
+
+/* Images within cube faces */
 .face img {
-  width: 100px;
+  width: 100px;                /* Consistent image size */
   height: 100px;
-  filter: grayscale(1) brightness(2);
-}
-.front {
-  transform: rotateY(0deg) translateZ(100px);
-}
-.back {
-  transform: rotateY(180deg) translateZ(100px);
-}
-.right {
-  transform: rotateY(90deg) translateZ(100px);
-}
-.left {
-  transform: rotateY(-90deg) translateZ(100px);
-}
-.top {
-  transform: rotateX(90deg) translateZ(100px);
-}
-.bottom {
-  transform: rotateX(-90deg) translateZ(100px);
+  filter: grayscale(1) brightness(2);  /* Stylized monochrome effect */
 }
 
-        /* --- CARD SECTIONS --- */
-.section {
-  padding: 4rem 0;
+/* 3D Positioning for each cube face using CSS transforms */
+/* Each face is rotated and translated to form a cube shape */
+
+.front {
+  transform: rotateY(0deg) translateZ(100px);    /* Front face - no rotation, moved forward */
 }
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);  /* Back face - 180° rotation, moved forward */
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);   /* Right face - 90° rotation, moved forward */
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);  /* Left face - -90° rotation, moved forward */
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);   /* Top face - X-axis rotation, moved forward */
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);  /* Bottom face - negative X-axis rotation */
+}
+
+/* ================================================
+   CONTENT SECTIONS & CARDS LAYOUT
+   ================================================ */
+/* Section containers with consistent vertical spacing */
+.section {
+  padding: 4rem 0;             /* Generous vertical spacing between sections */
+}
+
+/* Section header with flex layout for title and "view more" link */
 .section-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  border-bottom: 1.5px solid rgba(0,212,255,0.10);
-  padding-bottom: 0.7rem;
+  justify-content: space-between;  /* Title left, link right */
+  align-items: center;         /* Vertically align items */
+  margin-bottom: 2rem;         /* Space before content */
+  border-bottom: 1.5px solid rgba(0,212,255,0.10);  /* Subtle brand-colored divider */
+  padding-bottom: 0.7rem;      /* Space above border */
 }
+
+/* Section title styling */
 .section-title {
-  font-size: 2rem;
+  font-size: 2rem;             /* Prominent section headings */
 }
+
+/* "View More" link with animated underline */
 .view-more {
-  color: #00d4ff;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s;
+  color: #00d4ff;             /* Brand color */
+  text-decoration: none;       /* Remove default underline */
+  font-weight: bold;           /* Emphasize link */
+  border-bottom: 2px solid transparent;  /* Hidden underline initially */
+  transition: border-color 0.3s;  /* Smooth underline animation */
 }
+
+/* Show underline on hover */
 .view-more:hover {
-  border-color: #00d4ff;
+  border-color: #00d4ff;      /* Brand color underline */
 }
+
+/* ================================================
+   ADVANCED RESOURCE CARDS SYSTEM
+   ================================================ */
+
+/* Responsive grid layout for resource cards - 2 columns by default */
 .cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
+  grid-template-columns: 1fr 1fr;  /* Two equal columns for resources */
+  gap: 2.2rem;                /* Generous space between cards */
 }
+
+/* Individual resource card with advanced styling */
 .card {
-  position: relative;
-  border-radius: 12px;
+  position: relative;          /* Positioning context for pseudo-elements */
+  border-radius: 12px;         /* Rounded corners for modern look */
+  /* Complex gradient background with brand color accent */
   background: linear-gradient(135deg, rgba(26,26,46,0.97) 80%, rgba(0,212,255,0.04));
+  /* Multi-layered shadow for depth and brand color accent */
   box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,212,255,0.04);
-  border: 1.5px solid rgba(0,212,255,0.10);
-  overflow: hidden;
+  border: 1.5px solid rgba(0,212,255,0.10);  /* Subtle brand-colored border */
+  overflow: hidden;            /* Contain child elements */
+  /* Smooth transitions for hover effects */
   transition: box-shadow 0.25s, transform 0.18s;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;         /* Vertical spacing between cards */
 }
+
+/* Left accent border using pseudo-element */
 .card::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 6px;
+  content: "";                 /* Required for pseudo-element */
+  position: absolute;          /* Position relative to card */
+  left: 0; top: 0; bottom: 0;  /* Full height, left edge */
+  width: 6px;                  /* Narrow accent border width */
+  /* Vertical gradient accent border */
   background: linear-gradient(180deg, var(--primary), var(--primary-dark));
-  border-radius: 0 8px 8px 0;
-  z-index: 2;
+  border-radius: 0 8px 8px 0;  /* Rounded right edge only */
+  z-index: 2;                  /* Above card background */
 }
+
+/* Card hover and focus-within effects for accessibility */
 .card:hover, .card:focus-within {
+  /* Enhanced shadow with brand color glow */
   box-shadow: 0 8px 40px 0 rgba(0,212,255,0.18), 0 2px 8px 0 rgba(0,0,0,0.12);
+  /* Subtle lift and scale effect */
   transform: translateY(-4px) scale(1.012);
 }
+
+/* Card content container */
 .card-content {
-  padding: 2rem 1.5rem 1.5rem 2rem;
-  position: relative;
-  z-index: 3;
+  padding: 2rem 1.5rem 1.5rem 2rem;  /* Asymmetric padding for left accent */
+  position: relative;          /* Above pseudo-elements */
+  z-index: 3;                  /* Ensure content stays above decorative elements */
 }
+
+/* Card title styling with icon support */
 .card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 0.7rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
+  font-size: 1.25rem;          /* Slightly larger than body text */
+  font-weight: 700;            /* Bold weight for emphasis */
+  color: var(--primary);       /* Brand color for headings */
+  margin-bottom: 0.7rem;       /* Space below heading */
+  display: flex;               /* Horizontal layout for text and icons */
+  align-items: center;         /* Vertically center items */
+  gap: 0.5em;                  /* Space between text and icons */
 }
+
+/* FontAwesome icons within card titles */
 .card h3 .fa, .card h3 .fab {
-  font-size: 1.1em;
-  color: var(--primary-dark);
+  font-size: 1.1em;            /* Slightly larger than text */
+  color: var(--primary-dark);  /* Darker brand shade for contrast */
 }
+
+/* Card metadata styling */
 .card small {
-  opacity: 0.7;
-  font-size: 0.98em;
+  opacity: 0.7;                /* Subtle styling for secondary text */
+  font-size: 0.98em;           /* Slightly smaller than body text */
 }
+/* ================================================
+   TESTIMONIALS SECTION WITH AUTO-SCROLL
+   ================================================ */
         
-        /* --- TESTIMONIALS (as per wireframe with animation) --- */
+/* Testimonials section with auto-scrolling animation */
 .testimonials {
-  padding: 4rem 0;
-  background: rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  padding: 4rem 0;             /* Section spacing */
+  background: rgba(0, 0, 0, 0.1);  /* Subtle background differentiation */
+  overflow: hidden;            /* Hide scrolling content outside bounds */
 }
+
+/* Testimonial slider container */
 .testimonial-slider {
-  width: 100%;
-  position: relative;
+  width: 100%;                 /* Full width container */
+  position: relative;          /* Positioning context for fade overlays */
 }
+
+/* Fade overlay effects using pseudo-elements */
 .testimonial-slider::before,
 .testimonial-slider::after {
-  content: "";
-  position: absolute;
+  content: "";                 /* Required for pseudo-elements */
+  position: absolute;          /* Position over slider content */
   top: 0;
-  width: 200px;
-  height: 100%;
-  z-index: 2;
+  width: 200px;               /* Width of fade effect */
+  height: 100%;               /* Full height of slider */
+  z-index: 2;                 /* Above slider content */
 }
+
+/* Left fade overlay - creates seamless infinite scroll illusion */
 .testimonial-slider::before {
-  left: 0;
-  background: linear-gradient(to right, #1a1a2e, transparent);
+  left: 0;                    /* Position at left edge */
+  background: linear-gradient(to right, #1a1a2e, transparent);  /* Fade from solid to transparent */
 }
+
+/* Right fade overlay - matches left side */
 .testimonial-slider::after {
-  right: 0;
-  background: linear-gradient(to left, #1a1a2e, transparent);
+  right: 0;                   /* Position at right edge */
+  background: linear-gradient(to left, #1a1a2e, transparent);   /* Fade from solid to transparent */
 }
+
+/* Testimonial track - contains all testimonial cards */
 .testimonial-track {
-  display: flex;
-  width: calc(290px * 8); /* card width * number of cards */
-  animation: scroll-left 40s linear infinite;
+  display: flex;              /* Horizontal layout for cards */
+  width: calc(290px * 8);     /* Total width: card width × number of cards */
+  animation: scroll-left 40s linear infinite;  /* Continuous left scroll animation */
 }
+
+/* Keyframe animation for infinite horizontal scrolling */
 @keyframes scroll-left {
   from {
-    transform: translateX(0);
+    transform: translateX(0);    /* Start at original position */
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Move left by half width for seamless loop */
   }
 }
+
+/* Individual testimonial card styling */
 .testimonial {
-  width: 250px;
-  margin: 0 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 1.5rem;
-  flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 250px;               /* Fixed card width */
+  margin: 0 20px;             /* Horizontal spacing between cards */
+  background: rgba(255, 255, 255, 0.05);  /* Glassmorphism background */
+  border-radius: 15px;        /* Rounded corners */
+  padding: 1.5rem;            /* Internal spacing */
+  flex-shrink: 0;             /* Prevent cards from shrinking */
+  border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
 }
+
+/* Testimonial header with avatar and name */
 .testimonial-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+  display: flex;              /* Horizontal layout for avatar and text */
+  align-items: center;        /* Vertically center items */
+  margin-bottom: 1rem;        /* Space before testimonial text */
 }
+
+/* Avatar styling with gradient background */
 .testimonial-avatar {
-  width: 40px;
+  width: 40px;                /* Square avatar dimensions */
   height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #00d4ff, #0099cc);
-  margin-right: 1rem;
+  border-radius: 50%;         /* Circular avatar */
+  background: linear-gradient(135deg, #00d4ff, #0099cc);  /* Brand gradient */
+  margin-right: 1rem;         /* Space before name */
 }
+
+/* Testimonial text styling */
 .testimonial p {
-  font-style: italic;
-  opacity: 0.9;
+  font-style: italic;         /* Italicize testimonial quotes */
+  opacity: 0.9;               /* Slight transparency for hierarchy */
 }
 
-        /* --- ABOUT SECTION (as per wireframe) --- */
+/* ================================================
+   ABOUT SECTION
+   ================================================ */
+/* About section with two-column layout */
 .about {
-  padding: 6rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  padding: 6rem 0;             /* Extra padding for section emphasis */
+  display: grid;               /* CSS Grid layout */
+  grid-template-columns: 1fr 1fr;  /* Two equal columns */
+  gap: 4rem;                   /* Space between content and visual */
+  align-items: center;         /* Vertically center content */
 }
+
+/* About section visual element */
 .about-visual {
-  height: 250px;
-  background: rgba(0, 212, 255, 0.05);
-  border: 1px solid rgba(0, 212, 255, 0.1);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height: 250px;               /* Fixed height for consistency */
+  background: rgba(0, 212, 255, 0.05);  /* Subtle brand color tint */
+  border: 1px solid rgba(0, 212, 255, 0.1);  /* Subtle border */
+  border-radius: 15px;         /* Rounded corners */
+  display: flex;               /* Center icon within container */
+  align-items: center;         /* Vertically center */
+  justify-content: center;     /* Horizontally center */
+  text-align: center;          /* Center any text content */
 }
+
+/* Icon within about visual */
 .about-visual .icon {
-  font-size: 3rem;
-  color: #00d4ff;
+  font-size: 3rem;             /* Large decorative icon */
+  color: #00d4ff;             /* Brand color */
 }
 
-        /* Footer */
+/* ================================================
+   FOOTER SECTION
+   ================================================ */
+
+/* Footer container with dark background */
 .footer {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 3rem 2rem 1rem;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-.footer-links a {
-  color: #00d4ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-links a:hover {
-  color: white;
-}
-.footer-links a.active {
-  color: var(--primary);
-  font-weight: bold;
-  background: var(--primary);
-  color: var(--text);
-  border-radius: 8px;
-  padding: 0.25em 0.5em;
-}
-.footer-links a:hover {
-  color: var(--primary);
-  background: rgba(0, 212, 255, 0.08);
-  border-radius: 8px;
-  padding: 0.25em 0.5em;
+  background: rgba(0, 0, 0, 0.3);    /* Dark semi-transparent background */
+  padding: 3rem 2rem 1rem;           /* Generous padding with less bottom space */
+  text-align: center;                /* Center all footer content */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle top border */
 }
 
+/* Footer navigation links container */
+.footer-links {
+  display: flex;               /* Horizontal layout */
+  justify-content: center;     /* Center the links */
+  gap: 2rem;                  /* Space between links */
+  margin-bottom: 2rem;        /* Space before additional footer content */
+  flex-wrap: wrap;            /* Allow wrapping on smaller screens */
+}
+
+/* Individual footer link styling */
+.footer-links a {
+  color: #00d4ff;            /* Brand color */
+  text-decoration: none;      /* Remove underlines */
+  transition: color 0.3s ease;  /* Smooth color transitions */
+}
+
+/* Footer link hover state */
+.footer-links a:hover {
+  color: white;               /* White text on hover */
+}
+
+/* Active footer link styling - matches navigation */
+.footer-links a.active {
+  color: var(--primary);      /* Brand color */
+  font-weight: bold;          /* Emphasize active state */
+  background: var(--primary); /* Background highlight */
+  color: var(--text);         /* Text color override */
+  border-radius: 8px;         /* Rounded corners */
+  padding: 0.25em 0.5em;      /* Pill-shaped padding */
+}
+
+/* Footer link hover effects - matches navigation */
+.footer-links a:hover {
+  color: var(--primary);      /* Brand color on hover */
+  background: rgba(0, 212, 255, 0.08);  /* Subtle background highlight */
+  border-radius: 8px;         /* Rounded hover state */
+  padding: 0.25em 0.5em;      /* Consistent padding */
+}
+
+/* ================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ================================================ */
+
+/* Medium screen breakpoint - 2 columns to 1 column for cards */
 @media (max-width: 900px) {
   .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;    /* Single column layout */
+    gap: 1.5rem;                   /* Reduced gap for mobile */
   }
 }
+
+/* Mobile breakpoint - major layout changes */
 @media (max-width: 768px) {
+  /* Switch two-column layouts to single column */
   .hero,
   .about {
-    grid-template-columns: 1fr;
-    text-align: center;
+    grid-template-columns: 1fr;    /* Single column layout */
+    text-align: center;            /* Center content on mobile */
   }
+
+  /* Adjust hero content spacing */
   .hero-content p {
-    margin: 1rem auto 2rem;
+    margin: 1rem auto 2rem;        /* Center paragraph with auto margins */
   }
+
+  /* Center call-to-action buttons */
   .cta-buttons {
-    justify-content: center;
+    justify-content: center;       /* Center button group */
   }
+
+  /* Hide navigation links on mobile (hamburger menu would replace this) */
   .nav-links {
     display: none;
   }
+
+  /* Stack section headers vertically on mobile */
   .section-header {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
+    flex-direction: column;        /* Vertical layout */
+    gap: 1rem;                     /* Space between title and link */
+    align-items: flex-start;       /* Align to left edge */
   }
 }
+
+/* ================================================
+   BACKGROUND PARTICLE SYSTEM
+   ================================================ */
+
+/* Particle container - identical to other pages */
 .particles {
-  position: fixed;
+  position: fixed;             /* Fixed to viewport */
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%;                /* Full viewport coverage */
   height: 100%;
-  pointer-events: none;
-  z-index: -1;
+  pointer-events: none;       /* Don't interfere with interactions */
+  z-index: -1;                /* Behind all content */
 }
+
+/* Individual particle styling */
 .particle {
-  position: absolute;
-  width: 2px;
+  position: absolute;          /* Absolute positioning for animation */
+  width: 2px;                 /* Small particle size */
   height: 2px;
-  background: #00d4ff;
-  opacity: 0.5;
-  animation: float 6s infinite linear;
+  background: #00d4ff;        /* Brand color particles */
+  opacity: 0.5;               /* Semi-transparent for subtle effect */
+  animation: float 6s infinite linear;  /* Continuous floating animation */
 }
+
+/* Particle floating animation - creates upward movement with rotation */
 @keyframes float {
   0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
+    transform: translateY(100vh) rotate(0deg);  /* Start below viewport */
+    opacity: 0;                                 /* Fade in */
   }
   10% {
-    opacity: 0.5;
+    opacity: 0.5;                              /* Reach full opacity */
   }
   90% {
-    opacity: 0.5;
+    opacity: 0.5;                              /* Maintain opacity */
   }
   100% {
-    transform: translateY(-10vh) rotate(360deg);
-    opacity: 0;
+    transform: translateY(-10vh) rotate(360deg); /* End above viewport with rotation */
+    opacity: 0;                                  /* Fade out */
   }
 }
 
-/* Theme color variables for easy updates */
+/* ================================================
+   CSS CUSTOM PROPERTIES (THEME VARIABLES)
+   ================================================ */
+/* Global theme variables for consistent styling and easy updates */
 :root {
-  --primary: #00d4ff;
-  --primary-dark: #0099cc;
-  --bg-dark: #0f0f23;
-  --bg-darker: #1a1a2e;
-  --bg-darkest: #16213e;
-  --text: #fff;
-  --contrast: #222;
+  --primary: #00d4ff;          /* Main brand color - bright cyan */
+  --primary-dark: #0099cc;     /* Darker brand shade for hover states */
+  --bg-dark: #0f0f23;          /* Primary dark background */
+  --bg-darker: #1a1a2e;        /* Secondary dark background */
+  --bg-darkest: #16213e;       /* Tertiary dark background */
+  --text: #fff;                /* Primary text color */
+  --contrast: #222;            /* High contrast color for accessibility */
 }
 
-/* Skip link for accessibility */
+/* ================================================
+   ACCESSIBILITY FEATURES
+   ================================================ */
+
+/* Skip link for keyboard navigation - hidden by default */
 .skip-link {
-  position: absolute;
-  left: -999px;
+  position: absolute;          /* Position off-screen */
+  left: -999px;               /* Hide far left */
   top: auto;
-  width: 1px;
+  width: 1px;                 /* Minimal dimensions when hidden */
   height: 1px;
-  overflow: hidden;
-  z-index: 10000;
-  background: var(--primary);
-  color: var(--contrast);
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-weight: bold;
+  overflow: hidden;           /* Ensure content is hidden */
+  z-index: 10000;             /* Above all other content when focused */
+  background: var(--primary); /* Brand color background */
+  color: var(--contrast);     /* High contrast text */
+  padding: 8px 16px;          /* Comfortable padding when visible */
+  border-radius: 4px;         /* Rounded corners */
+  font-weight: bold;          /* Emphasize important navigation */
 }
+
+/* Show skip link when focused via keyboard */
 .skip-link:focus {
-  left: 1rem;
+  left: 1rem;                 /* Position on screen */
   top: 1rem;
-  width: auto;
+  width: auto;                /* Auto-size to content */
   height: auto;
-  outline: 2px solid var(--primary-dark);
+  outline: 2px solid var(--primary-dark);  /* Visible focus indicator */
 }
+
+/* ================================================
+   UTILITY COMPONENTS
+   ================================================ */
 
 /* Scroll to top button */
 .scroll-to-top {
-  background: var(--primary);
-  color: var(--text);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s;
-}
-.scroll-to-top:hover,
-.scroll-to-top:focus {
-  background: var(--primary-dark);
-  outline: 2px solid var(--primary-dark);
+  background: var(--primary);  /* Brand color background */
+  color: var(--text);          /* White text */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+  transition: background 0.3s; /* Smooth hover transitions */
 }
 
-/* Ensure high contrast for links and buttons */
+/* Scroll to top hover and focus states */
+.scroll-to-top:hover,
+.scroll-to-top:focus {
+  background: var(--primary-dark);  /* Darker shade on interaction */
+  outline: 2px solid var(--primary-dark);  /* Visible focus indicator */
+}
+
+/* ================================================
+   CONSISTENT THEMING FOR INTERACTIVE ELEMENTS
+   ================================================ */
+
+/* Base styling for all interactive elements using theme variables */
 .nav-links a,
 .btn,
 .footer-links a {
-  color: var(--primary);
-  background: transparent;
+  color: var(--primary);       /* Brand color for all interactive elements */
+  background: transparent;     /* Transparent background by default */
 }
+
+/* Active and hover states for interactive elements */
 .nav-links a.active,
 .nav-links a:hover,
 .btn-primary,
 .footer-links a:hover {
-  color: var(--text);
-  background: var(--primary);
+  color: var(--text);          /* White text for contrast */
+  background: var(--primary);  /* Brand color background */
 }
 
-/* --- Resource Link Buttons --- */
+/* ================================================
+   RESOURCE LINK BUTTONS - INTERACTIVE ELEMENTS
+   ================================================ */
+/* Container for resource link buttons within cards */
 .resource-links {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  margin-top: 1rem;            /* Space above button group */
+  display: flex;               /* Vertical stacking of buttons */
+  flex-direction: column;      /* Stack buttons vertically */
+  gap: 0.6rem;                /* Space between individual buttons */
 }
+
+/* Individual resource link button with advanced styling */
 .resource-link {
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-  padding: 0.55em 1.1em 0.55em 1.1em;
-  border-radius: 999px;
-  background: rgba(0,212,255,0.10);
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 1.04em;
-  text-decoration: none;
-  border: 1.5px solid rgba(0,212,255,0.18);
-  box-shadow: 0 1px 6px rgba(0,212,255,0.04);
+  display: flex;               /* Horizontal layout for icon and text */
+  align-items: center;         /* Vertically center content */
+  gap: 0.7em;                  /* Space between icon and text */
+  padding: 0.55em 1.1em 0.55em 1.1em;  /* Symmetric comfortable padding */
+  border-radius: 999px;        /* Pill-shaped button */
+  background: rgba(0,212,255,0.10);     /* Semi-transparent brand background */
+  color: var(--primary);       /* Brand color text */
+  font-weight: 600;            /* Semi-bold for emphasis */
+  font-size: 1.04em;           /* Slightly larger than body text */
+  text-decoration: none;       /* Remove underlines */
+  border: 1.5px solid rgba(0,212,255,0.18);  /* Semi-transparent brand border */
+  box-shadow: 0 1px 6px rgba(0,212,255,0.04);  /* Subtle brand-colored shadow */
+  /* Smooth transitions for all interactive properties */
   transition: background 0.18s, color 0.18s, border 0.18s, transform 0.18s;
-  outline: none;
-  cursor: pointer;
-  position: relative;
+  outline: none;               /* Remove default focus outline */
+  cursor: pointer;             /* Pointer cursor for interactivity */
+  position: relative;          /* Positioning context for pseudo-elements */
 }
+
+/* FontAwesome icons within resource links */
 .resource-link .fa, .resource-link .fab {
-  font-size: 1.15em;
-  margin-right: 0.3em;
+  font-size: 1.15em;           /* Larger than text for visual balance */
+  margin-right: 0.3em;         /* Additional space after icon */
 }
+
+/* Arrow icon for indicating external links */
 .resource-link .fa-arrow-right {
-  margin-left: 0.7em;
-  font-size: 0.98em;
-  opacity: 0.7;
-  transition: margin-left 0.18s;
+  margin-left: 0.7em;          /* Space before arrow */
+  font-size: 0.98em;           /* Slightly smaller than main icon */
+  opacity: 0.7;                /* Subtle by default */
+  transition: margin-left 0.18s;  /* Animate arrow movement */
 }
+
+/* Resource link hover and focus states */
 .resource-link:hover, .resource-link:focus {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary-dark);
-  transform: translateY(-2px) scale(1.03);
-  text-decoration: none;
+  background: var(--primary);  /* Solid brand background */
+  color: #fff;                 /* White text for contrast */
+  border-color: var(--primary-dark);  /* Darker border for definition */
+  transform: translateY(-2px) scale(1.03);  /* Lift and slightly scale */
+  text-decoration: none;       /* Ensure no underlines appear */
 }
+
+/* Arrow animation on hover/focus - moves right to indicate action */
 .resource-link:hover .fa-arrow-right, .resource-link:focus .fa-arrow-right {
-  margin-left: 1em;
-  opacity: 1;
+  margin-left: 1em;            /* Move arrow further right */
+  opacity: 1;                  /* Full opacity on interaction */
 }
+
+/* Active state for tactile feedback */
 .resource-link:active {
-  transform: scale(0.98);
+  transform: scale(0.98);      /* Slight shrink on click */
 }
+
+/* Remove any tooltip artifacts that might appear */
 .resource-link[aria-label]:after {
   /* Remove tooltip on .resource-link hover/focus */
   display: none !important;
 }
 
+/* ================================================
+   MOBILE OPTIMIZATIONS FOR RESOURCE LINKS
+   ================================================ */
+
+/* Small screen adjustments for resource links */
 @media (max-width: 600px) {
   .resource-links {
-    gap: 0.5rem;
+    gap: 0.5rem;                /* Tighter spacing on mobile */
   }
+  
   .resource-link {
-    font-size: 0.98em;
-    padding: 0.5em 1em;
+    font-size: 0.98em;          /* Slightly smaller text on mobile */
+    padding: 0.5em 1em;         /* Reduced padding for smaller screens */
   }
 }

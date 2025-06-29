@@ -1,63 +1,85 @@
-/* Theme color variables for easy updates */
+/* ================================================
+   EVENTS PAGE STYLES - IITG Coding Club
+   ================================================ */
+
+/* CSS Custom Properties (Variables) for consistent theming */
+/* This approach allows easy theme updates and maintains consistency */
 :root {
-  --primary: #00d4ff;
-  --primary-dark: #0099cc;
-  --bg-dark: #0f0f23;
-  --bg-darker: #1a1a2e;
-  --bg-darkest: #16213e;
-  --text: #fff;
-  --contrast: #222;
+  --primary: #00d4ff;        /* Main brand color - cyan blue */
+  --primary-dark: #0099cc;   /* Darker shade for gradients and hover states */
+  --bg-dark: #0f0f23;        /* Primary background - deep dark blue */
+  --bg-darker: #1a1a2e;      /* Secondary background - slightly lighter */
+  --bg-darkest: #16213e;     /* Accent background - darkest blue */
+  --text: #fff;              /* Primary text color - white */
+  --contrast: #222;          /* High contrast color for readability */
 }
 
+/* Global Reset - ensures consistent styling across browsers */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;  /* Include padding and border in element width/height */
 }
 
+/* Body - Main container styling with dark theme */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Multi-stop gradient background for visual depth */
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     color: white;
-    line-height: 1.6;
-    overflow-x: hidden;
+    line-height: 1.6;         /* Improved readability */
+    overflow-x: hidden;       /* Prevent horizontal scrollbars */
 }
 
-/* Header */
+/* ================================================
+   HEADER & NAVIGATION STYLES
+   ================================================ */
+
+/* Fixed header with glassmorphism effect */
 .header {
-  position: fixed;
+  position: fixed;           /* Stay at top during scroll */
   top: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(15, 15, 35, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;            /* Above other content */
+  background: rgba(15, 15, 35, 0.95);  /* Semi-transparent background */
+  backdrop-filter: blur(10px);          /* Glassmorphism blur effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
 }
+
+/* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  /* Logo left, links right */
   align-items: center;
   padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1200px;              /* Constrain width on large screens */
+  margin: 0 auto;                 /* Center navigation */
 }
+
+/* Logo styling with brand color */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00d4ff;
+  color: #00d4ff;              /* Brand cyan color */
   text-decoration: none;
 }
+
+/* Navigation links container */
 .nav-links {
   display: flex;
-  gap: 2rem;
-  list-style: none;
+  gap: 2rem;                   /* Space between navigation items */
+  list-style: none;           /* Remove bullet points */
 }
+
+/* Individual navigation link styling */
 .nav-links a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
-  position: relative;
+  transition: color 0.3s ease;  /* Smooth color transitions */
+  position: relative;           /* For pseudo-element positioning */
 }
+
+/* Active navigation link styling */
 .nav-links a.active {
   color: var(--primary);
   font-weight: bold;
@@ -66,211 +88,265 @@ body {
   border-radius: 8px;
   padding: 0.25em 0.5em;
 }
+
+/* Hover effects for navigation links */
 .nav-links a:hover {
   color: var(--primary);
-  background: rgba(0, 212, 255, 0.08);
+  background: rgba(0, 212, 255, 0.08);  /* Subtle background highlight */
   border-radius: 8px;
   padding: 0.25em 0.5em;
 }
+
+/* Animated underline effect using pseudo-elements */
 .nav-links a::after {
   content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
-  width: 0;
+  width: 0;                    /* Start with no width */
   height: 2px;
   background: #00d4ff;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease; /* Animate width change */
 }
+
+/* Expand underline on hover and active states */
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 100%;
+  width: 100%;                 /* Full width underline */
 }
+
+/* Search bar styling with glassmorphism */
 .search-bar {
   padding: 0.5rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;         /* Rounded pill shape */
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparent background */
   color: white;
-  outline: none;
-  transition: all 0.3s ease;
+  outline: none;               /* Remove default focus outline */
+  transition: all 0.3s ease;   /* Smooth focus transitions */
 }
+
+/* Search bar focus state */
 .search-bar:focus {
-  border-color: #00d4ff;
-  background: rgba(255, 255, 255, 0.15);
+  border-color: #00d4ff;       /* Brand color border on focus */
+  background: rgba(255, 255, 255, 0.15);  /* Slightly more opaque */
 }
 
+/* ================================================
+   LAYOUT & PAGE STRUCTURE
+   ================================================ */
+
+/* Main content container with responsive max-width */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-/* Page Header */
-.page-header {
-    padding: 120px 2rem 60px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.2);
+  max-width: 1200px;          /* Prevent content from being too wide */
+  margin: 0 auto;             /* Center container */
+  padding: 0 2rem;            /* Horizontal padding for mobile */
 }
 
+/* ================================================
+   PAGE HEADER SECTION
+   ================================================ */
+
+/* Hero section at top of events page */
+.page-header {
+    padding: 120px 2rem 60px;  /* Top padding accounts for fixed header */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);  /* Subtle overlay for text readability */
+}
+
+/* Main page title with gradient text effect */
 .page-title {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    /* Gradient text effect using background-clip */
     background: linear-gradient(135deg, #00d4ff, #0099cc);
-    -webkit-background-clip: text;
+    -webkit-background-clip: text;      /* Webkit browsers */
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background-clip: text;              /* Standard property */
 }
 
+/* Subtitle text styling */
 .page-subtitle {
     font-size: 1.2rem;
-    opacity: 0.8;
-    max-width: 600px;
-    margin: 0 auto;
+    opacity: 0.8;               /* Subtle transparency for hierarchy */
+    max-width: 600px;           /* Constrain width for readability */
+    margin: 0 auto;             /* Center text block */
 }
 
-/* Filter Tabs */
+/* ================================================
+   EVENT FILTERING INTERFACE
+   ================================================ */
+
+/* Filter tabs container with responsive layout */
 .filter-tabs {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: center;    /* Center the filter buttons */
+    gap: 1rem;                  /* Space between filter buttons */
     margin: 2rem 0;
-    flex-wrap: wrap;
+    flex-wrap: wrap;            /* Allow wrapping on smaller screens */
 }
 
+/* Individual filter button styling */
 .filter-tab {
     padding: 0.8rem 1.5rem;
-    border: 2px solid rgba(0, 212, 255, 0.3);
-    border-radius: 25px;
+    border: 2px solid rgba(0, 212, 255, 0.3);  /* Semi-transparent border */
+    border-radius: 25px;        /* Pill-shaped buttons */
     background: transparent;
     color: #00d4ff;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;  /* Smooth state transitions */
     font-size: 0.9rem;
 }
 
+/* Active and hover states for filter buttons */
 .filter-tab.active, .filter-tab:hover {
-    background: #00d4ff;
-    color: white;
-    transform: translateY(-2px);
+    background: #00d4ff;       /* Solid background when active */
+    color: white;              /* White text for contrast */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
-/* Events Grid */
+/* ================================================
+   EVENTS GRID & CARD LAYOUT
+   ================================================ */
+
+/* Events section container */
 .events-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
+/* Responsive grid layout for event cards */
 .events-grid {
     display: grid;
+    /* Auto-fit creates responsive columns that adjust to screen size */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 2rem;                  /* Space between cards */
     margin-bottom: 3rem;
 }
 
+/* Individual event card styling with glassmorphism */
 .event-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    position: relative;
+    background: rgba(255, 255, 255, 0.05);  /* Semi-transparent background */
+    border-radius: 20px;        /* Rounded corners for modern look */
+    overflow: hidden;           /* Contain child elements */
+    transition: all 0.3s ease;  /* Smooth hover animations */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
+    backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+    position: relative;         /* For absolute positioned children */
 }
 
+/* Card hover effects for interactivity */
 .event-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+    transform: translateY(-10px); /* Lift effect on hover */
+    background: rgba(255, 255, 255, 0.1);  /* Slightly more opaque */
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);  /* Glowing shadow */
 }
 
-
+/* Card content container */
 .event-content {
-    padding: 2rem;
+    padding: 2rem;              /* Internal spacing */
 }
 
+/* Event date badge styling */
 .event-date {
     display: inline-block;
-    background: rgba(0, 212, 255, 0.2);
+    background: rgba(0, 212, 255, 0.2);  /* Semi-transparent badge */
     color: #00d4ff;
     padding: 0.5rem 1rem;
-    border-radius: 15px;
+    border-radius: 15px;        /* Rounded badge */
     font-size: 0.8rem;
     margin-bottom: 1rem;
     font-weight: bold;
 }
 
+/* Event title styling */
 .event-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: white;
 }
 
+/* Event description text */
 .event-description {
-    opacity: 0.8;
+    opacity: 0.8;               /* Subtle transparency for hierarchy */
     margin-bottom: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.6;           /* Improved readability */
 }
 
+/* Event metadata container (location, time) */
 .event-meta {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;  /* Spread items across width */
     align-items: center;
     margin-bottom: 1.5rem;
 }
 
+/* Location and time text styling */
 .event-location, .event-time {
     font-size: 0.9rem;
-    opacity: 0.8;
+    opacity: 0.8;               /* Subtle styling for secondary info */
 }
 
+/* Event type badge (top-right corner) */
 .event-type {
-    position: absolute;
+    position: absolute;         /* Position relative to card */
     top: 1rem;
     right: 1rem;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);  /* Dark semi-transparent background */
     color: #00d4ff;
     padding: 0.3rem 0.8rem;
     border-radius: 10px;
     font-size: 0.8rem;
 }
 
+/* ================================================
+   BUTTON STYLES & INTERACTIVE ELEMENTS
+   ================================================ */
+
+/* Base button styling */
 .btn {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;   /* Smooth hover transitions */
     text-decoration: none;
     display: inline-block;
-    width: 100%;
+    width: 100%;                 /* Full width within container */
     text-align: center;
 }
 
+/* Primary button variant (filled) */
 .btn-primary {
     background: transparent;
     color: #00d4ff;
     border: 2px solid #00d4ff;
 }
 
+/* Outline button variant */
 .btn-outline {
     background: transparent;
     color: #00d4ff;
     border: 2px solid #00d4ff;
 }
 
+/* Button hover effects */
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    transform: translateY(-2px);  /* Lift effect */
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);  /* Glowing shadow */
 }
 
+/* Unified styling for interactive elements using CSS variables */
 .nav-links a,
 .btn,
 .footer-links a {
-  color: var(--primary);
+  color: var(--primary);        /* Use theme colors */
   background: transparent;
 }
+
+/* Unified active/hover states */
 .nav-links a.active,
 .nav-links a:hover,
 .btn-primary,
@@ -279,161 +355,223 @@ body {
   background: var(--primary);
 }
 
-/* Upcoming Events Timeline */
+/* ================================================
+   UPCOMING EVENTS TIMELINE
+   ================================================ */
+
+/* Timeline section - vertical layout showing chronological events */
 .timeline {
-    margin: 4rem 0;
+    margin: 4rem 0;              /* Generous spacing from other sections */
 }
 
+/* Timeline section title */
 .timeline-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: #00d4ff;
+    color: #00d4ff;              /* Brand color for section headers */
 }
 
+/* Timeline container - constrains width and centers content */
 .timeline-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;          /* Establishes positioning context for absolute children */
+    max-width: 800px;           /* Optimal reading width */
+    margin: 0 auto;             /* Center the timeline */
 }
 
+/* Central vertical line - visual anchor for timeline items */
 .timeline-line {
     position: absolute;
-    left: 50%;
+    left: 50%;                  /* Center horizontally */
     top: 0;
-    bottom: 0;
+    bottom: 0;                  /* Stretch full height of container */
     width: 2px;
+    /* Gradient line adds visual interest */
     background: linear-gradient(to bottom, #00d4ff, #0099cc);
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Perfect centering (account for line width) */
 }
 
+/* Individual timeline item container */
 .timeline-item {
-    position: relative;
-    margin: 2rem 0;
+    position: relative;          /* For absolute positioning of dot */
+    margin: 2rem 0;             /* Vertical spacing between items */
     display: flex;
-    align-items: center;
+    align-items: center;        /* Vertically center content */
 }
 
+/* Timeline content cards with glassmorphism effect */
 .timeline-content {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);  /* Semi-transparent white */
+    border-radius: 15px;        /* Rounded corners for modern look */
     padding: 1.5rem;
-    width: 45%;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 45%;                 /* Half width minus gap for center line */
+    backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
+    /* Box shadow would be added here for depth if needed */
 }
 
+/* Alternating layout - odd items align to left side */
 .timeline-item:nth-child(odd) .timeline-content {
-    margin-right: auto;
+    margin-right: auto;         /* Push to left side, leaving right space */
 }
 
+/* Even items align to right side for zigzag pattern */
 .timeline-item:nth-child(even) .timeline-content {
-    margin-left: auto;
+    margin-left: auto;          /* Push to right side, leaving left space */
 }
 
+/* Timeline dots - visual markers on the central line */
 .timeline-dot {
     position: absolute;
-    left: 50%;
+    left: 50%;                  /* Center on timeline line */
     width: 20px;
     height: 20px;
-    background: #00d4ff;
-    border-radius: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+    background: #00d4ff;        /* Brand color for emphasis */
+    border-radius: 50%;         /* Perfect circle */
+    transform: translateX(-50%); /* Perfect centering */
+    z-index: 1;                 /* Above timeline line */
+    /* Could add box-shadow for depth: box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); */
 }
 
-        /* Footer */
+/* ================================================
+   FOOTER SECTION
+   ================================================ */
+
+/* Footer container with glassmorphism background */
 .footer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 3rem 2rem 1rem;
+    background: rgba(0, 0, 0, 0.3);    /* Dark semi-transparent overlay */
+    padding: 3rem 2rem 1rem;           /* Generous padding with less bottom space */
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle separator line */
+    margin-top: 4rem;                  /* Space from main content */
 }
 
+/* Footer navigation links container */
 .footer-links {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+    justify-content: center;           /* Center the links horizontally */
+    gap: 2rem;                        /* Space between footer links */
+    margin-bottom: 2rem;              /* Space before copyright/additional content */
+    flex-wrap: wrap;                  /* Allow wrapping on smaller screens */
 }
 
+/* Individual footer link styling */
 .footer-links a {
-    color: #00d4ff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: #00d4ff;                   /* Brand color for links */
+    text-decoration: none;            /* Remove underlines */
+    transition: color 0.3s ease;      /* Smooth color transitions */
+    /* Could add hover effects like: 
+       padding, background, border-radius for pill-shaped hover states */
 }
 
+/* Footer link hover state */
 .footer-links a:hover {
-    color: white;
+    color: white;                     /* White text on hover for contrast */
+    /* Additional hover effects could include:
+       background: rgba(0, 212, 255, 0.1);
+       padding: 0.5rem 1rem;
+       border-radius: 20px; */
 }
 
-/* Particles */
+/* ================================================
+   BACKGROUND PARTICLE SYSTEM
+   ================================================ */
+
+/* Particle container - fixed overlay covering entire viewport */
 .particles {
-    position: fixed;
+    position: fixed;                  /* Fixed to viewport, not page scroll */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
+    width: 100%;                     /* Full viewport width */
+    height: 100%;                    /* Full viewport height */
+    pointer-events: none;            /* Don't interfere with page interactions */
+    z-index: -1;                     /* Behind all other content */
 }
 
+/* Individual particle styling */
 .particle {
-    position: absolute;
-    width: 2px;
+    position: absolute;              /* Absolute positioning for animation control */
+    width: 2px;                     /* Small dot size */
     height: 2px;
-    background: #00d4ff;
-    opacity: 0.5;
-    animation: float 6s infinite linear;
+    background: #00d4ff;            /* Brand color particles */
+    opacity: 0.5;                   /* Semi-transparent for subtle effect */
+    animation: float 6s infinite linear;  /* Continuous floating animation */
+    /* Particles are dynamically positioned via JavaScript */
 }
 
+/* Particle floating animation - creates upward movement with rotation */
 @keyframes float {
     0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
+        transform: translateY(100vh) rotate(0deg);  /* Start below viewport */
+        opacity: 0;                                 /* Fade in */
     }
     10% {
-        opacity: 0.5;
+        opacity: 0.5;                              /* Reach full opacity */
     }
     90% {
-        opacity: 0.5;
+        opacity: 0.5;                              /* Maintain opacity */
     }
     100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
+        transform: translateY(-10vh) rotate(360deg); /* End above viewport with full rotation */
+        opacity: 0;                                  /* Fade out */
     }
 }
 
-/* Responsive */
+/* ================================================
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATION
+   ================================================ */
+
+/* Tablet and mobile breakpoint - screens smaller than 768px */
 @media (max-width: 768px) {
+    /* Hide navigation links on mobile - would typically show hamburger menu */
     .nav-links {
         display: none;
+        /* In a full implementation, this would be replaced with:
+           - Hamburger menu button
+           - Slide-out or dropdown navigation
+           - Touch-friendly larger tap targets */
     }
 
+    /* Reduce title size for mobile screens */
     .page-title {
-        font-size: 2.5rem;
+        font-size: 2.5rem;              /* Smaller than desktop 3.5rem */
+        /* Could also adjust line-height and margin for better mobile spacing */
     }
 
+    /* Single column layout for event cards on mobile */
     .events-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;     /* Force single column */
+        /* gap remains the same for consistent spacing */
     }
 
+    /* Mobile timeline layout adjustments */
     .timeline-content {
-        width: 90%;
+        width: 90%;                     /* Wider cards on mobile */
+        /* Leave space for timeline line and dots */
     }
 
+    /* Simplify timeline layout - all items align left */
     .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 0;
-        margin-right: auto;
+        margin-left: 0;                 /* Override alternating layout */
+        margin-right: auto;             /* Align all items to left */
     }
 
+    /* Move timeline line to left edge instead of center */
     .timeline-line {
-        left: 20px;
+        left: 20px;                     /* Fixed position from left edge */
+        /* transform: translateX(-50%) is no longer needed */
     }
 
+    /* Move timeline dots to match new line position */
     .timeline-dot {
-        left: 20px;
+        left: 20px;                     /* Match timeline line position */
+        /* transform: translateX(-50%) centers dot on line */
     }
 }
+
+/* Additional mobile optimizations that could be added:
+   - Larger touch targets for buttons (min 44px)
+   - Adjusted font sizes for readability
+   - Modified spacing for better mobile UX
+   - Touch gesture support
+   - Optimized images and reduced motion for performance */
