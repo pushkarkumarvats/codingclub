@@ -5,7 +5,7 @@ Welcome to the official repository for the IITG ODP Coding Club website. This pr
 ---
 
 ## 🚀 Project Overview
-- **Purpose:** Showcase club activities, events, resources, and team members for the IITG Coding Club.
+- **Purpose:** Showcase club activities, events, resources, and team members for the IITG ODP Coding Club.
 - **Features:**
   - Modern dark-themed design
   - Fully responsive and mobile-first
