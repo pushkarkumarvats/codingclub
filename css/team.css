@@ -1,17 +1,17 @@
 /* =====================================================
-   TEAM PAGE STYLES - IITG CODING CLUB
+   TEAM PAGE STYLES - IITG ODP CODING CLUB
    ===================================================== */
 
 /* CSS Custom Properties (Variables) for consistent theming
    These variables allow easy theme updates across the entire page */
 :root {
-  --primary: #00d4ff;        /* Main brand color - bright cyan */
-  --primary-dark: #0099cc;   /* Darker shade for gradients and hover states */
-  --bg-dark: #0f0f23;        /* Primary background - deep dark blue */
-  --bg-darker: #1a1a2e;      /* Secondary background - slightly lighter */
-  --bg-darkest: #16213e;     /* Tertiary background - for depth */
-  --text: #fff;              /* Primary text color - white */
-  --contrast: #222;          /* High contrast color for overlays */
+  --primary: #00d4ff; /* Main brand color - bright cyan */
+  --primary-dark: #0099cc; /* Darker shade for gradients and hover states */
+  --bg-dark: #0f0f23; /* Primary background - deep dark blue */
+  --bg-darker: #1a1a2e; /* Secondary background - slightly lighter */
+  --bg-darkest: #16213e; /* Tertiary background - for depth */
+  --text: #fff; /* Primary text color - white */
+  --contrast: #222; /* High contrast color for overlays */
 }
 
 /* ================================================
@@ -20,9 +20,9 @@
 
 /* Global reset for consistent cross-browser rendering */
 * {
-  margin: 0;                 /* Remove default margins */
-  padding: 0;                /* Remove default padding */
-  box-sizing: border-box;    /* Include padding and border in element's total width/height */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
 
 /* Body styling with dark theme and gradient background */
@@ -30,9 +30,9 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font stack */
   /* Multi-stop gradient creating depth and visual interest */
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  color: white;              /* Primary text color */
-  line-height: 1.6;          /* Improved readability with proper line spacing */
-  overflow-x: hidden;        /* Prevent horizontal scrolling on mobile */
+  color: white; /* Primary text color */
+  line-height: 1.6; /* Improved readability with proper line spacing */
+  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
 }
 /* ================================================
    HEADER & NAVIGATION SYSTEM
@@ -40,99 +40,99 @@ body {
 
 /* Fixed header with glassmorphism effect */
 .header {
-  position: fixed;              /* Stay at top during scroll */
+  position: fixed; /* Stay at top during scroll */
   top: 0;
   width: 100%;
-  z-index: 1000;               /* Ensure header stays above other content */
-  background: rgba(15, 15, 35, 0.95);  /* Semi-transparent dark background */
-  backdrop-filter: blur(10px);  /* Glassmorphism blur effect for modern look */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle separator */
+  z-index: 1000; /* Ensure header stays above other content */
+  background: rgba(15, 15, 35, 0.95); /* Semi-transparent dark background */
+  backdrop-filter: blur(10px); /* Glassmorphism blur effect for modern look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
 }
 
 /* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between;  /* Logo left, navigation right */
-  align-items: center;          /* Vertically center items */
-  padding: 1rem 2rem;           /* Internal spacing */
-  max-width: 1200px;            /* Constrain width on large screens */
-  margin: 0 auto;               /* Center navigation container */
+  justify-content: space-between; /* Logo left, navigation right */
+  align-items: center; /* Vertically center items */
+  padding: 1rem 2rem; /* Internal spacing */
+  max-width: 1200px; /* Constrain width on large screens */
+  margin: 0 auto; /* Center navigation container */
 }
 
 /* Logo styling with brand color */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00d4ff;              /* Brand cyan color */
-  text-decoration: none;        /* Remove underline from link */
+  color: #00d4ff; /* Brand cyan color */
+  text-decoration: none; /* Remove underline from link */
 }
 
 /* Navigation links container with flexbox */
 .nav-links {
   display: flex;
-  gap: 2rem;                   /* Space between navigation items */
-  list-style: none;            /* Remove bullet points from list */
+  gap: 2rem; /* Space between navigation items */
+  list-style: none; /* Remove bullet points from list */
 }
 
 /* Base navigation link styling */
 .nav-links a {
-  color: white;                /* Default text color */
-  text-decoration: none;       /* Remove underlines */
+  color: white; /* Default text color */
+  text-decoration: none; /* Remove underlines */
   transition: color 0.3s ease; /* Smooth color transitions on hover */
-  position: relative;          /* Required for pseudo-element positioning */
+  position: relative; /* Required for pseudo-element positioning */
 }
 
 /* Active navigation link styling - highlights current page */
 .nav-links a.active {
-  color: var(--primary);       /* Brand color for active state */
-  font-weight: bold;           /* Emphasize active link */
-  background: var(--primary);  /* Background highlight */
-  color: var(--text);          /* Text color override */
-  border-radius: 8px;          /* Rounded corners */
-  padding: 0.25em 0.5em;       /* Pill-shaped padding */
+  color: var(--primary); /* Brand color for active state */
+  font-weight: bold; /* Emphasize active link */
+  background: var(--primary); /* Background highlight */
+  color: var(--text); /* Text color override */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0.25em 0.5em; /* Pill-shaped padding */
 }
 
 /* Navigation link hover effects */
 .nav-links a:hover {
-  color: var(--primary);       /* Brand color on hover */
-  background: rgba(0, 212, 255, 0.08);  /* Subtle background highlight */
-  border-radius: 8px;          /* Rounded hover state */
-  padding: 0.25em 0.5em;       /* Consistent padding with active state */
+  color: var(--primary); /* Brand color on hover */
+  background: rgba(0, 212, 255, 0.08); /* Subtle background highlight */
+  border-radius: 8px; /* Rounded hover state */
+  padding: 0.25em 0.5em; /* Consistent padding with active state */
 }
 
 /* Animated underline effect using pseudo-elements */
 .nav-links a::after {
-  content: "";                 /* Required for pseudo-element */
-  position: absolute;          /* Position relative to parent link */
-  bottom: -5px;                /* Below the text */
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position relative to parent link */
+  bottom: -5px; /* Below the text */
   left: 0;
-  width: 0;                    /* Start with no width */
-  height: 2px;                 /* Thin underline */
-  background: #00d4ff;         /* Brand color underline */
+  width: 0; /* Start with no width */
+  height: 2px; /* Thin underline */
+  background: #00d4ff; /* Brand color underline */
   transition: width 0.3s ease; /* Animate width change */
 }
 
 /* Expand underline on hover and active states */
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 100%;                 /* Full width underline */
+  width: 100%; /* Full width underline */
 }
 
 /* Search bar styling with glassmorphism effect */
 .search-bar {
-  padding: 0.5rem 1rem;        /* Internal spacing */
-  border: 1px solid rgba(255, 255, 255, 0.2);  /* Semi-transparent border */
-  border-radius: 25px;         /* Pill-shaped input */
-  background: rgba(255, 255, 255, 0.1);  /* Glassmorphism background */
-  color: white;                /* Text color */
-  outline: none;               /* Remove default focus outline */
-  transition: all 0.3s ease;   /* Smooth focus transitions */
+  padding: 0.5rem 1rem; /* Internal spacing */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+  border-radius: 25px; /* Pill-shaped input */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism background */
+  color: white; /* Text color */
+  outline: none; /* Remove default focus outline */
+  transition: all 0.3s ease; /* Smooth focus transitions */
 }
 
 /* Search bar focus state */
 .search-bar:focus {
-  border-color: #00d4ff;       /* Brand color border on focus */
-  background: rgba(255, 255, 255, 0.15);  /* Slightly more opaque on focus */
+  border-color: #00d4ff; /* Brand color border on focus */
+  background: rgba(255, 255, 255, 0.15); /* Slightly more opaque on focus */
 }
 
 /* ================================================
@@ -141,9 +141,9 @@ body {
 
 /* Main content container with responsive max-width */
 .container {
-  max-width: 1200px;           /* Optimal reading width */
-  margin: 0 auto;              /* Center container */
-  padding: 0 2rem;             /* Horizontal padding for content */
+  max-width: 1200px; /* Optimal reading width */
+  margin: 0 auto; /* Center container */
+  padding: 0 2rem; /* Horizontal padding for content */
 }
 
 /* ================================================
@@ -152,76 +152,76 @@ body {
 
 /* Hero section with split-screen layout */
 .hero {
-  padding-top: 140px;          /* Account for fixed header height */
-  padding-bottom: 80px;        /* Bottom spacing */
-  display: grid;               /* CSS Grid for layout */
-  grid-template-columns: 1fr 1fr;  /* Two equal columns */
-  gap: 4rem;                   /* Space between content and visual */
-  align-items: center;         /* Vertically center content */
-  min-height: 80vh;            /* Minimum viewport height for impact */
+  padding-top: 140px; /* Account for fixed header height */
+  padding-bottom: 80px; /* Bottom spacing */
+  display: grid; /* CSS Grid for layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 4rem; /* Space between content and visual */
+  align-items: center; /* Vertically center content */
+  min-height: 80vh; /* Minimum viewport height for impact */
 }
 
 /* Hero content text styling */
 .hero-content h1 {
-  font-size: 3.5rem;           /* Large impact font size */
-  margin-bottom: 1rem;         /* Space below heading */
-  line-height: 1.2;            /* Tight line spacing for headings */
-  min-height: 4.5em;           /* Reserve space for typewriter animation */
-  display: block;              /* Block-level for consistent layout */
+  font-size: 3.5rem; /* Large impact font size */
+  margin-bottom: 1rem; /* Space below heading */
+  line-height: 1.2; /* Tight line spacing for headings */
+  min-height: 4.5em; /* Reserve space for typewriter animation */
+  display: block; /* Block-level for consistent layout */
 }
 
 /* Gradient text effect for highlighted words */
 .hero-content .highlight {
   /* Create gradient background that will be clipped to text */
   background: linear-gradient(135deg, #00d4ff, #0099cc);
-  -webkit-background-clip: text;      /* Webkit-specific property */
-  -webkit-text-fill-color: transparent;  /* Make text transparent to show background */
-  background-clip: text;              /* Standard property for future compatibility */
+  -webkit-background-clip: text; /* Webkit-specific property */
+  -webkit-text-fill-color: transparent; /* Make text transparent to show background */
+  background-clip: text; /* Standard property for future compatibility */
 }
 
 /* Hero description paragraph */
 .hero-content p {
-  font-size: 1.2rem;           /* Slightly larger than body text */
-  margin-bottom: 2rem;         /* Space before call-to-action buttons */
-  opacity: 0.9;                /* Subtle transparency for hierarchy */
-  max-width: 500px;            /* Constrain width for readability */
+  font-size: 1.2rem; /* Slightly larger than body text */
+  margin-bottom: 2rem; /* Space before call-to-action buttons */
+  opacity: 0.9; /* Subtle transparency for hierarchy */
+  max-width: 500px; /* Constrain width for readability */
 }
 
 /* Call-to-action buttons container */
 .cta-buttons {
-  display: flex;               /* Horizontal layout for buttons */
-  gap: 1rem;                   /* Space between buttons */
+  display: flex; /* Horizontal layout for buttons */
+  gap: 1rem; /* Space between buttons */
 }
 
 /* Base button styling */
 .btn {
-  padding: 12px 24px;          /* Comfortable click target size */
-  border: none;                /* Remove default button border */
-  border-radius: 8px;          /* Rounded corners */
-  cursor: pointer;             /* Pointer cursor for interactivity */
-  font-size: 1rem;             /* Readable font size */
-  transition: all 0.3s ease;   /* Smooth hover animations */
-  text-decoration: none;       /* Remove underlines from links styled as buttons */
-  display: inline-block;       /* Allow width/height while staying inline */
+  padding: 12px 24px; /* Comfortable click target size */
+  border: none; /* Remove default button border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  font-size: 1rem; /* Readable font size */
+  transition: all 0.3s ease; /* Smooth hover animations */
+  text-decoration: none; /* Remove underlines from links styled as buttons */
+  display: inline-block; /* Allow width/height while staying inline */
 }
 
 /* Primary button with gradient background */
 .btn-primary {
-  background: linear-gradient(135deg, #00d4ff, #0099cc);  /* Brand gradient */
-  color: white;                /* White text for contrast */
+  background: linear-gradient(135deg, #00d4ff, #0099cc); /* Brand gradient */
+  color: white; /* White text for contrast */
 }
 
 /* Secondary button with outline style */
 .btn-secondary {
-  background: transparent;     /* No background fill */
-  color: #00d4ff;             /* Brand color text */
-  border: 2px solid #00d4ff;  /* Brand color border */
+  background: transparent; /* No background fill */
+  color: #00d4ff; /* Brand color text */
+  border: 2px solid #00d4ff; /* Brand color border */
 }
 
 /* Button hover effects */
 .btn:hover {
   transform: translateY(-2px); /* Subtle lift effect */
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);  /* Glowing shadow */
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); /* Glowing shadow */
 }
 
 /* ================================================
@@ -231,13 +231,13 @@ body {
 /* Container for 3D visual element */
 .hero-visual {
   display: flex;
-  align-items: center;         /* Vertically center cube */
-  justify-content: center;     /* Horizontally center cube */
-  height: 350px;               /* Fixed height for consistent layout */
-  background: rgba(0, 212, 255, 0.05);  /* Subtle background tint */
-  border: 1px solid rgba(0, 212, 255, 0.1);  /* Subtle border */
-  border-radius: 15px;         /* Rounded container */
-  perspective: 1000px;         /* 3D perspective for child elements - crucial for 3D effect */
+  align-items: center; /* Vertically center cube */
+  justify-content: center; /* Horizontally center cube */
+  height: 350px; /* Fixed height for consistent layout */
+  background: rgba(0, 212, 255, 0.05); /* Subtle background tint */
+  border: 1px solid rgba(0, 212, 255, 0.1); /* Subtle border */
+  border-radius: 15px; /* Rounded container */
+  perspective: 1000px; /* 3D perspective for child elements - crucial for 3D effect */
 }
 
 /* ================================================
@@ -246,68 +246,68 @@ body {
 
 /* 3D Cube container with transform-style preservation */
 .cube {
-  width: 200px;                /* Cube dimensions */
+  width: 200px; /* Cube dimensions */
   height: 200px;
-  position: relative;          /* Positioning context for faces */
+  position: relative; /* Positioning context for faces */
   transform-style: preserve-3d; /* CRITICAL: Preserves 3D positioning of child elements */
-  animation: rotate-cube 20s infinite linear;  /* Continuous rotation animation */
+  animation: rotate-cube 20s infinite linear; /* Continuous rotation animation */
 }
 
 /* Keyframe animation for smooth 3D rotation */
 @keyframes rotate-cube {
   from {
-    transform: rotateX(0) rotateY(0);    /* Start position */
+    transform: rotateX(0) rotateY(0); /* Start position */
   }
   to {
-    transform: rotateX(360deg) rotateY(360deg);  /* Full rotation on both axes */
+    transform: rotateX(360deg) rotateY(360deg); /* Full rotation on both axes */
   }
 }
 
 /* Individual cube face styling - each face is positioned in 3D space */
 .face {
-  position: absolute;          /* Absolute positioning for 3D transforms */
-  width: 200px;                /* Match cube dimensions */
+  position: absolute; /* Absolute positioning for 3D transforms */
+  width: 200px; /* Match cube dimensions */
   height: 200px;
-  border: 2px solid #00d4ff;   /* Brand color borders */
-  background: rgba(0, 212, 255, 0.1);  /* Semi-transparent fill */
-  backdrop-filter: blur(5px);  /* Glassmorphism effect */
-  display: flex;               /* Center content within each face */
+  border: 2px solid #00d4ff; /* Brand color borders */
+  background: rgba(0, 212, 255, 0.1); /* Semi-transparent fill */
+  backdrop-filter: blur(5px); /* Glassmorphism effect */
+  display: flex; /* Center content within each face */
   align-items: center;
   justify-content: center;
 }
 
 /* Images within cube faces */
 .face img {
-  width: 100px;                /* Consistent image size */
+  width: 100px; /* Consistent image size */
   height: 100px;
-  filter: grayscale(1) brightness(2);  /* Stylized monochrome effect */
+  filter: grayscale(1) brightness(2); /* Stylized monochrome effect */
 }
 
 /* 3D Positioning for each cube face using CSS transforms */
 /* Each face is rotated and translated to form a cube shape */
 
 .front {
-  transform: rotateY(0deg) translateZ(100px);    /* Front face - no rotation, moved forward */
+  transform: rotateY(0deg) translateZ(100px); /* Front face - no rotation, moved forward */
 }
 
 .back {
-  transform: rotateY(180deg) translateZ(100px);  /* Back face - 180° rotation, moved forward */
+  transform: rotateY(180deg) translateZ(100px); /* Back face - 180° rotation, moved forward */
 }
 
 .right {
-  transform: rotateY(90deg) translateZ(100px);   /* Right face - 90° rotation, moved forward */
+  transform: rotateY(90deg) translateZ(100px); /* Right face - 90° rotation, moved forward */
 }
 
 .left {
-  transform: rotateY(-90deg) translateZ(100px);  /* Left face - -90° rotation, moved forward */
+  transform: rotateY(-90deg) translateZ(100px); /* Left face - -90° rotation, moved forward */
 }
 
 .top {
-  transform: rotateX(90deg) translateZ(100px);   /* Top face - X-axis rotation, moved forward */
+  transform: rotateX(90deg) translateZ(100px); /* Top face - X-axis rotation, moved forward */
 }
 
 .bottom {
-  transform: rotateX(-90deg) translateZ(100px);  /* Bottom face - negative X-axis rotation */
+  transform: rotateX(-90deg) translateZ(100px); /* Bottom face - negative X-axis rotation */
 }
 
 /* ================================================
@@ -315,41 +315,41 @@ body {
    ================================================ */
 /* Section containers with consistent vertical spacing */
 .section {
-  padding: 4rem 0;             /* Generous vertical spacing between sections */
+  padding: 4rem 0; /* Generous vertical spacing between sections */
 }
 
 /* Section header with flex layout for title and "view more" link */
 .section-header {
   display: flex;
-  justify-content: space-between;  /* Title left, link right */
-  align-items: center;         /* Vertically align items */
-  margin-bottom: 2rem;         /* Space before content */
+  justify-content: space-between; /* Title left, link right */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 2rem; /* Space before content */
 }
 
 /* Section title styling */
 .section-title {
-  font-size: 2rem;             /* Prominent section headings */
+  font-size: 2rem; /* Prominent section headings */
 }
 
 /* "View More" link with animated underline */
 .view-more {
-  color: #00d4ff;             /* Brand color */
-  text-decoration: none;       /* Remove default underline */
-  font-weight: bold;           /* Emphasize link */
-  border-bottom: 2px solid transparent;  /* Hidden underline initially */
-  transition: border-color 0.3s;  /* Smooth underline animation */
+  color: #00d4ff; /* Brand color */
+  text-decoration: none; /* Remove default underline */
+  font-weight: bold; /* Emphasize link */
+  border-bottom: 2px solid transparent; /* Hidden underline initially */
+  transition: border-color 0.3s; /* Smooth underline animation */
 }
 
 /* Show underline on hover */
 .view-more:hover {
-  border-color: #00d4ff;      /* Brand color underline */
+  border-color: #00d4ff; /* Brand color underline */
 }
 
 /* Responsive grid layout for team member cards */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns by default */
-  gap: 2rem;                  /* Space between cards */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns by default */
+  gap: 2rem; /* Space between cards */
 }
 
 /* ================================================
@@ -358,43 +358,43 @@ body {
 
 /* Team member card container with animated border effect */
 .card {
-  position: relative;          /* Positioning context for pseudo-elements */
-  padding: 2px;               /* Space for animated border */
-  border-radius: 15px;        /* Rounded corners */
-  overflow: hidden;           /* Contain animated elements */
-  background: transparent;     /* No default background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth hover effects */
+  position: relative; /* Positioning context for pseudo-elements */
+  padding: 2px; /* Space for animated border */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Contain animated elements */
+  background: transparent; /* No default background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
 /* Animated rotating border using pseudo-element and conic gradient */
 .card::before {
-  content: "";                 /* Required for pseudo-element */
-  position: absolute;          /* Position relative to card */
-  top: 50%;                   /* Center vertically */
-  left: 50%;                  /* Center horizontally */
-  width: 200%;                /* Larger than card for rotation effect */
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position relative to card */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 200%; /* Larger than card for rotation effect */
   height: 200%;
   /* Conic gradient creates a spinning light effect */
   background: conic-gradient(
-    from 0deg at 50% 50%,     /* Start angle and center point */
-    #00d4ff,                 /* Brand color segments */
-    transparent,             /* Transparent segments create gaps */
-    transparent,
+    from 0deg at 50% 50%,
+    /* Start angle and center point */ #00d4ff,
+    /* Brand color segments */ transparent,
+    /* Transparent segments create gaps */ transparent,
     #00d4ff
   );
-  transform: translate(-50%, -50%);  /* Perfect centering */
-  animation: spin 4s linear infinite;  /* Continuous rotation */
-  opacity: 0;                 /* Hidden by default */
-  transition: opacity 0.3s ease;  /* Smooth fade in/out */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  animation: spin 4s linear infinite; /* Continuous rotation */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade in/out */
 }
 
 /* Keyframe animation for border rotation */
 @keyframes spin {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);    /* Start position */
+    transform: translate(-50%, -50%) rotate(0deg); /* Start position */
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg);  /* Full rotation */
+    transform: translate(-50%, -50%) rotate(360deg); /* Full rotation */
   }
 }
 
@@ -403,18 +403,18 @@ body {
   /* Multi-stop gradient background for depth */
   background: linear-gradient(
     145deg,
-    rgba(26, 26, 46, 0.9),    /* Lighter dark blue */
-    rgba(15, 15, 35, 0.9)     /* Darker blue */
+    rgba(26, 26, 46, 0.9),
+    /* Lighter dark blue */ rgba(15, 15, 35, 0.9) /* Darker blue */
   );
   backdrop-filter: blur(10px); /* Glassmorphism blur effect */
-  border-radius: 14px;        /* Slightly smaller radius than container */
-  padding: 2rem;              /* Internal spacing */
-  height: 100%;               /* Fill container height */
-  position: relative;         /* Above animated border */
-  z-index: 1;                 /* Ensure content stays above border animation */
-  display: flex;              /* Vertical layout for team member info */
-  flex-direction: column;     /* Stack elements vertically */
-  align-items: center;        /* Center content horizontally */
+  border-radius: 14px; /* Slightly smaller radius than container */
+  padding: 2rem; /* Internal spacing */
+  height: 100%; /* Fill container height */
+  position: relative; /* Above animated border */
+  z-index: 1; /* Ensure content stays above border animation */
+  display: flex; /* Vertical layout for team member info */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 /* Card hover effects */
@@ -424,19 +424,19 @@ body {
 
 /* Show animated border on hover */
 .card:hover::before {
-  opacity: 1;                 /* Fade in the rotating border */
+  opacity: 1; /* Fade in the rotating border */
 }
 
 /* Team member name styling */
 .card h3 {
-  color: #00d4ff;            /* Brand color for names */
-  margin-bottom: 1rem;        /* Space below name */
-  font-size: 1.3rem;          /* Slightly larger than body text */
+  color: #00d4ff; /* Brand color for names */
+  margin-bottom: 1rem; /* Space below name */
+  font-size: 1.3rem; /* Slightly larger than body text */
 }
 
 /* Team member role/position styling */
 .card small {
-  opacity: 0.7;               /* Subtle styling for role text */
+  opacity: 0.7; /* Subtle styling for role text */
 }
 
 /* ================================================
@@ -445,19 +445,22 @@ body {
 
 /* Circular avatar with brand color background */
 .avatar {
-  width: 80px;                /* Avatar dimensions */
+  width: 80px; /* Avatar dimensions */
   height: 80px;
-  border-radius: 50%;         /* Perfect circle */
-  background: var(--primary, #00d4ff);    /* Brand color background with fallback */
-  color: var(--bg-darkest, #16213e);      /* Dark text for contrast */
-  display: flex;              /* Center initials within avatar */
-  align-items: center;        /* Vertically center */
-  justify-content: center;    /* Horizontally center */
-  font-size: 2rem;            /* Large font for initials */
-  font-weight: bold;          /* Bold weight for emphasis */
-  margin-bottom: 1rem;        /* Space below avatar */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);  /* Subtle shadow for depth */
-  letter-spacing: 1px;        /* Slight letter spacing for readability */
+  border-radius: 50%; /* Perfect circle */
+  background: var(
+    --primary,
+    #00d4ff
+  ); /* Brand color background with fallback */
+  color: var(--bg-darkest, #16213e); /* Dark text for contrast */
+  display: flex; /* Center initials within avatar */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  font-size: 2rem; /* Large font for initials */
+  font-weight: bold; /* Bold weight for emphasis */
+  margin-bottom: 1rem; /* Space below avatar */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); /* Subtle shadow for depth */
+  letter-spacing: 1px; /* Slight letter spacing for readability */
 }
 
 /* ================================================
@@ -466,30 +469,30 @@ body {
 
 /* Container for social media icons */
 .social-icons {
-  display: flex;              /* Horizontal layout for icons */
-  justify-content: center;    /* Center icon group */
-  align-items: center;        /* Vertically align icons */
-  gap: 1.2rem;               /* Space between individual icons */
-  margin-top: 1.2rem;        /* Space above social icons */
+  display: flex; /* Horizontal layout for icons */
+  justify-content: center; /* Center icon group */
+  align-items: center; /* Vertically align icons */
+  gap: 1.2rem; /* Space between individual icons */
+  margin-top: 1.2rem; /* Space above social icons */
 }
 
 /* Individual social media link styling */
 .social-icons a {
-  color: var(--primary, #00d4ff);         /* Brand color with fallback */
-  font-size: 1.5rem;          /* Large enough for easy clicking */
+  color: var(--primary, #00d4ff); /* Brand color with fallback */
+  font-size: 1.5rem; /* Large enough for easy clicking */
   transition: color 0.2s, transform 0.2s; /* Fast, responsive transitions */
-  display: flex;              /* Center icon within link */
+  display: flex; /* Center icon within link */
   align-items: center;
   justify-content: center;
-  text-decoration: none;      /* Remove underlines */
+  text-decoration: none; /* Remove underlines */
 }
 
 /* Social icon hover and focus effects */
 .social-icons a:hover,
 .social-icons a:focus {
-  color: var(--primary-dark, #0099cc);    /* Darker brand shade */
-  transform: scale(1.15);     /* Slight zoom effect */
-  text-decoration: none;      /* Ensure no underlines appear */
+  color: var(--primary-dark, #0099cc); /* Darker brand shade */
+  transform: scale(1.15); /* Slight zoom effect */
+  text-decoration: none; /* Ensure no underlines appear */
 }
 
 /* ================================================
@@ -498,51 +501,59 @@ body {
 
 /* Testimonials section with auto-scrolling animation */
 .testimonials {
-  padding: 4rem 0;             /* Section spacing */
-  background: rgba(0, 0, 0, 0.1);  /* Subtle background differentiation */
-  overflow: hidden;            /* Hide scrolling content outside bounds */
+  padding: 4rem 0; /* Section spacing */
+  background: rgba(0, 0, 0, 0.1); /* Subtle background differentiation */
+  overflow: hidden; /* Hide scrolling content outside bounds */
 }
 
 /* Testimonial slider container */
 .testimonial-slider {
-  width: 100%;                 /* Full width container */
-  position: relative;          /* Positioning context for fade overlays */
+  width: 100%; /* Full width container */
+  position: relative; /* Positioning context for fade overlays */
 }
 
 /* Fade overlay effects using pseudo-elements */
 .testimonial-slider::before,
 .testimonial-slider::after {
-  content: "";                 /* Required for pseudo-elements */
-  position: absolute;          /* Position over slider content */
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position over slider content */
   top: 0;
-  width: 200px;               /* Width of fade effect */
-  height: 100%;               /* Full height of slider */
-  z-index: 2;                 /* Above slider content */
+  width: 200px; /* Width of fade effect */
+  height: 100%; /* Full height of slider */
+  z-index: 2; /* Above slider content */
 }
 
 /* Left fade overlay - creates seamless infinite scroll illusion */
 .testimonial-slider::before {
-  left: 0;                    /* Position at left edge */
-  background: linear-gradient(to right, #1a1a2e, transparent);  /* Fade from solid to transparent */
+  left: 0; /* Position at left edge */
+  background: linear-gradient(
+    to right,
+    #1a1a2e,
+    transparent
+  ); /* Fade from solid to transparent */
 }
 
 /* Right fade overlay - matches left side */
 .testimonial-slider::after {
-  right: 0;                   /* Position at right edge */
-  background: linear-gradient(to left, #1a1a2e, transparent);   /* Fade from solid to transparent */
+  right: 0; /* Position at right edge */
+  background: linear-gradient(
+    to left,
+    #1a1a2e,
+    transparent
+  ); /* Fade from solid to transparent */
 }
 
 /* Testimonial track - contains all testimonial cards */
 .testimonial-track {
-  display: flex;              /* Horizontal layout for cards */
-  width: calc(290px * 8);     /* Total width: card width × number of cards */
-  animation: scroll-left 40s linear infinite;  /* Continuous left scroll animation */
+  display: flex; /* Horizontal layout for cards */
+  width: calc(290px * 8); /* Total width: card width × number of cards */
+  animation: scroll-left 40s linear infinite; /* Continuous left scroll animation */
 }
 
 /* Keyframe animation for infinite horizontal scrolling */
 @keyframes scroll-left {
   from {
-    transform: translateX(0);    /* Start at original position */
+    transform: translateX(0); /* Start at original position */
   }
   to {
     transform: translateX(-50%); /* Move left by half width for seamless loop */
@@ -551,35 +562,35 @@ body {
 
 /* Individual testimonial card styling */
 .testimonial {
-  width: 250px;               /* Fixed card width */
-  margin: 0 20px;             /* Horizontal spacing between cards */
-  background: rgba(255, 255, 255, 0.05);  /* Glassmorphism background */
-  border-radius: 15px;        /* Rounded corners */
-  padding: 1.5rem;            /* Internal spacing */
-  flex-shrink: 0;             /* Prevent cards from shrinking */
-  border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
+  width: 250px; /* Fixed card width */
+  margin: 0 20px; /* Horizontal spacing between cards */
+  background: rgba(255, 255, 255, 0.05); /* Glassmorphism background */
+  border-radius: 15px; /* Rounded corners */
+  padding: 1.5rem; /* Internal spacing */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
 }
 
 /* Testimonial header with avatar and name */
 .testimonial-header {
-  display: flex;              /* Horizontal layout for avatar and text */
-  align-items: center;        /* Vertically center items */
-  margin-bottom: 1rem;        /* Space before testimonial text */
+  display: flex; /* Horizontal layout for avatar and text */
+  align-items: center; /* Vertically center items */
+  margin-bottom: 1rem; /* Space before testimonial text */
 }
 
 /* Avatar styling with gradient background */
 .testimonial-avatar {
-  width: 40px;                /* Square avatar dimensions */
+  width: 40px; /* Square avatar dimensions */
   height: 40px;
-  border-radius: 50%;         /* Circular avatar */
-  background: linear-gradient(135deg, #00d4ff, #0099cc);  /* Brand gradient */
-  margin-right: 1rem;         /* Space before name */
+  border-radius: 50%; /* Circular avatar */
+  background: linear-gradient(135deg, #00d4ff, #0099cc); /* Brand gradient */
+  margin-right: 1rem; /* Space before name */
 }
 
 /* Testimonial text styling */
 .testimonial p {
-  font-style: italic;         /* Italicize testimonial quotes */
-  opacity: 0.9;               /* Slight transparency for hierarchy */
+  font-style: italic; /* Italicize testimonial quotes */
+  opacity: 0.9; /* Slight transparency for hierarchy */
 }
 
 /* ================================================
@@ -588,29 +599,29 @@ body {
 
 /* About section with two-column layout */
 .about {
-  padding: 6rem 0;             /* Extra padding for section emphasis */
-  display: grid;               /* CSS Grid layout */
-  grid-template-columns: 1fr 1fr;  /* Two equal columns */
-  gap: 4rem;                   /* Space between content and visual */
-  align-items: center;         /* Vertically center content */
+  padding: 6rem 0; /* Extra padding for section emphasis */
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 4rem; /* Space between content and visual */
+  align-items: center; /* Vertically center content */
 }
 
 /* About section visual element */
 .about-visual {
-  height: 250px;               /* Fixed height for consistency */
-  background: rgba(0, 212, 255, 0.05);  /* Subtle brand color tint */
-  border: 1px solid rgba(0, 212, 255, 0.1);  /* Subtle border */
-  border-radius: 15px;         /* Rounded corners */
-  display: flex;               /* Center icon within container */
-  align-items: center;         /* Vertically center */
-  justify-content: center;     /* Horizontally center */
-  text-align: center;          /* Center any text content */
+  height: 250px; /* Fixed height for consistency */
+  background: rgba(0, 212, 255, 0.05); /* Subtle brand color tint */
+  border: 1px solid rgba(0, 212, 255, 0.1); /* Subtle border */
+  border-radius: 15px; /* Rounded corners */
+  display: flex; /* Center icon within container */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  text-align: center; /* Center any text content */
 }
 
 /* Icon within about visual */
 .about-visual .icon {
-  font-size: 3rem;             /* Large decorative icon */
-  color: #00d4ff;             /* Brand color */
+  font-size: 3rem; /* Large decorative icon */
+  color: #00d4ff; /* Brand color */
 }
 
 /* ================================================
@@ -619,49 +630,49 @@ body {
 
 /* Footer container with dark background */
 .footer {
-  background: rgba(0, 0, 0, 0.3);    /* Dark semi-transparent background */
-  padding: 3rem 2rem 1rem;           /* Generous padding with less bottom space */
-  text-align: center;                /* Center all footer content */
-  border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle top border */
+  background: rgba(0, 0, 0, 0.3); /* Dark semi-transparent background */
+  padding: 3rem 2rem 1rem; /* Generous padding with less bottom space */
+  text-align: center; /* Center all footer content */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
 }
 
 /* Footer navigation links container */
 .footer-links {
-  display: flex;               /* Horizontal layout */
-  justify-content: center;     /* Center the links */
-  gap: 2rem;                  /* Space between links */
-  margin-bottom: 2rem;        /* Space before additional footer content */
-  flex-wrap: wrap;            /* Allow wrapping on smaller screens */
+  display: flex; /* Horizontal layout */
+  justify-content: center; /* Center the links */
+  gap: 2rem; /* Space between links */
+  margin-bottom: 2rem; /* Space before additional footer content */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 /* Individual footer link styling */
 .footer-links a {
-  color: #00d4ff;            /* Brand color */
-  text-decoration: none;      /* Remove underlines */
-  transition: color 0.3s ease;  /* Smooth color transitions */
+  color: #00d4ff; /* Brand color */
+  text-decoration: none; /* Remove underlines */
+  transition: color 0.3s ease; /* Smooth color transitions */
 }
 
 /* Footer link hover state */
 .footer-links a:hover {
-  color: white;               /* White text on hover */
+  color: white; /* White text on hover */
 }
 
 /* Active footer link styling - matches navigation */
 .footer-links a.active {
-  color: var(--primary);      /* Brand color */
-  font-weight: bold;          /* Emphasize active state */
+  color: var(--primary); /* Brand color */
+  font-weight: bold; /* Emphasize active state */
   background: var(--primary); /* Background highlight */
-  color: var(--text);         /* Text color override */
-  border-radius: 8px;         /* Rounded corners */
-  padding: 0.25em 0.5em;      /* Pill-shaped padding */
+  color: var(--text); /* Text color override */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0.25em 0.5em; /* Pill-shaped padding */
 }
 
 /* Footer link hover effects - matches navigation */
 .footer-links a:hover {
-  color: var(--primary);      /* Brand color on hover */
-  background: rgba(0, 212, 255, 0.08);  /* Subtle background highlight */
-  border-radius: 8px;         /* Rounded hover state */
-  padding: 0.25em 0.5em;      /* Consistent padding */
+  color: var(--primary); /* Brand color on hover */
+  background: rgba(0, 212, 255, 0.08); /* Subtle background highlight */
+  border-radius: 8px; /* Rounded hover state */
+  padding: 0.25em 0.5em; /* Consistent padding */
 }
 
 /* ================================================
