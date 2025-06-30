@@ -399,7 +399,7 @@ body {
     rgba(15, 15, 35, 0.9)     /* Darker blue */
   );
   backdrop-filter: blur(10px); /* Glassmorphism blur effect */
-  border-radius: 14px;        /* Slightly smaller radius than container */
+  border-radius: 15px;        /* Slightly smaller radius than container */
   padding: 2rem;              /* Internal spacing */
   height: 100%;               /* Fill container height */
   position: relative;         /* Above animated border */
