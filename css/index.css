@@ -37,16 +37,16 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000; /* Ensure header stays above other content */
-  background: rgba(15, 15, 35, 0.95); /* Semi-transparent dark background */
-  backdrop-filter: blur(10px); /* Glassmorphism blur effect for modern look */
+  background: rgba(15, 15, 35, 0.7); /* Semi-transparent dark background */
+  backdrop-filter: blur(25px); /* Glassmorphism blur effect for modern look */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
 }
 
 /* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between; /* Logo left, navigation right */
-  align-items: center; /* Vertically center items */
+  justify-content:space-between; /* Logo left, navigation right */
+  align-items: center ; /* Vertically center items */
   padding: 1rem 2rem; /* Internal spacing */
   max-width: 1200px; /* Constrain width on large screens */
   margin: 0 auto; /* Center navigation container */
@@ -58,6 +58,10 @@ body {
   font-weight: bold;
   color: var(--primary); /* Use CSS custom property for brand color */
   text-decoration: none; /* Remove underline from link */
+}
+
+#clubLogo {
+  width: 175px;
 }
 
 /* Navigation links container with flexbox */
@@ -658,7 +662,22 @@ body {
 
   /* Hide navigation links on mobile (hamburger menu would replace this) */
   .nav-links {
-    display: none;
+    display: contents;
+  }
+
+  #clubLogo {
+    width: 110px;
+  }
+
+  /* Fade overlay effects using pseudo-elements */
+  .testimonial-slider::before,
+  .testimonial-slider::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position over slider content */
+    top: 0;
+    width: 200px; /* Width of fade effect */
+    height: 100%; /* Full height of slider */
+    z-index: 2; /* Above slider content */
   }
 
   /* Single column for cards on mobile */
