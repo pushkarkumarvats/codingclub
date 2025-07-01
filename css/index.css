@@ -502,6 +502,7 @@ body {
   width: 250px; /* Fixed card width */
   margin: 0 20px; /* Horizontal spacing between cards */
   background: rgba(255, 255, 255, 0.05); /* Glassmorphism background */
+  backdrop-filter: blur(25px);
   border-radius: 15px; /* Rounded corners */
   padding: 1.5rem; /* Internal spacing */
   flex-shrink: 0; /* Prevent cards from shrinking */
