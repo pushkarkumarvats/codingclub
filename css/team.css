@@ -833,3 +833,15 @@ body {
 .about-indent-bottom {
   margin-bottom: 3%;
 }
+
+.center-text {
+  justify-content: center;
+  text-align: center;
+}
+.avatar-fallback {
+  display: none;
+}
+.icon-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
