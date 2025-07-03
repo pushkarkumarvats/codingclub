@@ -45,8 +45,8 @@ body {
 /* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content:space-between; /* Logo left, navigation right */
-  align-items: center ; /* Vertically center items */
+  justify-content: space-between; /* Logo left, navigation right */
+  align-items: center; /* Vertically center items */
   padding: 1rem 2rem; /* Internal spacing */
   max-width: 1200px; /* Constrain width on large screens */
   margin: 0 auto; /* Center navigation container */
@@ -400,15 +400,15 @@ body {
   /* Multi-stop gradient background for depth */
   background: linear-gradient(
     145deg,
-    rgba(26, 26, 46, 0.9),    /* Lighter dark blue */
-    rgba(15, 15, 35, 0.9)     /* Darker blue */
+    rgba(26, 26, 46, 0.9),
+    /* Lighter dark blue */ rgba(15, 15, 35, 0.9) /* Darker blue */
   );
   backdrop-filter: blur(10px); /* Glassmorphism blur effect */
-  border-radius: 15px;        /* Slightly smaller radius than container */
-  padding: 2rem;              /* Internal spacing */
-  height: 100%;               /* Fill container height */
-  position: relative;         /* Above animated border */
-  z-index: 1;                 /* Ensure content stays above border animation */
+  border-radius: 15px; /* Slightly smaller radius than container */
+  padding: 2rem; /* Internal spacing */
+  height: 100%; /* Fill container height */
+  position: relative; /* Above animated border */
+  z-index: 1; /* Ensure content stays above border animation */
 }
 
 /* Card hover effects */
@@ -518,11 +518,22 @@ body {
 
 /* Avatar styling with gradient background */
 .testimonial-avatar {
-  width: 40px; /* Square avatar dimensions */
+  width: 40px;
   height: 40px;
-  border-radius: 50%; /* Circular avatar */
-  background: linear-gradient(135deg, #00d4ff, #0099cc); /* Brand gradient */
-  margin-right: 1rem; /* Space before name */
+  background: #00bfff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+}
+
+.testimonial-avatar img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 /* Testimonial text styling */
@@ -536,11 +547,11 @@ body {
    ================================================ */
 /* About section with two-column layout */
 .about {
-  padding: 6rem 0;             /* Extra padding for section emphasis */
-  display: contents;               /* CSS Grid layout */
-  grid-template-columns: 1fr 1fr;  /* Two equal columns */
-  gap: 4rem;                   /* Space between content and visual */
-  align-items: center;         /* Vertically center content */
+  padding: 6rem 0; /* Extra padding for section emphasis */
+  display: contents; /* CSS Grid layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 4rem; /* Space between content and visual */
+  align-items: center; /* Vertically center content */
 }
 
 .about p {
@@ -555,8 +566,8 @@ body {
 }
 
 .about-content {
-  background: rgba(0, 212, 255, 0.05);  /* Subtle brand color tint */
-  border: 1px solid rgba(0, 212, 255, 0.1);  /* Subtle border */
+  background: rgba(0, 212, 255, 0.05); /* Subtle brand color tint */
+  border: 1px solid rgba(0, 212, 255, 0.1); /* Subtle border */
   border-radius: 20px;
   margin-top: 3%;
   margin-bottom: 3%;
