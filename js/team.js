@@ -55,3 +55,28 @@ window.addEventListener('scroll', function () {
     // Update last scroll position, preventing negative values
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Smooth scroll functionality for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  // Scroll to top button visibility and functionality
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) scrollBtn.style.display = "block";
+      else scrollBtn.style.display = "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});

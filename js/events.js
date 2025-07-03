@@ -1,4 +1,3 @@
-
 // Create floating particles for background animation
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
@@ -128,3 +127,28 @@ style.textContent = `
 `;
 // Append the style element to document head to make animations available
 document.head.appendChild(style);
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Smooth scroll functionality for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  // Scroll to top button visibility and functionality
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) scrollBtn.style.display = "block";
+      else scrollBtn.style.display = "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});

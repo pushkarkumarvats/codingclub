@@ -766,10 +766,19 @@ body {
 }
 /* Scroll to top button */
 .scroll-to-top {
-  background: var(--primary);
-  color: var(--text);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s;
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1001;
+  background: #00d4ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
 }
 .scroll-to-top:hover,
 .scroll-to-top:focus {
@@ -806,4 +815,8 @@ body {
   .center-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.avatar-round {
+  border-radius: 50%;
 }
