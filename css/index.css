@@ -947,3 +947,7 @@ body.error-404 {
 .about-indent-bottom {
   margin-bottom: 3%;
 }
+
+.scroll-to-top i {
+  color: #fff !important;
+}

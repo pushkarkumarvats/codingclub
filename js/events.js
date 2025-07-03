@@ -56,25 +56,27 @@ filterTabs.forEach(tab => {
 // Real-time search functionality for events
 const searchBar = document.querySelector('.search-bar');
 
-searchBar.addEventListener('input', (e) => {
-    // Convert search term to lowercase for case-insensitive matching
-    const searchTerm = e.target.value.toLowerCase();
+if (searchBar) {
+  searchBar.addEventListener('input', (e) => {
+      // Convert search term to lowercase for case-insensitive matching
+      const searchTerm = e.target.value.toLowerCase();
 
-    // Check each event card against the search term
-    eventCards.forEach(card => {
-        // Extract text content from title and description elements
-        const title = card.querySelector('.event-title').textContent.toLowerCase();
-        const description = card.querySelector('.event-description').textContent.toLowerCase();
+      // Check each event card against the search term
+      eventCards.forEach(card => {
+          // Extract text content from title and description elements
+          const title = card.querySelector('.event-title').textContent.toLowerCase();
+          const description = card.querySelector('.event-description').textContent.toLowerCase();
 
-        // Show card if search term is found in title OR description
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
-            card.style.display = 'block';
-        } else {
-            // Hide card if search term doesn't match
-            card.style.display = 'none';
-        }
-    });
-});
+          // Show card if search term is found in title OR description
+          if (title.includes(searchTerm) || description.includes(searchTerm)) {
+              card.style.display = 'block';
+          } else {
+              // Hide card if search term doesn't match
+              card.style.display = 'none';
+          }
+      });
+  });
+}
 
 // Initialize particle animation when page fully loads
 window.addEventListener('load', createParticles);
@@ -125,13 +127,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Scroll to top button visibility and functionality
   const scrollBtn = document.getElementById("scrollToTop");
+  console.log("Scroll button found:", scrollBtn); // Debug log
+  
   if (scrollBtn) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) scrollBtn.style.display = "block";
-      else scrollBtn.style.display = "none";
+      console.log("Scroll position:", window.scrollY); // Debug log
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+        console.log("Showing scroll button"); // Debug log
+      } else {
+        scrollBtn.style.display = "none";
+        console.log("Hiding scroll button"); // Debug log
+      }
     });
+    
     scrollBtn.addEventListener("click", () => {
+      console.log("Scroll button clicked"); // Debug log
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  } else {
+    console.error("Scroll button not found!"); // Debug log
   }
 });

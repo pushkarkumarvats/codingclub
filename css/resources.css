@@ -599,6 +599,10 @@ body {
   cursor: pointer;
 }
 
+.scroll-to-top i {
+  color: #fff !important;
+}
+
 .about-indent {
   margin-left: 2%;
 }

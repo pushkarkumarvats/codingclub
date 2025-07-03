@@ -607,3 +607,7 @@ body {
     transform: translateY(0);
   }
 }
+
+.scroll-to-top i {
+  color: #fff !important;
+}
