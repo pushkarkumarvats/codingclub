@@ -111,23 +111,6 @@ document.querySelectorAll('.event-card, .timeline-item').forEach(element => {
     observer.observe(element);
 });
 
-// Dynamically inject CSS animation keyframes for fade-in effect
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn {
-        from { 
-            opacity: 0; 
-            transform: translateY(20px); 
-        }
-        to { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-    }
-`;
-// Append the style element to document head to make animations available
-document.head.appendChild(style);
-
 document.addEventListener('DOMContentLoaded', function () {
   // Smooth scroll functionality for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

@@ -820,3 +820,16 @@ body {
 .avatar-round {
   border-radius: 50%;
 }
+
+.about-indent {
+  margin-left: 2%;
+}
+.about-list {
+  margin-left: 7%;
+}
+.about-indent-right {
+  margin-right: 2%;
+}
+.about-indent-bottom {
+  margin-bottom: 3%;
+}

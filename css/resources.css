@@ -598,3 +598,27 @@ body {
   font-size: 2rem;
   cursor: pointer;
 }
+
+.about-indent {
+  margin-left: 2%;
+}
+.about-list {
+  margin-left: 7%;
+}
+.about-indent-right {
+  margin-right: 2%;
+}
+.about-indent-bottom {
+  margin-bottom: 3%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

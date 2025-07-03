@@ -930,3 +930,20 @@ body.error-404 {
     font-size: 1.1rem;
   }
 }
+
+.about-title {
+  margin-top: 2%;
+  margin-left: 3%;
+}
+.about-indent {
+  margin-left: 2%;
+}
+.about-list {
+  margin-left: 7%;
+}
+.about-indent-right {
+  margin-right: 2%;
+}
+.about-indent-bottom {
+  margin-bottom: 3%;
+}
