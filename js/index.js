@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const scrollBtn = document.getElementById("scrollToTop");
   if (scrollBtn) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) scrollBtn.style.display = "block";
+      if (window.scrollY > 100) scrollBtn.style.display = "block";
       else scrollBtn.style.display = "none";
     });
     scrollBtn.addEventListener("click", () => {

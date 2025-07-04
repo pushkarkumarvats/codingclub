@@ -46,3 +46,22 @@ document.head.appendChild(style);
 // ===== Initialize Particles After Load =====
 window.addEventListener('load', createParticles);
 
+// Scroll to top button visibility and functionality
+const scrollBtn = document.getElementById("scrollToTop");
+
+if (scrollBtn) {
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+ window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
