@@ -577,3 +577,37 @@ body {
    - Modified spacing for better mobile UX
    - Touch gesture support
    - Optimized images and reduced motion for performance */
+
+.avatar-round {
+  border-radius: 50%;
+}
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1001;
+  background: #00d4ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-to-top i {
+  color: #fff !important;
+}

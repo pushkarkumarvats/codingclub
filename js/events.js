@@ -1,4 +1,3 @@
-
 // Create floating particles for background animation
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
@@ -57,25 +56,27 @@ filterTabs.forEach(tab => {
 // Real-time search functionality for events
 const searchBar = document.querySelector('.search-bar');
 
-searchBar.addEventListener('input', (e) => {
-    // Convert search term to lowercase for case-insensitive matching
-    const searchTerm = e.target.value.toLowerCase();
+if (searchBar) {
+  searchBar.addEventListener('input', (e) => {
+      // Convert search term to lowercase for case-insensitive matching
+      const searchTerm = e.target.value.toLowerCase();
 
-    // Check each event card against the search term
-    eventCards.forEach(card => {
-        // Extract text content from title and description elements
-        const title = card.querySelector('.event-title').textContent.toLowerCase();
-        const description = card.querySelector('.event-description').textContent.toLowerCase();
+      // Check each event card against the search term
+      eventCards.forEach(card => {
+          // Extract text content from title and description elements
+          const title = card.querySelector('.event-title').textContent.toLowerCase();
+          const description = card.querySelector('.event-description').textContent.toLowerCase();
 
-        // Show card if search term is found in title OR description
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
-            card.style.display = 'block';
-        } else {
-            // Hide card if search term doesn't match
-            card.style.display = 'none';
-        }
-    });
-});
+          // Show card if search term is found in title OR description
+          if (title.includes(searchTerm) || description.includes(searchTerm)) {
+              card.style.display = 'block';
+          } else {
+              // Hide card if search term doesn't match
+              card.style.display = 'none';
+          }
+      });
+  });
+}
 
 // Initialize particle animation when page fully loads
 window.addEventListener('load', createParticles);
@@ -112,19 +113,39 @@ document.querySelectorAll('.event-card, .timeline-item').forEach(element => {
     observer.observe(element);
 });
 
-// Dynamically inject CSS animation keyframes for fade-in effect
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn {
-        from { 
-            opacity: 0; 
-            transform: translateY(20px); 
-        }
-        to { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-    }
-`;
-// Append the style element to document head to make animations available
-document.head.appendChild(style);
+document.addEventListener('DOMContentLoaded', function () {
+  // Smooth scroll functionality for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  // Scroll to top button visibility and functionality
+  const scrollBtn = document.getElementById("scrollToTop");
+  console.log("Scroll button found:", scrollBtn); // Debug log
+  
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      console.log("Scroll position:", window.scrollY); // Debug log
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+        console.log("Showing scroll button"); // Debug log
+      } else {
+        scrollBtn.style.display = "none";
+        console.log("Hiding scroll button"); // Debug log
+      }
+    });
+    
+    scrollBtn.addEventListener("click", () => {
+      console.log("Scroll button clicked"); // Debug log
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  } else {
+    console.error("Scroll button not found!"); // Debug log
+  }
+});

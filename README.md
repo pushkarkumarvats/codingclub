@@ -53,6 +53,7 @@ codingclub/
 - **Navigation:** Update navigation links in the `<nav>` section of each HTML file if you add new pages.
 - **Assets:** Place all images, logos, and profile photos in the `assets/` folder. Use descriptive, lowercase filenames.
 - **CSS/JS:** For new sections, create a new CSS/JS file in the respective folder and link it in your HTML.
+- **External CSS Only:** Always use external CSS files for all styles. **Do not use inline `style` attributes or `<style>` blocks in HTML.** This is required for Content Security Policy (CSP) compliance, improved security, and consistent cross-browser behavior. Define all custom styles in the appropriate CSS file and use class or ID selectors in your HTML.
 
 ---
 

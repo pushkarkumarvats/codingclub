@@ -42,17 +42,21 @@
     <title>Events / ODP Coding Club</title>
 
     <!-- External CSS stylesheets -->
-    <link rel="stylesheet" href="../css/events.css" />
+    <link rel="stylesheet" href="/css/events.css" />
     <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <!-- Favicon for browser tab -->
-    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
   </head>
 
   <body>
+    <button id="scrollToTop" aria-label="Scroll to top" class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Fallback notice for users with JavaScript disabled -->
     <noscript>
       <div
@@ -74,10 +78,11 @@
         <!-- Logo with home page link -->
         <a href="/" class="logo"
           ><img
-            src="../assets/logo_with_name1_transparent.png"
+            src="/assets/logo_with_name1_transparent.png"
             width="150px"
             alt="Coding Club logo"
             loading="eager"
+            class="avatar-round"
         /></a>
         <!-- Alternative logo options (commented out) -->
         <!-- <a href="/" class="logo"><img src="../assets/logo.png" width="60px" alt="logo"></a> -->
@@ -86,9 +91,9 @@
         <!-- Main navigation menu -->
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
-          <li><a href="../events/" class="active">Events</a></li>
-          <li><a href="../resources/">Resources</a></li>
-          <li><a href="../team/">Team</a></li>
+          <li><a href="/events/" class="active">Events</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/team/">Team</a></li>
         </ul>
 
         <!-- Search functionality -->
@@ -310,8 +315,8 @@
       <div class="footer-links">
         <a href="/">Home</a>
         <a href="#">Events</a>
-        <a href="../resources/">Resources</a>
-        <a href="../team/">Team</a>
+        <a href="/resources/">Resources</a>
+        <a href="/team/">Team</a>
         <a href="#">Feedback</a>
       </div>
 
@@ -320,7 +325,7 @@
     </footer>
 
     <!-- JavaScript files for functionality -->
-    <script src="../js/events.js"></script>
-    <script src="../js/footer_text.js"></script>
+    <script src="/js/events.js"></script>
+    <script src="/js/footer_text.js"></script>
   </body>
 </html>
