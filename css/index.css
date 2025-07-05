@@ -434,6 +434,124 @@ body {
 }
 
 /* ================================================
+   ADVANCED CARD SYSTEM FOR THE ABOUT SECTION WITH GLOWING BORDERS WHEN HOVERED ON
+   ================================================ */
+
+/* Card container */
+.about-card {
+  position: relative; /* Positioning context for pseudo-elements */
+  padding: 2px; /* Space for animated border */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Contain animated elements */
+  background: transparent; /* No default background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Card content with glassmorphism background */
+.about-card-content {
+  /* Multi-stop gradient background for depth */
+  background: linear-gradient(
+    145deg,
+    rgba(26, 26, 46, 0.9),
+    /* Lighter dark blue */ rgba(15, 15, 35, 0.9) /* Darker blue */
+  );
+  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+  border-radius: 15px; /* Slightly smaller radius than container */
+  padding: 2rem; /* Internal spacing */
+  height: 100%; /* Fill container height */
+  position: relative; /* Above animated border */
+  z-index: 1; /* Ensure content stays above border animation */
+}
+
+/* Card hover effects */
+.about-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 0 30px 10px rgba(0, 212, 255, 0.2);
+}
+
+/* Card title styling */
+.about-card h3 {
+  color: #00d4ff; /* Brand color for headings */
+  margin-bottom: 1rem; /* Space below heading */
+  font-size: 1.3rem; /* Slightly larger than body text */
+}
+
+/* Card metadata styling */
+.about-card small {
+  opacity: 0.7; /* Subtle styling for secondary text */
+}
+
+/* ================================================
+   UPDATE SOON TEXT STYLES
+   ================================================ */
+.update-soon {
+  /* Text styling for "coming soon" message */
+  text-align: center; /* Center the text */
+  font-size: 1.5rem; /* Larger font size */
+  font-weight: 600; /* Semi-bold text */
+  color: #ffffff; /* White text for contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Strong shadow for better readability */
+  
+  /* Positioning and spacing */
+  padding: 2.5rem 0rem 2.5rem 0rem; /* Inner padding */
+  margin: 0; /* Remove default margins */
+  
+  /* Center vertically within parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%; /* Take full height of parent */
+  
+  /* Ensure text appears above background effects */
+  position: relative;
+  z-index: 3; /* Above background overlay and blur */
+}
+
+.background-image {
+  /* Background image for "coming soon" section */
+  background-image: url(/assets/coming_soon_background.png);
+  background-size: cover; /* Scale image to cover entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-attachment: local; /* Image scrolls with content */
+  
+  /* Container styling */
+  min-height: 200px; /* Minimum height to show background */
+  padding: 2rem; /* Inner spacing */
+  border-radius: 12px; /* Rounded corners */
+  position: relative; /* Positioning context for child elements */
+  
+  /* Create blurred background effect using pseudo-element */
+  overflow: hidden; /* Hide overflow from pseudo-element */
+}
+
+/* Pseudo-element to create the blurred background effect */
+.background-image::before {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position over the entire container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* Same background as parent but blurred */
+  background-image: url(/assets/coming_soon_background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Apply blur effect to the background image */
+  filter: blur(8px); /* Blur the background image */
+  
+  /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.1); /* Dark overlay for better text contrast */
+  background-blend-mode: overlay; /* Blend overlay with background */
+  
+  /* Ensure it's behind the text */
+  z-index: 1; /* Behind text but above container */
+}
+
+/* ================================================
    TESTIMONIALS SECTION
    ================================================ */
 /* Testimonials section with auto-scrolling animation */
@@ -509,31 +627,46 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
 }
 
-/* Testimonial header with avatar and name */
+/* Testimonial header with avatar and name - vertically centered layout */
 .testimonial-header {
-  display: flex; /* Horizontal layout for avatar and text */
-  align-items: center; /* Vertically center items */
+  display: flex; /* Vertical layout for avatar and name */
+  flex-direction: column; /* Stack avatar above name */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text alignment */
   margin-bottom: 1rem; /* Space before testimonial text */
 }
 
-/* Avatar styling with gradient background */
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  background: #00bfff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1.5rem;
+/* Style the strong tag (name) inside testimonial header */
+.testimonial-header strong {
+  margin-top: 0.5rem; /* Space between avatar and name */
+  font-size: 1rem; /* Adjust name font size */
+  color: var(--primary); /* Brand color for names */
 }
 
+/* Wrapper for testimonial name to control spacing */
+.testimonial-name {
+  margin-top: 0.5rem; /* Space between avatar and name */
+}
+
+/* Avatar styling with gradient background - centered layout */
+.testimonial-avatar {
+  width: 60px; /* Slightly larger for better visibility */
+  height: 60px;
+  background: linear-gradient(135deg, #00d4ff, #0099cc); /* Brand gradient */
+  border-radius: 50%; /* Circular avatar */
+  box-shadow: 0 0 30px 5px rgba(0, 212, 255, 0.2); /* Glowing shadow */
+  display: flex; /* Center image within avatar */
+  align-items: center; /* Vertically center image */
+  justify-content: center; /* Horizontally center image */
+  overflow: hidden; /* Ensure image doesn't overflow rounded borders */
+}
+
+/* Avatar image styling */
 .testimonial-avatar img {
-  width: 44px;
-  height: 44px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
+  width: 100%; /* Fill avatar container */
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio while filling container */
+  border-radius: 50%; /* Ensure image is also circular */
 }
 
 /* Testimonial text styling */

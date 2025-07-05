@@ -154,36 +154,13 @@
       <section class="section" id="events">
         <div class="section-header">
           <h2 class="section-title">Upcoming Events</h2>
-          <a href="/events/" class="view-more">View more →</a>
+          <!-- view-more link (commented out for future use) -->
+          <!-- <a href="/events/" class="view-more">View more →</a> -->
         </div>
-        <!-- Events cards grid layout -->
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card-content">
-              <h3>JavaScript Workshop</h3>
-              <p>
-                Learn modern JS fundamentals and ES6+ features in this
-                hands-on workshop.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <h3>React Bootcamp</h3>
-              <p>
-                Build your first React application with hooks, state
-                management, and modern practices.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <h3>Open Source Hackathon</h3>
-              <p>
-                Contribute to open source projects and collaborate with
-                developers worldwide.
-              </p>
-            </div>
+        <!-- Made it 'coming soon' till upcoming events are listed -->
+        <div class="background-image">
+          <div class="update-soon">
+            Coming soon..
           </div>
         </div>
       </section>
@@ -226,43 +203,7 @@
         </div>
       </section>
 
-      <!-- Featured Projects section -->
-      <section class="section" id="events">
-        <div class="section-header">
-          <h2 class="section-title">Featured Projects</h2>
-          <a href="/events/" class="view-more">View more →</a>
-        </div>
-        <!-- Project cards grid layout -->
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card-content">
-              <h3>JavaScript Workshop</h3>
-              <p>
-                Learn modern JS fundamentals and ES6+ features in this
-                hands-on workshop.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <h3>React Bootcamp</h3>
-              <p>
-                Build your first React application with hooks, state
-                management, and modern practices.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <h3>Open Source Hackathon</h3>
-              <p>
-                Contribute to open source projects and collaborate with
-                developers worldwide.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
 
     <!-- Testimonials section with auto-scrolling slider -->
@@ -278,9 +219,11 @@
           <div class="testimonial">
             <div class="testimonial-header">
               <div class="testimonial-avatar">
-                <img src="https://cdn.jsdelivr.net/gh/alohe/avatars/png/memo_1.png" width="48" height="48" class="avatar-round" />
+                <img src="https://cdn.jsdelivr.net/gh/alohe/avatars/png/memo_1.png" class="avatar-round" />
               </div>
-              <strong>Anil</strong>
+              <div class="testimonial-name">
+                <strong>Anil</strong>
+              </div>
             </div>
             <p>
               "The practicial sessions, especially on HTML, CSS, and JavaScript,
@@ -498,7 +441,7 @@
       <!-- About the Club section with stats and description -->
       <section class="section about">
         <div class="about-content">
-          <div class="card">
+          <div class="about-card">
             <div class="card-content">
               <h2 class="section-title about-title">About the Club</h2>
               <br>
