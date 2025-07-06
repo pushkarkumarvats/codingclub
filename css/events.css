@@ -37,23 +37,23 @@ body {
 
 /* Fixed header with glassmorphism effect */
 .header {
-  position: fixed; /* Stay at top during scroll */
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Above other content */
-  background: rgba(15, 15, 35, 0.95); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  z-index: 1000;
+  background: rgba(15, 15, 35, 0.7);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between; /* Logo left, links right */
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  max-width: 1200px; /* Constrain width on large screens */
-  margin: 0 auto; /* Center navigation */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Logo styling with brand color */
@@ -527,11 +527,7 @@ body {
 @media (max-width: 768px) {
   /* Hide navigation links on mobile - would typically show hamburger menu */
   .nav-links {
-    display: none;
-    /* In a full implementation, this would be replaced with:
-           - Hamburger menu button
-           - Slide-out or dropdown navigation
-           - Touch-friendly larger tap targets */
+    display: contents;
   }
 
   /* Reduce title size for mobile screens */
@@ -568,6 +564,10 @@ body {
   .timeline-dot {
     left: 20px; /* Match timeline line position */
     /* transform: translateX(-50%) centers dot on line */
+  }
+
+  #clubLogo {
+    width: 110px;
   }
 }
 
@@ -610,4 +610,8 @@ body {
 
 .scroll-to-top i {
   color: #fff !important;
+}
+
+#clubLogo {
+  width: 175px;
 }

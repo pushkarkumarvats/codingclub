@@ -40,23 +40,23 @@ body {
 
 /* Fixed header with glassmorphism effect */
 .header {
-  position: fixed; /* Stay at top during scroll */
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure header stays above other content */
-  background: rgba(15, 15, 35, 0.95); /* Semi-transparent dark background */
-  backdrop-filter: blur(10px); /* Glassmorphism blur effect for modern look */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  z-index: 1000;
+  background: rgba(15, 15, 35, 0.7);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between; /* Logo left, navigation right */
-  align-items: center; /* Vertically center items */
-  padding: 1rem 2rem; /* Internal spacing */
-  max-width: 1200px; /* Constrain width on large screens */
-  margin: 0 auto; /* Center navigation container */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Logo styling with brand color */
@@ -697,7 +697,7 @@ body {
     justify-content: center;
   }
   .nav-links {
-    display: none;
+    display: contents;
   }
   .cards-grid {
     grid-template-columns: 1fr;
@@ -706,6 +706,9 @@ body {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
+  }
+  #clubLogo {
+    width: 110px;
   }
 }
 .particles {
@@ -848,4 +851,8 @@ body {
 
 .scroll-to-top i {
   color: #fff !important;
+}
+
+#clubLogo {
+  width: 175px;
 }

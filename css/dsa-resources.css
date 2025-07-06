@@ -69,46 +69,46 @@ body {
 
 /* Individual navigation link styling */
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease; /* Smooth color transitions */
-  position: relative; /* For pseudo-element positioning */
+  color: var(--text); /* Default text color */
+  text-decoration: none; /* Remove underlines */
+  transition: color 0.3s ease; /* Smooth color transitions on hover */
+  position: relative; /* Required for pseudo-element positioning */
 }
 
 /* Active navigation link styling */
 .nav-links a.active {
-  color: var(--primary);
-  font-weight: bold;
-  background: var(--primary);
-  color: var(--text);
-  border-radius: 8px;
-  padding: 0.25em 0.5em;
+  color: var(--primary); /* Brand color for active state */
+  font-weight: bold; /* Emphasize active link */
+  background: var(--primary); /* Background highlight */
+  color: var(--text); /* Text color override */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0.25em 0.5em; /* Pill-shaped padding */
 }
 
 /* Hover effects for navigation links */
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--primary); /* Brand color on hover */
   background: rgba(0, 212, 255, 0.08); /* Subtle background highlight */
-  border-radius: 8px;
-  padding: 0.25em 0.5em;
+  border-radius: 8px; /* Rounded hover state */
+  padding: 0.25em 0.5em; /* Consistent padding with active state */
 }
 
 /* Animated underline effect using pseudo-elements */
 .nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position relative to parent link */
+  bottom: -5px; /* Below the text */
   left: 0;
   width: 0; /* Start with no width */
-  height: 2px;
-  background: #00d4ff;
-  transition: width 0.3s ease; /* Animate width change */
+  height: 2px; /* Thin underline */
+  background: var(--primary); /* Brand color underline */
+  transition: width 0.3s ease; /* Smooth width animation */
 }
 
 /* Expand underline on hover and active states */
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 100%; /* Full width underline */
+  width: 100%; /* Full width underline on hover/active */
 }
 
 /* ================================================
@@ -317,15 +317,20 @@ body {
 @media (max-width: 768px) {
   /* Hide navigation links on mobile - would typically show hamburger menu */
   .nav-links {
-    display: none;
-    /* In a full implementation, this would be replaced with:
-           - Hamburger menu button
-           - Slide-out or dropdown navigation
-           - Touch-friendly larger tap targets */
+    display: contents;
   }
 
   /* Reduce title size for mobile screens */
   .page-title {
     font-size: 2.5rem; /* Smaller than desktop 3.5rem */
     /* Could also adjust line-height and margin for better mobile spacing */
-    }
+  }
+
+  #clubLogo {
+    width: 110px;
+  }
+}
+
+#clubLogo {
+  width: 175px;
+}
