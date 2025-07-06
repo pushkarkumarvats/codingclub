@@ -87,8 +87,8 @@ body {
 
 /* Hover effects for navigation links */
 .nav-links a:hover {
-  color: var(--text);
-  background: var(--primary);
+  color: var(--primary);
+  background: rgba(0, 212, 255, 0.08);
   border-radius: 8px; /* Rounded hover state */
   padding: 0.25em 0.5em; /* Consistent padding with active state */
 }
@@ -241,31 +241,34 @@ body {
 
 .footer-links {
   display: flex;
-  justify-content: center; /* Center the links horizontally */
-  gap: 2rem; /* Space between footer links */
-  margin-bottom: 2rem; /* Space before copyright/additional content */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 /* Individual footer link styling */
 .footer-links a {
-  color: var(--primary);
-  background: transparent;
-  text-decoration: none; /* Remove underlines */
-  transition: color 0.3s ease; /* Smooth color transitions */
-  /* Could add hover effects like: 
-       padding, background, border-radius for pill-shaped hover states */
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 /* Footer link hover state */
+.footer-links a.active {
+  color: var(--text);
+  background: var(--primary);
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
+}
+
 .footer-links a:hover {
   color: var(--text);
   background: var(--primary);
-  /* Additional hover effects could include:
-       background: rgba(0, 212, 255, 0.1);
-       padding: 0.5rem 1rem;
-       border-radius: 20px; */
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
 }
+
 
 /* ================================================
    BACKGROUND PARTICLE SYSTEM

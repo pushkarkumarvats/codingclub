@@ -84,20 +84,18 @@ body {
 
 /* Active navigation link styling - highlights current page */
 .nav-links a.active {
-  color: var(--primary); /* Brand color for active state */
-  font-weight: bold; /* Emphasize active link */
-  background: var(--primary); /* Background highlight */
-  color: var(--text); /* Text color override */
-  border-radius: 8px; /* Rounded corners */
-  padding: 0.25em 0.5em; /* Pill-shaped padding */
+  color: var(--text);
+  background: var(--primary);
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
 }
 
 /* Navigation link hover effects */
 .nav-links a:hover {
-  color: var(--primary); /* Brand color on hover */
-  background: rgba(0, 212, 255, 0.08); /* Subtle background highlight */
-  border-radius: 8px; /* Rounded hover state */
-  padding: 0.25em 0.5em; /* Consistent padding with active state */
+  color: var(--primary);
+  background: rgba(0, 212, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
 }
 
 /* Animated underline effect using pseudo-elements */
@@ -638,42 +636,36 @@ body {
 
 /* Footer navigation links container */
 .footer-links {
-  display: flex; /* Horizontal layout */
-  justify-content: center; /* Center the links */
-  gap: 2rem; /* Space between links */
-  margin-bottom: 2rem; /* Space before additional footer content */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 /* Individual footer link styling */
 .footer-links a {
-  color: #00d4ff; /* Brand color */
-  text-decoration: none; /* Remove underlines */
-  transition: color 0.3s ease; /* Smooth color transitions */
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 /* Footer link hover state */
 .footer-links a:hover {
-  color: white; /* White text on hover */
+  color: var(--primary);
+  background: rgba(0, 212, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
 }
 
 /* Active footer link styling - matches navigation */
-.footer-links a.active {
-  color: var(--primary); /* Brand color */
-  font-weight: bold; /* Emphasize active state */
-  background: var(--primary); /* Background highlight */
-  color: var(--text); /* Text color override */
-  border-radius: 8px; /* Rounded corners */
-  padding: 0.25em 0.5em; /* Pill-shaped padding */
+.footer-links a:hover {
+  color: var(--text);
+  background: var(--primary);
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
 }
 
-/* Footer link hover effects - matches navigation */
-.footer-links a:hover {
-  color: var(--primary); /* Brand color on hover */
-  background: rgba(0, 212, 255, 0.08); /* Subtle background highlight */
-  border-radius: 8px; /* Rounded hover state */
-  padding: 0.25em 0.5em; /* Consistent padding */
-}
 
 /* ================================================
    RESPONSIVE DESIGN BREAKPOINTS
