@@ -69,7 +69,8 @@ body {
 
 /* Individual navigation link styling */
 .nav-links a {
-  color: var(--text); /* Default text color */
+  color: var(--primary);
+  background: transparent;
   text-decoration: none; /* Remove underlines */
   transition: color 0.3s ease; /* Smooth color transitions on hover */
   position: relative; /* Required for pseudo-element positioning */
@@ -77,18 +78,17 @@ body {
 
 /* Active navigation link styling */
 .nav-links a.active {
-  color: var(--primary); /* Brand color for active state */
+  color: var(--text);
+  background: var(--primary);
   font-weight: bold; /* Emphasize active link */
-  background: var(--primary); /* Background highlight */
-  color: var(--text); /* Text color override */
   border-radius: 8px; /* Rounded corners */
   padding: 0.25em 0.5em; /* Pill-shaped padding */
 }
 
 /* Hover effects for navigation links */
 .nav-links a:hover {
-  color: var(--primary); /* Brand color on hover */
-  background: rgba(0, 212, 255, 0.08); /* Subtle background highlight */
+  color: var(--text);
+  background: var(--primary);
   border-radius: 8px; /* Rounded hover state */
   padding: 0.25em 0.5em; /* Consistent padding with active state */
 }
@@ -249,7 +249,8 @@ body {
 
 /* Individual footer link styling */
 .footer-links a {
-  color: #00d4ff; /* Brand color for links */
+  color: var(--primary);
+  background: transparent;
   text-decoration: none; /* Remove underlines */
   transition: color 0.3s ease; /* Smooth color transitions */
   /* Could add hover effects like: 
@@ -258,7 +259,8 @@ body {
 
 /* Footer link hover state */
 .footer-links a:hover {
-  color: white; /* White text on hover for contrast */
+  color: var(--text);
+  background: var(--primary);
   /* Additional hover effects could include:
        background: rgba(0, 212, 255, 0.1);
        padding: 0.5rem 1rem;
