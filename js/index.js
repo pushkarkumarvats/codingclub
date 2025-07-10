@@ -30,6 +30,8 @@ window.addEventListener('load', createParticles);
 
 // Smart header visibility: hide on scroll down, show on scroll up
 // This creates a more immersive reading experience by giving users more screen space
+// DISABLED: Commented out to keep navbar always visible
+/*
 let lastScrollTop = 0;  // Track previous scroll position for direction detection
 
 window.addEventListener('scroll', function () {
@@ -52,6 +54,7 @@ window.addEventListener('scroll', function () {
   // Update last scroll position, preventing negative values
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+*/
 
 // Typewriter animation for hero section
 const words = ["Code.", "Create.", "Collaborate."];
