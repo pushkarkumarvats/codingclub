@@ -1,4 +1,6 @@
 {
+  "buildCommand": "node js/generate-sitemap.js",
+  "outputDirectory": ".",
   "redirects": [
     {
       "source": "/index.html",
