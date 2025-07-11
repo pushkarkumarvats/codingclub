@@ -40,6 +40,8 @@ body {
   background: rgba(15, 15, 35, 0.7); /* Semi-transparent dark background */
   backdrop-filter: blur(25px); /* Glassmorphism blur effect for modern look */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  transform: translateY(0); /* Ensure header is always visible */
+  transition: transform 0.3s ease; /* Smooth transitions if needed */
 }
 
 /* Navigation container with flexbox layout */
@@ -433,9 +435,9 @@ body {
   opacity: 0.7; /* Subtle styling for secondary text */
 }
 
-/* ================================================
+/* ================================================================================
    ADVANCED CARD SYSTEM FOR THE ABOUT SECTION WITH GLOWING BORDERS WHEN HOVERED ON
-   ================================================ */
+   ================================================================================ */
 
 /* Card container */
 .about-card {
@@ -490,7 +492,7 @@ body {
   font-size: 1.5rem; /* Larger font size */
   font-weight: 600; /* Semi-bold text */
   color: #ffffff; /* White text for contrast */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Strong shadow for better readability */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5); /* Strong shadow for better readability */
   
   /* Positioning and spacing */
   padding: 2.5rem 0rem 2.5rem 0rem; /* Inner padding */
@@ -501,11 +503,29 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100%; /* Take full height of parent */
+  gap: 1rem; /* Space between lock icon and text */
   
   /* Ensure text appears above background effects */
   position: relative;
   z-index: 3; /* Above background overlay and blur */
 }
+
+/* Specific styling for the lock icon */
+#lockIcon{
+  font-size: 1.25rem; /* Slightly smaller than text for better balance */
+  color: #16213e; /* Brand color for the icon */
+  /* background: linear-gradient(to bottom, #4de0ff, #00d4ff, #00c0eb); */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5); /* Shadow to match text */
+  border-radius: 5px;
+
+  /* background-clip: text;
+  -webkit-background-clip: text; /* For WebKit browsers */
+
+  /* color: transparent; Fallback for other browsers */
+  /* -webkit-text-fill-color: transparent; For WebKit browsers */
+}
+
+
 
 .background-image {
   /* Background image for "coming soon" section */
@@ -807,11 +827,14 @@ body {
 
   /* Hide navigation links on mobile (hamburger menu would replace this) */
   .nav-links {
-    display: contents;
+    display: flex;
+    flex-wrap: wrap;
+    
   }
 
   #clubLogo {
-    width: 110px;
+    width: 100px;
+    margin-right: 3rem;
   }
 
   /* Fade overlay effects using pseudo-elements */
