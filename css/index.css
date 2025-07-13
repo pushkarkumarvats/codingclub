@@ -513,7 +513,7 @@ body {
 /* Specific styling for the lock icon */
 #lockIcon{
   font-size: 1.25rem; /* Slightly smaller than text for better balance */
-  color: #16213e; /* Brand color for the icon */
+  color: #16213e;
   /* background: linear-gradient(to bottom, #4de0ff, #00d4ff, #00c0eb); */
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.5); /* Shadow to match text */
   border-radius: 5px;
