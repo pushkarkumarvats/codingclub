@@ -37,38 +37,51 @@ body {
 
 /* Fixed header with glassmorphism effect */
 .header {
-  position: fixed;
+  position: fixed; /* Stay at top during scroll */
   top: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(15, 15, 35, 0.7);
-  backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000; /* Ensure header stays above other content */
+  
 }
 
 /* Navigation container with flexbox layout */
 .nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between; /* Logo left, navigation right */
+  align-items: center; /* Vertically center items */
+  padding: 0rem 1rem; /* Internal spacing */
+  max-width: 1200px; /* Constrain width on large screens */
+  margin: 20px auto; /* Center navigation container */
+
+  border-radius: 25px; /* Made the corners softer */
+
+  background: rgba(0, 0, 0, 0.05); /* Semi-transparent dark background */
+  backdrop-filter: blur(25px); /* Glassmorphism blur effect for modern look */
+  border: 1.5px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  transform: translateY(0); /* Ensure header is always visible */
+  transition: transform 0.3s ease; /* Smooth transitions if needed */
 }
 
 /* Logo styling with brand color */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00d4ff; /* Brand cyan color */
-  text-decoration: none;
+  color: var(--primary); /* Use CSS custom property for brand color */
+  text-decoration: none; /* Remove underline from link */
+
+  margin-left: 2.5rem;
 }
 
-/* Navigation links container */
+#clubLogo {
+  width: 175px;
+}
+
+/* Navigation links container with flexbox */
 .nav-links {
+  margin-right: 3rem;
   display: flex;
   gap: 2rem; /* Space between navigation items */
-  list-style: none; /* Remove bullet points */
+  list-style: none; /* Remove bullet points from list */
 }
 
 /* Individual navigation link styling */
@@ -526,10 +539,10 @@ body {
 
 /* Tablet and mobile breakpoint - screens smaller than 768px */
 @media (max-width: 768px) {
-  /* Hide navigation links on mobile - would typically show hamburger menu */
+  /* Hide navigation links on mobile - would typically show hamburger menu
   .nav-links {
     display: contents;
-  }
+  } */
 
   /* Reduce title size for mobile screens */
   .page-title {
@@ -567,8 +580,25 @@ body {
     /* transform: translateX(-50%) centers dot on line */
   }
 
+  .nav {
+    padding: 1rem 2rem; /* Internal spacing */
+    margin-top: 0%;
+  }
+
+  /* Hide navigation links on mobile (hamburger menu would replace this) */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0%;
+  }
+
+  .logo {
+    margin-left: 1.5rem;
+  }
+
   #clubLogo {
-    width: 110px;
+    width: 120px;
+    margin-right: 1rem;
   }
 }
 
@@ -611,8 +641,4 @@ body {
 
 .scroll-to-top i {
   color: #fff !important;
-}
-
-#clubLogo {
-  width: 175px;
 }
