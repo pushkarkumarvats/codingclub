@@ -69,10 +69,10 @@ function typeWord() {
     if (charIndex < words[wordIndex].length) {
       typewriterText.textContent += words[wordIndex][charIndex];
       charIndex++;
-      setTimeout(typeWord, 100);
+      setTimeout(typeWord, 180); // slower typing
     } else {
       typing = false;
-      setTimeout(eraseWord, 1200);
+      setTimeout(eraseWord, 1800); // slower pause before erasing
     }
   }
 }
@@ -82,11 +82,11 @@ function eraseWord() {
     if (charIndex > 0) {
       typewriterText.textContent = words[wordIndex].substring(0, charIndex - 1);
       charIndex--;
-      setTimeout(eraseWord, 50);
+      setTimeout(eraseWord, 100); // slower erasing
     } else {
       typing = true;
       wordIndex = (wordIndex + 1) % words.length;
-      setTimeout(typeWord, 400);
+      setTimeout(typeWord, 700); // slower pause before typing next word
     }
   }
 }
