@@ -44,9 +44,9 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(15, 15, 35, 0.7);
-  backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 /* Navigation container with flexbox layout */
@@ -54,9 +54,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 1rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(25px);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 /* Logo styling with brand color */
@@ -65,6 +71,7 @@ body {
   font-weight: bold;
   color: #00d4ff; /* Brand cyan color */
   text-decoration: none; /* Remove underline from link */
+  margin-left: 2.5rem;
 }
 
 /* Navigation links container with flexbox */
@@ -72,6 +79,7 @@ body {
   display: flex;
   gap: 2rem; /* Space between navigation items */
   list-style: none; /* Remove bullet points from list */
+  margin-right: 3rem;
 }
 
 /* Base navigation link styling */
