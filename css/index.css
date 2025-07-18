@@ -37,11 +37,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000; /* Ensure header stays above other content */
-  background: rgba(15, 15, 35, 0.7); /* Semi-transparent dark background */
-  backdrop-filter: blur(25px); /* Glassmorphism blur effect for modern look */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
-  transform: translateY(0); /* Ensure header is always visible */
-  transition: transform 0.3s ease; /* Smooth transitions if needed */
+  
 }
 
 /* Navigation container with flexbox layout */
@@ -49,9 +45,17 @@ body {
   display: flex;
   justify-content: space-between; /* Logo left, navigation right */
   align-items: center; /* Vertically center items */
-  padding: 1rem 2rem; /* Internal spacing */
+  padding: 0rem 1rem; /* Internal spacing */
   max-width: 1200px; /* Constrain width on large screens */
-  margin: 0 auto; /* Center navigation container */
+  margin: 20px auto; /* Center navigation container */
+
+  border-radius: 25px; /* Made the corners softer */
+
+  background: rgba(0, 0, 0, 0.05); /* Semi-transparent dark background */
+  backdrop-filter: blur(25px); /* Glassmorphism blur effect for modern look */
+  border: 1.5px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  transform: translateY(0); /* Ensure header is always visible */
+  transition: transform 0.3s ease; /* Smooth transitions if needed */
 }
 
 /* Logo styling with brand color */
@@ -60,6 +64,8 @@ body {
   font-weight: bold;
   color: var(--primary); /* Use CSS custom property for brand color */
   text-decoration: none; /* Remove underline from link */
+
+  margin-left: 2.5rem;
 }
 
 #clubLogo {
@@ -68,6 +74,7 @@ body {
 
 /* Navigation links container with flexbox */
 .nav-links {
+  margin-right: 3rem;
   display: flex;
   gap: 2rem; /* Space between navigation items */
   list-style: none; /* Remove bullet points from list */
@@ -513,7 +520,7 @@ body {
 /* Specific styling for the lock icon */
 #lockIcon{
   font-size: 1.25rem; /* Slightly smaller than text for better balance */
-  color: #16213e; /* Brand color for the icon */
+  color: #007cf0;
   /* background: linear-gradient(to bottom, #4de0ff, #00d4ff, #00c0eb); */
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.5); /* Shadow to match text */
   border-radius: 5px;
@@ -825,16 +832,25 @@ body {
     justify-content: center; /* Center button group */
   }
 
+  .nav {
+    padding: 1rem 2rem; /* Internal spacing */
+    margin-top: 0%;
+  }
+
   /* Hide navigation links on mobile (hamburger menu would replace this) */
   .nav-links {
     display: flex;
     flex-wrap: wrap;
-    
+    margin-right: 0%;
+  }
+
+  .logo {
+    margin-left: 1.5rem;
   }
 
   #clubLogo {
-    width: 100px;
-    margin-right: 3rem;
+    width: 120px;
+    margin-right: 1rem;
   }
 
   /* Fade overlay effects using pseudo-elements */
