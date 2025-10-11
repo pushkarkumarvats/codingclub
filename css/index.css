@@ -28,13 +28,30 @@ body {
 }
 
 /* ================================================
+   MARQUEE BANNER
+   ================================================ */
+
+/* Marquee banner styling for credit line */
+.marquee-banner {
+  background: rgba(0, 0, 0, 0.05);
+  color: #00d4ff;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+/* ================================================
    HEADER & NAVIGATION SYSTEM
    ================================================ */
 
 /* Fixed header with glassmorphism effect */
 .header {
   position: fixed; /* Stay at top during scroll */
-  top: 0;
+  top: 20px; /* Push down to account for marquee banner */
   width: 100%;
   z-index: 1000; /* Ensure header stays above other content */
   

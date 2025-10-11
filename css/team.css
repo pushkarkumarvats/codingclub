@@ -34,6 +34,25 @@ body {
   line-height: 1.6; /* Improved readability with proper line spacing */
   overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
 }
+
+/* ================================================
+   MARQUEE BANNER
+   ================================================ */
+
+/* Marquee banner styling for credit line */
+.marquee-banner {
+  background: rgba(0, 0, 0, 0.05);
+  color: #00d4ff;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+
 /* ================================================
    HEADER & NAVIGATION SYSTEM
    ================================================ */
