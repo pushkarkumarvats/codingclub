@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO meta description for search engines -->
+  <meta name="description"
+    content="Solvothon 2025 - IIT Guwahati's biggest hackathon problem solving competition organized by Coding Club. Join us for an exciting coding challenge!" />
+
+  <!-- Open Graph meta tags for social media sharing -->
+  <meta property="og:title" content="Solvothon 2025 - IIT Guwahati" />
+  <meta property="og:description"
+    content="IIT Guwahati's biggest hackathon problem solving competition. Join us for an exciting coding challenge organized by Coding Club!" />
+  <meta property="og:image" content="https://codingcluboesiitg.vercel.app/assets/solvothon_art.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codingcluboesiitg.vercel.app/events/solvothon-2025/" />
+
+  <title>Solvothon 2025 | IIT Guwahati Coding Club</title>
+
+  <!-- External CSS stylesheets -->
+  <link rel="stylesheet" href="/css/solvothon.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Solvothon 2025",
+      "organizer": {
+        "@type": "Organization",
+        "name": "IIT Guwahati Online Degree Coding Club",
+        "url": "https://codingcluboesiitg.vercel.app/"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "IIT Guwahati",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guwahati",
+          "addressRegion": "Assam",
+          "addressCountry": "IN"
+        }
+      },
+      "description": "IIT Guwahati's biggest hackathon problem solving competition",
+      "eventStatus": "https://schema.org/EventScheduled"
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Fallback notice for users with JavaScript disabled -->
+  <noscript>
+    <div style="background: #222; color: #fff; padding: 1em; text-align: center">
+      This site works best with JavaScript enabled. Some features may not work properly without it.
+    </div>
+  </noscript>
+
+  <!-- Accessibility: Skip to main content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Marquee banner -->
+  <marquee behavior="scroll" direction="left" class="marquee-banner">
+    This website is maintained by the IIT Guwahati Online Degree Coding Club members under faculty supervision.
+  </marquee>
+
+  <!-- Particle animation background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Header with Navigation -->
+  <header class="header" role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/" class="logo">
+        <img src="/assets/logo_with_name1_transparent.png" id="clubLogo" alt="Coding Club logo" loading="eager" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/">Courses</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/team/">Team</a></li>
+      </ul>
+      <!-- Mobile menu toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-trophy"></i>
+          <span>IIT Guwahati's Biggest Hackathon</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="gradient-text">SOLVOTHON</span>
+          <span class="year">2025</span>
+        </h1>
+        <p class="hero-subtitle">
+          The Ultimate Problem Solving Competition
+        </p>
+        <p class="hero-description">
+          Organized by <strong>Coding Club</strong>
+        </p>
+        <div class="cta-buttons">
+          <a href="#register" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> Register Now
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            <i class="fas fa-info-circle"></i> More details
+          </a>
+        </div>
+        <!-- Countdown Timer -->
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-value" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+      <!-- Animated Code Background -->
+      <div class="hero-visual">
+        <div class="code-animation">
+          <div class="code-line"></div>
+          <div class="code-line"></div>
+          <div class="code-line"></div>
+          <div class="code-line"></div>
+          <div class="code-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Solvothon</h2>
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>What is Solvothon?</h3>
+            <p>
+              Solvothon is IIT Guwahati's premier hackathon and problem-solving competition, bringing together
+              the brightest minds to tackle challenging algorithmic problems and innovative coding challenges.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Who Can Participate?</h3>
+            <p>
+              Open to all students passionate about coding and problem-solving. Whether you're a beginner or
+              an experienced coder, Solvothon has challenges for everyone!
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Why Join?</h3>
+            <p>
+              Compete for exciting prizes, gain recognition, network with fellow coders, and enhance your
+              problem-solving skills in a competitive environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Highlights -->
+    <section class="section highlights-section">
+      <div class="container">
+        <h2 class="section-title">Event Highlights</h2>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="highlight-number">500+</div>
+            <p>Expected Participants</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">24</div>
+            <p>Hours of Coding</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">₹50K+</div>
+            <p>Prize Pool</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">20+</div>
+            <p>Problem Challenges</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline-section">
+      <div class="container">
+        <h2 class="section-title">Event Timeline</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Registration Opens</h3>
+              <p class="timeline-date">January 15, 2026</p>
+              <p>Start your journey by registering for Solvothon 2025</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Registration Closes</h3>
+              <p class="timeline-date">February 10, 2026</p>
+              <p>Last date to register for the competition</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Hackathon Begins</h3>
+              <p class="timeline-date">February 15, 2026 - 10:00 AM</p>
+              <p>The 24-hour coding marathon starts!</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Results & Prize Distribution</h3>
+              <p class="timeline-date">February 16, 2026 - 12:00 PM</p>
+              <p>Winners announced and prizes distributed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section class="section prizes-section">
+      <div class="container">
+        <h2 class="section-title">Prizes & Recognition</h2>
+        <div class="prizes-grid">
+          <div class="prize-card gold">
+            <div class="prize-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>1st Prize</h3>
+            <div class="prize-amount">₹25,000</div>
+            <ul class="prize-benefits">
+              <li><i class="fas fa-check"></i> Winner Certificate</li>
+              <li><i class="fas fa-check"></i> Exclusive Swag</li>
+              <li><i class="fas fa-check"></i> Recognition on Website</li>
+            </ul>
+          </div>
+          <div class="prize-card silver">
+            <div class="prize-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>2nd Prize</h3>
+            <div class="prize-amount">₹15,000</div>
+            <ul class="prize-benefits">
+              <li><i class="fas fa-check"></i> Runner-up Certificate</li>
+              <li><i class="fas fa-check"></i> Coding Club Swag</li>
+              <li><i class="fas fa-check"></i> Recognition on Website</li>
+            </ul>
+          </div>
+          <div class="prize-card bronze">
+            <div class="prize-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>3rd Prize</h3>
+            <div class="prize-amount">₹10,000</div>
+            <ul class="prize-benefits">
+              <li><i class="fas fa-check"></i> Participant Certificate</li>
+              <li><i class="fas fa-check"></i> Special Mention</li>
+              <li><i class="fas fa-check"></i> Recognition on Website</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="section registration-section" id="register">
+      <div class="container">
+        <h2 class="section-title">Register for Solvothon 2025</h2>
+        <div class="registration-content">
+          <div class="registration-info">
+            <h3>Ready to compete?</h3>
+            <p>Join IIT Guwahati's biggest problem-solving competition and showcase your coding skills!</p>
+            <ul class="registration-benefits">
+              <li><i class="fas fa-check-circle"></i> Free participation</li>
+              <li><i class="fas fa-check-circle"></i> Certificate for all participants</li>
+              <li><i class="fas fa-check-circle"></i> Exciting prizes and swag</li>
+              <li><i class="fas fa-check-circle"></i> Network with fellow coders</li>
+              <li><i class="fas fa-check-circle"></i> Learn from industry experts</li>
+            </ul>
+          </div>
+          <div class="registration-form-container">
+            <form class="registration-form" id="registrationForm">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+              </div>
+              <div class="form-group">
+                <label for="institution">Institution *</label>
+                <input type="text" id="institution" name="institution" required placeholder="Your college/university">
+              </div>
+              <div class="form-group">
+                <label for="experience">Coding Experience</label>
+                <select id="experience" name="experience">
+                  <option value="">Select your experience level</option>
+                  <option value="beginner">Beginner (0-1 years)</option>
+                  <option value="intermediate">Intermediate (1-3 years)</option>
+                  <option value="advanced">Advanced (3+ years)</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-paper-plane"></i> Submit Registration
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is there any registration fee?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>No, Solvothon 2025 is completely free to participate in. We believe in making quality coding competitions accessible to everyone.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I participate individually or do I need a team?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>You can participate both individually or as a team of up to 3 members. Choose what works best for you!</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What programming languages are allowed?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>You can use any programming language of your choice including C++, Java, Python, JavaScript, and more.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Will there be mentors available during the event?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We'll have experienced mentors and industry experts available throughout the event to guide participants.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is this an online or offline event?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Solvothon 2025 will be conducted in hybrid mode - both online and offline at IIT Guwahati campus.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How will winners be selected?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Winners will be selected based on problem-solving accuracy, code efficiency, and completion time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-card">
+              <i class="fas fa-envelope"></i>
+              <h3>Email Us</h3>
+              <p><a href="mailto:codingclub@iitg.ac.in">codingclub@iitg.ac.in</a></p>
+            </div>
+            <div class="contact-card">
+              <i class="fas fa-phone"></i>
+              <h3>Call Us</h3>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+            <div class="contact-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Visit Us</h3>
+              <p>IIT Guwahati Campus<br>Guwahati, Assam - 781039</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About Online Coding Club</h4>
+          <p>IIT Guwahati's premier coding community fostering innovation, learning, and collaboration.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/team/">Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> codingclub@iitg.ac.in</li>
+            <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fas fa-map-marker-alt"></i> IIT Guwahati, Assam</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 IIT Guwahati Online Degree Coding Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="/js/solvothon.js"></script>
+</body>
+
+</html>
